@@ -24,6 +24,7 @@ import {
   Activity,
   AlertCircle,
   CheckCircle,
+  FileCheck,
 } from "lucide-react";
 
 import {
@@ -52,6 +53,7 @@ import { StatsAPI, Overview, EmployeesActivityResp, ResponseModesResp, KbUsageRe
 import { AnalyticsAPI } from "../api/stats";
 import { downloadBlob } from "../utils/download";
 import { getApiBase } from "../api/http";
+import { FileApproval } from "./FileApproval";
 
 interface AdminDashboardProps {
   onLogout: () => void;
@@ -131,7 +133,7 @@ function IconBox({ theme, Icon }: { theme: Theme; Icon: any }) {
 }
 
 export function AdminDashboard({ onLogout }: AdminDashboardProps) {
-  const [activeTab, setActiveTab] = useState<"overview" | "users" | "analytics">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "users" | "analytics" | "file-approval">("overview");
 
   // ===== Users =====
   const [users, setUsers] = useState<User[]>([]);
@@ -607,6 +609,16 @@ export function AdminDashboard({ onLogout }: AdminDashboardProps) {
             <BarChart3 className="w-5 h-5" />
             <span>التحليلات المتقدمة</span>
           </button>
+
+          <button
+            onClick={() => setActiveTab("file-approval")}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+              activeTab === "file-approval" ? "bg-white/20" : "hover:bg-white/10"
+            }`}
+          >
+            <FileCheck className="w-5 h-5" />
+            <span>موافقة الملفات</span>
+          </button>
         </nav>
 
         <button
@@ -627,11 +639,13 @@ export function AdminDashboard({ onLogout }: AdminDashboardProps) {
               {activeTab === "overview" && "لوحة المعلومات الرئيسية"}
               {activeTab === "users" && "إدارة المستخدمين والصلاحيات"}
               {activeTab === "analytics" && "التحليلات والتقارير المتقدمة"}
+              {activeTab === "file-approval" && "موافقة الملفات"}
             </h1>
             <p className="text-gray-600">
               {activeTab === "overview" && "نظرة شاملة على أداء النظام (نفس تقرير الموظف)"}
               {activeTab === "users" && "إضافة وتعديل المستخدمين وصلاحياتهم"}
               {activeTab === "analytics" && "تقرير الأداء + تقرير أداء الموظفين"}
+              {activeTab === "file-approval" && "مراجعة والموافقة على الملفات المرفوعة من الموظفين"}
             </p>
 
             {(loadingStats || statsError) && (
@@ -1690,6 +1704,9 @@ export function AdminDashboard({ onLogout }: AdminDashboardProps) {
 
             </div>
           )}
+
+          {/* موافقة الملفات */}
+          {activeTab === "file-approval" && <FileApproval />}
 
         </div>
       </div>

@@ -1,284 +1,140 @@
-import { useState, useEffect } from 'react';
-import { Upload, FileText, CheckCircle, XCircle, Clock, Trash2 } from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { toast } from 'sonner';
-
-export interface UploadedFile {
-  id: string;
-  name: string;
-  content: string;
-  type: string;
-  size: number;
-  uploadedBy: string;
-  uploadedAt: Date;
-  status: 'pending' | 'approved' | 'rejected';
-  rejectionReason?: string;
-}
+// src/pages/FileManagement.tsx
+import { useState, useEffect, useCallback } from "react";
+import { Upload, FileText, CheckCircle, XCircle, Clock, Trash2, RefreshCw } from "lucide-react";
+import { listFiles, uploadFile, deleteFile, type FileOut } from "../api/files";
 
 export function FileManagement() {
-  const [files, setFiles] = useState<UploadedFile[]>([]);
+  const [files, setFiles]         = useState<FileOut[]>([]);
+  const [loading, setLoading]     = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [toast, setToast]         = useState<{ msg: string; ok: boolean } | null>(null);
 
-  useEffect(() => {
-    // تحميل الملفات من localStorage
-    const savedFiles = localStorage.getItem('uploadedFiles');
-    if (savedFiles) {
-      const parsedFiles = JSON.parse(savedFiles);
-      // تحويل التواريخ من string إلى Date
-      const filesWithDates = parsedFiles.map((file: any) => ({
-        ...file,
-        uploadedAt: new Date(file.uploadedAt)
-      }));
-      setFiles(filesWithDates);
-    }
+  const showToast = (msg: string, ok = true) => {
+    setToast({ msg, ok });
+    setTimeout(() => setToast(null), 3500);
+  };
+
+  const loadFiles = useCallback(async () => {
+    try { setFiles(await listFiles()); }
+    catch (e: any) { showToast("فشل تحميل الملفات: " + e.message, false); }
+    finally { setLoading(false); }
   }, []);
 
-  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFiles = event.target.files;
-    if (!selectedFiles || selectedFiles.length === 0) return;
+  useEffect(() => {
+    loadFiles();
+    const t = setInterval(loadFiles, 10_000);
+    return () => clearInterval(t);
+  }, [loadFiles]);
 
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = e.target.files;
+    if (!selected?.length) return;
     setUploading(true);
-
-    try {
-      const newFiles: UploadedFile[] = [];
-
-      for (let i = 0; i < selectedFiles.length; i++) {
-        const file = selectedFiles[i];
-        
-        // التحقق من نوع الملف
-        const allowedTypes = [
-          'text/plain',
-          'application/pdf',
-          'application/msword',
-          'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-        ];
-        
-        if (!allowedTypes.includes(file.type) && !file.name.endsWith('.txt')) {
-          toast.error(`نوع الملف ${file.name} غير مدعوم`);
-          continue;
-        }
-
-        // التحقق من حجم الملف (أقل من 5 ميجابايت)
-        if (file.size > 5 * 1024 * 1024) {
-          toast.error(`الملف ${file.name} كبير جداً (الحد الأقصى 5 ميجابايت)`);
-          continue;
-        }
-
-        // قراءة محتوى الملف
-        const content = await readFileContent(file);
-
-        const newFile: UploadedFile = {
-          id: `file_${Date.now()}_${i}`,
-          name: file.name,
-          content: content,
-          type: file.type || 'text/plain',
-          size: file.size,
-          uploadedBy: 'موظف', // في التطبيق الحقيقي سيكون اسم المستخدم
-          uploadedAt: new Date(),
-          status: 'pending'
-        };
-
-        newFiles.push(newFile);
+    let uploaded = 0;
+    for (let i = 0; i < selected.length; i++) {
+      const file = selected[i];
+      const allowed = ["text/plain","application/pdf","application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+      if (!allowed.includes(file.type) && !file.name.endsWith(".txt")) {
+        showToast(`نوع الملف "${file.name}" غير مدعوم`, false); continue;
       }
-
-      // حفظ الملفات الجديدة
-      const updatedFiles = [...files, ...newFiles];
-      setFiles(updatedFiles);
-      localStorage.setItem('uploadedFiles', JSON.stringify(updatedFiles));
-
-      toast.success(`تم رفع ${newFiles.length} ملف بنجاح. في انتظار موافقة الإدارة`);
-    } catch (error) {
-      console.error('خطأ في رفع الملف:', error);
-      toast.error('حدث خطأ أثناء رفع الملف');
-    } finally {
-      setUploading(false);
-      // إعادة تعيين input
-      event.target.value = '';
-    }
-  };
-
-  const readFileContent = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      
-      reader.onload = (e) => {
-        const content = e.target?.result as string;
-        resolve(content);
-      };
-      
-      reader.onerror = () => {
-        reject(new Error('فشل قراءة الملف'));
-      };
-
-      // قراءة الملف كنص
-      if (file.type === 'text/plain' || file.name.endsWith('.txt')) {
-        reader.readAsText(file);
-      } else {
-        // للملفات الأخرى، نحفظ فقط البيانات الوصفية
-        resolve('[محتوى ثنائي - سيتم معالجته عند الموافقة]');
+      if (file.size > 5 * 1024 * 1024) {
+        showToast(`الملف "${file.name}" أكبر من 5 ميجابايت`, false); continue;
       }
-    });
-  };
-
-  const handleDelete = (fileId: string) => {
-    const updatedFiles = files.filter(f => f.id !== fileId);
-    setFiles(updatedFiles);
-    localStorage.setItem('uploadedFiles', JSON.stringify(updatedFiles));
-    toast.success('تم حذف الملف');
-  };
-
-  const getStatusBadge = (status: string) => {
-    switch (status) {
-      case 'approved':
-        return (
-          <Badge className="bg-green-500 text-white">
-            <CheckCircle className="w-3 h-3 ml-1" />
-            موافق عليه
-          </Badge>
-        );
-      case 'rejected':
-        return (
-          <Badge className="bg-red-500 text-white">
-            <XCircle className="w-3 h-3 ml-1" />
-            مرفوض
-          </Badge>
-        );
-      default:
-        return (
-          <Badge className="bg-yellow-500 text-white">
-            <Clock className="w-3 h-3 ml-1" />
-            قيد المراجعة
-          </Badge>
-        );
+      try { await uploadFile(file); uploaded++; }
+      catch (err: any) { showToast(`فشل رفع "${file.name}": ${err.message}`, false); }
     }
+    if (uploaded > 0) { showToast(`تم رفع ${uploaded} ملف — في انتظار موافقة الإدارة`); await loadFiles(); }
+    setUploading(false);
+    e.target.value = "";
   };
 
-  const formatFileSize = (bytes: number): string => {
-    if (bytes < 1024) return bytes + ' بايت';
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' كيلوبايت';
-    return (bytes / (1024 * 1024)).toFixed(1) + ' ميجابايت';
+  const handleDelete = async (fileId: number) => {
+    try { await deleteFile(fileId); showToast("تم حذف الملف"); setFiles(prev => prev.filter(f => f.file_id !== fileId)); }
+    catch (err: any) { showToast("فشل الحذف: " + err.message, false); }
   };
 
-  const myFiles = files.filter(f => f.uploadedBy === 'موظف');
+  const fmtSize = (b: number) =>
+    b < 1024 ? b + " بايت" : b < 1048576 ? (b/1024).toFixed(1)+" كيلوبايت" : (b/1048576).toFixed(1)+" ميجابايت";
+
+  const fmtDate = (d: string) =>
+    new Date(d).toLocaleDateString("ar-EG", { year:"numeric",month:"long",day:"numeric",hour:"2-digit",minute:"2-digit" });
+
+  const badge = (s: string) => s === "approved"
+    ? <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"><CheckCircle className="w-3 h-3"/>موافق عليه</span>
+    : s === "rejected"
+    ? <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800"><XCircle className="w-3 h-3"/>مرفوض</span>
+    : <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800"><Clock className="w-3 h-3"/>قيد المراجعة</span>;
 
   return (
     <div className="space-y-6" dir="rtl">
-      <Card>
-        <CardHeader>
-          <CardTitle>رفع ملفات البيانات</CardTitle>
-          <CardDescription>
-            قم برفع ملفات تحتوي على معلومات ومعرفة لإضافتها إلى نظام الذكاء الاصطناعي. 
-            الملفات المرفوعة تحتاج موافقة الإدارة قبل إضافتها للنظام.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-col gap-4">
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors">
-              <input
-                type="file"
-                id="file-upload"
-                multiple
-                accept=".txt,.pdf,.doc,.docx"
-                onChange={handleFileUpload}
-                className="hidden"
-                disabled={uploading}
-              />
-              <label
-                htmlFor="file-upload"
-                className="cursor-pointer flex flex-col items-center gap-3"
-              >
-                <Upload className="w-12 h-12 text-gray-400" />
-                <div>
-                  <p className="text-lg font-medium text-gray-700">
-                    اضغط لرفع الملفات
-                  </p>
-                  <p className="text-sm text-gray-500 mt-1">
-                    أنواع الملفات المدعومة: TXT, PDF, DOC, DOCX (حتى 5 ميجابايت)
-                  </p>
-                </div>
-                {uploading && (
-                  <p className="text-blue-600 font-medium">جاري الرفع...</p>
-                )}
-              </label>
+      {toast && (
+        <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-xl shadow-lg text-white text-sm font-medium ${toast.ok ? "bg-green-600" : "bg-red-600"}`}>
+          {toast.msg}
+        </div>
+      )}
+      <div className="bg-white rounded-xl shadow-md p-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-1">رفع ملفات البيانات</h2>
+        <p className="text-sm text-gray-500 mb-4">الملفات تحتاج موافقة الإدارة قبل إضافتها للنظام</p>
+        <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors">
+          <input type="file" id="file-upload" multiple accept=".txt,.pdf,.doc,.docx" onChange={handleUpload} className="hidden" disabled={uploading} />
+          <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center gap-3">
+            <Upload className="w-12 h-12 text-gray-400" />
+            <div>
+              <p className="text-lg font-medium text-gray-700">اضغط لرفع الملفات</p>
+              <p className="text-sm text-gray-500 mt-1">TXT, PDF, DOC, DOCX — حتى 5 ميجابايت</p>
             </div>
-
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h4 className="font-medium text-blue-900 mb-2">إرشادات رفع الملفات:</h4>
-              <ul className="text-sm text-blue-800 space-y-1">
-                <li>• تأكد من أن الملفات تحتوي على معلومات دقيقة وموثوقة</li>
-                <li>• استخدم ملفات نصية بسيطة للحصول على أفضل نتائج</li>
-                <li>• الملفات المرفوعة ستتم مراجعتها قبل إضافتها للنظام</li>
-                <li>• يمكنك رفع عدة ملفات في نفس الوقت</li>
-              </ul>
-            </div>
+            {uploading && <p className="text-blue-600 font-medium animate-pulse">جاري الرفع...</p>}
+          </label>
+        </div>
+        <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800 space-y-1">
+          <p>• تأكد من أن الملفات تحتوي على معلومات دقيقة وموثوقة</p>
+          <p>• استخدم ملفات نصية بسيطة للحصول على أفضل نتائج</p>
+          <p>• يمكنك رفع عدة ملفات في نفس الوقت</p>
+        </div>
+      </div>
+      <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h2 className="text-xl font-bold text-gray-800">الملفات المرفوعة</h2>
+            <p className="text-sm text-gray-500">حالة ملفاتك</p>
           </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>الملفات المرفوعة</CardTitle>
-          <CardDescription>
-            عرض جميع الملفات التي قمت برفعها وحالتها
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {myFiles.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              <FileText className="w-12 h-12 mx-auto mb-3 text-gray-400" />
-              <p>لم تقم برفع أي ملفات بعد</p>
-            </div>
-          ) : (
-            <div className="space-y-3">
-              {myFiles.map((file) => (
-                <div
-                  key={file.id}
-                  className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-start gap-3 flex-1">
-                      <FileText className="w-5 h-5 text-blue-600 mt-1" />
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="font-medium text-gray-900">{file.name}</h4>
-                          {getStatusBadge(file.status)}
-                        </div>
-                        <div className="text-sm text-gray-500 space-y-1">
-                          <p>الحجم: {formatFileSize(file.size)}</p>
-                          <p>تاريخ الرفع: {file.uploadedAt.toLocaleDateString('ar-EG', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                          })}</p>
-                          {file.status === 'rejected' && file.rejectionReason && (
-                            <p className="text-red-600 mt-2">
-                              <span className="font-medium">سبب الرفض:</span> {file.rejectionReason}
-                            </p>
-                          )}
-                        </div>
+          <button onClick={loadFiles} disabled={loading} className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 text-sm text-gray-600 hover:bg-gray-50 transition-colors">
+            <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} /> تحديث
+          </button>
+        </div>
+        {loading ? (
+          <div className="text-center py-12 text-gray-400"><RefreshCw className="w-8 h-8 mx-auto mb-2 animate-spin" /><p>جاري التحميل...</p></div>
+        ) : files.length === 0 ? (
+          <div className="text-center py-12 text-gray-400"><FileText className="w-12 h-12 mx-auto mb-3" /><p>لم تقم برفع أي ملفات بعد</p></div>
+        ) : (
+          <div className="space-y-3">
+            {files.map(f => (
+              <div key={f.file_id} className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-3 flex-1">
+                    <FileText className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <span className="font-medium text-gray-900 truncate">{f.name}</span>
+                        {badge(f.status)}
                       </div>
+                      <p className="text-xs text-gray-500">{fmtSize(f.size_bytes)} · {fmtDate(f.uploaded_at)}</p>
+                      {f.status === "approved" && f.kb_id && <p className="text-xs text-green-600 mt-1">✓ أضيف لقاعدة المعرفة #{f.kb_id}</p>}
+                      {f.status === "rejected" && f.rejection_reason && <p className="text-xs text-red-600 mt-1"><span className="font-medium">سبب الرفض:</span> {f.rejection_reason}</p>}
                     </div>
-                    {file.status === 'pending' && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => handleDelete(file.id)}
-                        className="text-red-600 hover:text-red-700 hover:bg-red-50"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </Button>
-                    )}
                   </div>
+                  {f.status === "pending" && (
+                    <button onClick={() => handleDelete(f.file_id)} className="p-1.5 rounded-lg text-red-400 hover:text-red-600 hover:bg-red-50 transition-colors flex-shrink-0">
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
-              ))}
-            </div>
-          )}
-        </CardContent>
-      </Card>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

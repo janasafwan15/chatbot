@@ -15,6 +15,8 @@ import {
   Star,
   Download,
   RefreshCw,
+  Upload,
+  HelpCircle,
 } from "lucide-react";
 
 import {
@@ -46,6 +48,8 @@ import { StatsAPI, Overview, ResponseModesResp, KbUsageResp, QualityResp } from 
 import { useAuth } from "../context/AuthContext";
 import { getMemToken } from "../api/auth";
 import { RatingsAnalytics } from "../app/components/RatingsAnalytics";
+import { FileManagement } from "./FileManagement";
+import { UnansweredQuestions } from "./UnansweredQuestions";
 import { downloadBlob } from "../utils/download";
 
 interface EmployeeDashboardProps {
@@ -74,7 +78,7 @@ function arabicWeekday(dateISO: string) {
 const COLORS = ["#3B82F6", "#10B981", "#F59E0B", "#8B5CF6", "#EF4444", "#14B8A6", "#A855F7", "#64748B"];
 
 export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
-  const [activeTab, setActiveTab] = useState<"overview" | "responses" | "reports" | "ratings">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "responses" | "reports" | "ratings" | "files" | "unanswered">("overview");
 
   // ✅ FIX: التوكن من memory وليس localStorage
   const { role } = useAuth();
@@ -461,6 +465,26 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
               <span>التقييمات</span>
             </button>
           )}
+
+          <button
+            onClick={() => setActiveTab("files")}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+              activeTab === "files" ? "bg-white/20" : "hover:bg-white/10"
+            }`}
+          >
+            <Upload className="w-5 h-5" />
+            <span>إدارة الملفات</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab("unanswered")}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+              activeTab === "unanswered" ? "bg-white/20" : "hover:bg-white/10"
+            }`}
+          >
+            <HelpCircle className="w-5 h-5" />
+            <span>الأسئلة غير المجابة</span>
+          </button>
         </nav>
 
         <button
@@ -482,12 +506,16 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
               {activeTab === "responses" && "إدارة الردود الذكية"}
               {activeTab === "reports" && "التقارير والإحصائيات"}
               {activeTab === "ratings" && "التقييمات"}
+              {activeTab === "files" && "إدارة الملفات"}
+              {activeTab === "unanswered" && "الأسئلة غير المجابة"}
             </h1>
             <p className="text-gray-600">
               {activeTab === "overview" && "نظرة عامة على أداء النظام"}
               {activeTab === "responses" && "إضافة وتعديل الردود في قاعدة المعرفة"}
               {activeTab === "reports" && "مراقبة الأداء وتحليل البيانات"}
               {activeTab === "ratings" && "تحليلات تقييم المحادثات (نجوم فقط)"}
+              {activeTab === "files" && "رفع ملفات لإضافتها لقاعدة المعرفة بعد موافقة الإدارة"}
+              {activeTab === "unanswered" && "الأسئلة التي لم يستطع الذكاء الاصطناعي الإجابة عليها"}
             </p>
 
             {(loadingStats || statsError) && (
@@ -1053,6 +1081,13 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
               </div>
             </div>
           )}
+
+          {/* إدارة الملفات */}
+          {activeTab === "files" && <FileManagement />}
+
+          {/* الأسئلة غير المجابة */}
+          {activeTab === "unanswered" && <UnansweredQuestions />}
+
         </div>
       </div>
     </div>

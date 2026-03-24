@@ -1,0 +1,97 @@
+// frontend/src/api/files.ts
+import { apiFetch } from "./http";
+
+export interface FileOut {
+  file_id: number;
+  name: string;
+  file_type: string;
+  size_bytes: number;
+  uploaded_by: number | null;
+  uploaded_by_name: string | null;
+  uploaded_at: string;
+  status: "pending" | "approved" | "rejected";
+  rejection_reason?: string | null;
+  reviewed_by?: number | null;
+  reviewed_at?: string | null;
+  kb_id?: number | null;
+}
+
+export interface FileDetailOut extends FileOut {
+  content: string;
+}
+
+export interface FileStats {
+  pending_count: number;
+  approved_count: number;
+  rejected_count: number;
+  total_count: number;
+}
+
+// ── Upload ──────────────────────────────────────────────────
+
+/** يقرأ ملف كنص ويرفعه للسيرفر */
+export async function uploadFile(file: File): Promise<FileDetailOut> {
+  const content = await readFileAsText(file);
+
+  return apiFetch<FileDetailOut>("/files", {
+    method: "POST",
+    body: {
+      name:       file.name,
+      content,
+      file_type:  file.type || "text/plain",
+      size_bytes: file.size,
+    },
+  });
+}
+
+function readFileAsText(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload  = () => resolve(reader.result as string);
+    reader.onerror = () => reject(new Error("فشل قراءة الملف"));
+    reader.readAsText(file, "utf-8");
+  });
+}
+
+// ── List ────────────────────────────────────────────────────
+
+export async function listFiles(status?: "pending" | "approved" | "rejected"): Promise<FileOut[]> {
+  const qs = status ? `?status=${status}` : "";
+  return apiFetch<FileOut[]>(`/files${qs}`);
+}
+
+// ── Detail ──────────────────────────────────────────────────
+
+export async function getFile(fileId: number): Promise<FileDetailOut> {
+  return apiFetch<FileDetailOut>(`/files/${fileId}`);
+}
+
+// ── Approve ─────────────────────────────────────────────────
+
+export async function approveFile(fileId: number): Promise<{ ok: boolean; kb_id: number }> {
+  return apiFetch(`/files/${fileId}/approve`, { method: "POST" });
+}
+
+// ── Reject ──────────────────────────────────────────────────
+
+export async function rejectFile(
+  fileId: number,
+  rejectionReason: string
+): Promise<{ ok: boolean }> {
+  return apiFetch(`/files/${fileId}/reject`, {
+    method: "POST",
+    body: { rejection_reason: rejectionReason },
+  });
+}
+
+// ── Delete ──────────────────────────────────────────────────
+
+export async function deleteFile(fileId: number): Promise<{ ok: boolean }> {
+  return apiFetch(`/files/${fileId}`, { method: "DELETE" });
+}
+
+// ── Stats ────────────────────────────────────────────────────
+
+export async function getFilesStats(): Promise<FileStats> {
+  return apiFetch<FileStats>("/files/stats/summary");
+}

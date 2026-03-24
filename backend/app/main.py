@@ -76,6 +76,8 @@ from .admin_controls_api import router as admin_controls_router
 from .access_log_middleware import AccessLogMiddleware
 from .rag_metrics import ensure_eval_table
 from .routers.knowledge_routes import router as knowledge_router
+from .routers.files_routes import router as files_router
+from .routers.unanswered_routes import router as unanswered_router
 
 # =============================
 # App bootstrap
@@ -107,6 +109,8 @@ app.include_router(feedback_router)
 app.include_router(chat_analysis_router)   # ✅ تحليل المحادثات (أكثر المشاكل، الأحياء)
 app.include_router(admin_controls_router)  # ✅ Admin Controls (rebuild embeddings, LLM usage)
 app.include_router(knowledge_router)       # ✅ Knowledge Base مع pagination وchangelog
+app.include_router(files_router)           # ✅ رفع الملفات ومراجعتها
+app.include_router(unanswered_router)      # ✅ الأسئلة غير المجابة
 
 # ✅ Access Log Middleware — يسجّل كل طلب في access.log
 app.add_middleware(AccessLogMiddleware)
