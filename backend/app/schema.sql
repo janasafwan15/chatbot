@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 from typing import Optional
 import re
 
-#kjhgfhjretuuyt
+"update"
 def _validate_strong_password(v: str) -> str:
     """كلمة مرور قوية: 8+ أحرف، حرف كبير، رقم، رمز خاص"""
     errors = []
