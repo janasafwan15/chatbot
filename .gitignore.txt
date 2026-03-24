@@ -1,0 +1,28 @@
+# Environment files
+backend/.env
+frontend/.env
+
+# Database
+backend/app/app.db
+backend/backups/
+
+# RAG index (ملف بيانات مش كود)
+backend/rag_index.json
+
+# Logs
+backend/server.log
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Node modules
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# SSL certs
+certs/

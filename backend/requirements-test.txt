@@ -1,0 +1,3 @@
+# requirements-test.txt — حزم الاختبار فقط (لا تُضَاف لـ production)
+pytest>=8.0
+httpx>=0.27.0

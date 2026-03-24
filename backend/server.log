@@ -1,0 +1,1759 @@
+2026-02-09 19:45:35 | INFO | [trace=11-1770651935] Q='ساعات العمل'
+2026-02-09 19:45:35 | INFO | [trace=11-1770651935] intent=None conf=0.04
+2026-02-09 19:45:35 | INFO | [trace=11-1770651935] best_score=37 top=1
+2026-02-09 19:45:36 | INFO | [trace=11-1770651935] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 19:45:36 | INFO | [trace=11-1770651935] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-09 19:45:45 | INFO | [trace=11-1770651945] Q='رقم البلدرية'
+2026-02-09 19:45:45 | INFO | [trace=11-1770651945] intent=None conf=0.04
+2026-02-09 19:45:45 | INFO | [trace=11-1770651945] best_score=49 top=5
+2026-02-09 19:45:47 | INFO | [trace=11-1770651945] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 19:45:47 | INFO | [trace=11-1770651945] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-09 19:45:55 | INFO | [trace=11-1770651955] Q='بدي اشتكي'
+2026-02-09 19:45:55 | INFO | [trace=11-1770651955] intent=None conf=0.05
+2026-02-09 19:45:55 | INFO | [trace=11-1770651955] mode=dialogue_complaint (dialogue)
+2026-02-09 19:46:00 | INFO | [trace=11-1770651960] Q='على الفاتورة'
+2026-02-09 19:46:00 | INFO | [trace=11-1770651960] intent=None conf=0.05
+2026-02-09 19:46:00 | INFO | [trace=11-1770651960] mode=dialogue_complaint_direct (dialogue)
+2026-02-09 19:46:08 | INFO | [trace=11-1770651968] Q='بدي اشتكي على سرقة'
+2026-02-09 19:46:08 | INFO | [trace=11-1770651968] intent=None conf=0.05
+2026-02-09 19:46:08 | INFO | [trace=11-1770651968] mode=dialogue_complaint_direct (dialogue)
+2026-02-09 19:49:35 | INFO | [trace=11-1770652175] Q='وين مراكز الشحن'
+2026-02-09 19:49:35 | INFO | [trace=11-1770652175] mode=rule_charge_centers src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::6'}]
+2026-02-09 19:50:56 | INFO | [trace=11-1770652256] Q='الرقم'
+2026-02-09 19:50:56 | INFO | [trace=11-1770652256] intent=None conf=0.04
+2026-02-09 19:50:57 | INFO | [trace=11-1770652256] best_score=0 top=0
+2026-02-09 19:50:57 | INFO | [trace=11-1770652256] mode=clarify (no_rag_match)
+2026-02-09 19:51:06 | INFO | [trace=11-1770652266] Q='رقم البلدية'
+2026-02-09 19:51:06 | INFO | [trace=11-1770652266] intent=None conf=0.04
+2026-02-09 19:51:06 | INFO | [trace=11-1770652266] best_score=49 top=5
+2026-02-09 19:51:08 | INFO | [trace=11-1770652266] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 19:51:08 | INFO | [trace=11-1770652266] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-09 19:51:34 | INFO | [trace=11-1770652294] Q='بدي اشتكي'
+2026-02-09 19:51:34 | INFO | [trace=11-1770652294] intent=None conf=0.05
+2026-02-09 19:51:34 | INFO | [trace=11-1770652294] mode=dialogue_complaint (dialogue)
+2026-02-09 19:51:37 | INFO | [trace=11-1770652297] Q='عطل'
+2026-02-09 19:51:37 | INFO | [trace=11-1770652297] intent=None conf=0.05
+2026-02-09 19:51:37 | INFO | [trace=11-1770652297] mode=dialogue_complaint_direct (dialogue)
+2026-02-09 19:52:44 | INFO | [trace=11-1770652364] Q='وين مركز البلدة القديم'
+2026-02-09 19:52:44 | INFO | [trace=11-1770652364] intent=None conf=0.04
+2026-02-09 19:52:45 | INFO | [trace=11-1770652364] best_score=23 top=3
+2026-02-09 19:52:51 | INFO | [trace=11-1770652364] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 19:52:51 | INFO | [trace=11-1770652364] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::83'}]
+2026-02-09 19:55:16 | INFO | [trace=12-1770652516] Q='ساعات العمل'
+2026-02-09 19:55:16 | INFO | [trace=12-1770652516] intent=None conf=0.04
+2026-02-09 19:55:16 | INFO | [trace=12-1770652516] best_score=37 top=1
+2026-02-09 19:55:23 | INFO | [trace=12-1770652516] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 19:55:23 | INFO | [trace=12-1770652516] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-09 19:55:33 | INFO | [trace=12-1770652533] Q='مراكز الشحن'
+2026-02-09 19:55:33 | INFO | [trace=12-1770652533] mode=rule_charge_centers src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::6'}]
+2026-02-09 19:55:59 | INFO | [trace=12-1770652559] Q='وين المركز'
+2026-02-09 19:55:59 | INFO | [trace=12-1770652559] intent=None conf=0.04
+2026-02-09 19:55:59 | INFO | [trace=12-1770652559] best_score=0 top=0
+2026-02-09 19:55:59 | INFO | [trace=12-1770652559] mode=clarify (no_rag_match)
+2026-02-09 19:56:13 | INFO | [trace=12-1770652573] Q='بدي اشتكي على السرقة'
+2026-02-09 19:56:13 | INFO | [trace=12-1770652573] intent=None conf=0.05
+2026-02-09 19:56:13 | INFO | [trace=12-1770652573] mode=dialogue_complaint_direct (dialogue)
+2026-02-09 19:56:24 | INFO | [trace=12-1770652584] Q='الجيران بسرقو كهربا من العامود'
+2026-02-09 19:56:24 | INFO | [trace=12-1770652584] intent=None conf=0.05
+2026-02-09 19:56:24 | INFO | [trace=12-1770652584] best_score=11 top=3
+2026-02-09 19:56:24 | INFO | [trace=12-1770652584] mode=no_answer (no_rag_match)
+2026-02-09 19:57:01 | INFO | [trace=12-1770652621] Q='بدي تطبيق'
+2026-02-09 19:57:01 | INFO | [trace=12-1770652621] intent=None conf=0.04
+2026-02-09 19:57:01 | INFO | [trace=12-1770652621] best_score=23 top=2
+2026-02-09 19:57:08 | INFO | [trace=12-1770652621] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 19:57:08 | INFO | [trace=12-1770652621] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-09 20:00:56 | INFO | [trace=12-1770652856] Q='نسيت كلمة السر'
+2026-02-09 20:00:56 | INFO | [trace=12-1770652856] intent=None conf=0.04
+2026-02-09 20:00:56 | INFO | [trace=12-1770652856] best_score=51 top=2
+2026-02-09 20:01:08 | INFO | [trace=12-1770652856] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 20:01:08 | INFO | [trace=12-1770652856] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::95'}]
+2026-02-09 20:01:49 | INFO | [trace=12-1770652909] Q='بدي احول من 1 فاز الى 3'
+2026-02-09 20:01:49 | INFO | [trace=12-1770652909] intent=None conf=0.06
+2026-02-09 20:01:49 | INFO | [trace=12-1770652909] best_score=65 top=5
+2026-02-09 20:02:05 | INFO | [trace=12-1770652909] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-09 20:02:05 | INFO | [trace=12-1770652909] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-10 10:13:59 | INFO | [trace=13-1770704039] Q='ساعات العمل'
+2026-02-10 10:13:59 | INFO | [trace=13-1770704039] intent=None conf=0.04
+2026-02-10 10:13:59 | INFO | [trace=13-1770704039] best_score=37 top=1
+2026-02-10 10:14:02 | INFO | [trace=13-1770704039] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 10:14:03 | INFO | [trace=13-1770704039] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-10 10:26:14 | INFO | [trace=13-1770704774] Q='بدي اشتكي'
+2026-02-10 10:26:14 | INFO | [trace=13-1770704774] intent=None conf=0.05
+2026-02-10 10:26:14 | INFO | [trace=13-1770704774] mode=dialogue_complaint (dialogue)
+2026-02-10 10:26:17 | INFO | [trace=13-1770704777] Q='فاتورة'
+2026-02-10 10:26:17 | INFO | [trace=13-1770704777] intent=None conf=0.05
+2026-02-10 10:26:17 | INFO | [trace=13-1770704777] mode=dialogue_complaint_direct (dialogue)
+2026-02-10 10:26:22 | INFO | [trace=13-1770704782] Q='العداد بفصل'
+2026-02-10 10:26:22 | INFO | [trace=13-1770704782] intent=None conf=0.05
+2026-02-10 10:26:22 | INFO | [trace=13-1770704782] best_score=29 top=5
+2026-02-10 10:26:24 | INFO | [trace=13-1770704782] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 10:26:24 | INFO | [trace=13-1770704782] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-10 10:29:34 | INFO | [trace=13-1770704974] Q='بدي تطبيق'
+2026-02-10 10:29:34 | INFO | [trace=13-1770704974] intent=None conf=0.04
+2026-02-10 10:29:34 | INFO | [trace=13-1770704974] best_score=23 top=2
+2026-02-10 10:29:36 | INFO | [trace=13-1770704974] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 10:29:36 | INFO | [trace=13-1770704974] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-10 10:29:46 | INFO | [trace=13-1770704986] Q='في تطبيق للبلدية ؟'
+2026-02-10 10:29:46 | INFO | [trace=13-1770704986] intent=None conf=0.04
+2026-02-10 10:29:46 | INFO | [trace=13-1770704986] best_score=27 top=2
+2026-02-10 10:29:48 | INFO | [trace=13-1770704986] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 10:29:48 | INFO | [trace=13-1770704986] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-10 10:33:57 | INFO | [trace=13-1770705237] Q='بدي اتنازل'
+2026-02-10 10:33:57 | INFO | [trace=13-1770705237] intent=None conf=0.05
+2026-02-10 10:33:57 | INFO | [trace=13-1770705237] best_score=30 top=5
+2026-02-10 10:33:59 | INFO | [trace=13-1770705237] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 10:33:59 | INFO | [trace=13-1770705237] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-10 10:42:20 | INFO | [trace=14-1770705740] Q='ساعات العمل'
+2026-02-10 10:42:20 | INFO | [trace=14-1770705740] intent=None conf=0.04
+2026-02-10 10:42:20 | INFO | [trace=14-1770705740] best_score=37 top=1
+2026-02-10 10:42:29 | INFO | [trace=14-1770705740] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-10 10:42:57 | INFO | [trace=14-1770705777] Q='بدي اشتكي'
+2026-02-10 10:42:57 | INFO | [trace=14-1770705777] intent=None conf=0.05
+2026-02-10 10:42:57 | INFO | [trace=14-1770705777] mode=dialogue_complaint (dialogue)
+2026-02-10 10:43:00 | INFO | [trace=14-1770705780] Q='فاتورة'
+2026-02-10 10:43:00 | INFO | [trace=14-1770705780] intent=None conf=0.05
+2026-02-10 10:43:00 | INFO | [trace=14-1770705780] mode=dialogue_complaint_direct (dialogue)
+2026-02-10 10:43:05 | INFO | [trace=14-1770705785] Q='العداد بفصل'
+2026-02-10 10:43:05 | INFO | [trace=14-1770705785] intent=None conf=0.05
+2026-02-10 10:43:05 | INFO | [trace=14-1770705785] best_score=29 top=5
+2026-02-10 10:43:28 | INFO | [trace=14-1770705785] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-10 10:45:41 | INFO | [trace=14-1770705941] Q='مراكز الشحن'
+2026-02-10 10:45:41 | INFO | [trace=14-1770705941] mode=rule_charge_centers src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::6'}]
+2026-02-10 10:46:02 | INFO | [trace=14-1770705962] Q='العداد بفصل وهو فيه رصيد'
+2026-02-10 10:46:02 | INFO | [trace=14-1770705962] intent=None conf=0.04
+2026-02-10 10:46:02 | INFO | [trace=14-1770705962] best_score=43 top=5
+2026-02-10 10:46:19 | INFO | [trace=14-1770705962] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-10 10:46:49 | INFO | [trace=14-1770706009] Q='العداد بفصل'
+2026-02-10 10:46:49 | INFO | [trace=14-1770706009] intent=None conf=0.05
+2026-02-10 10:46:49 | INFO | [trace=14-1770706009] best_score=29 top=5
+2026-02-10 10:47:21 | INFO | [trace=14-1770706009] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-10 10:53:39 | INFO | [trace=15-1770706419] Q='الفاتورة'
+2026-02-10 10:53:39 | INFO | [trace=15-1770706419] intent=None conf=0.04
+2026-02-10 10:53:39 | INFO | [trace=15-1770706419] best_score=0 top=0
+2026-02-10 10:53:39 | INFO | [trace=15-1770706419] mode=clarify (no_rag_match)
+2026-02-10 11:06:48 | INFO | [trace=16-1770707208] Q='فاتورتي نار'
+2026-02-10 11:06:48 | INFO | [trace=16-1770707208] intent=None conf=0.04
+2026-02-10 11:06:49 | INFO | [trace=16-1770707208] best_score=0 top=0
+2026-02-10 11:06:49 | INFO | [trace=16-1770707208] mode=no_answer (no_rag_match)
+2026-02-10 11:06:54 | INFO | [trace=16-1770707214] Q=':('
+2026-02-10 11:06:54 | INFO | [trace=16-1770707214] intent=None conf=0.04
+2026-02-10 11:06:54 | INFO | [trace=16-1770707214] best_score=0 top=0
+2026-02-10 11:06:54 | INFO | [trace=16-1770707214] mode=clarify (no_rag_match)
+2026-02-10 11:07:04 | INFO | [trace=16-1770707224] Q='بدي اقدم شكوى'
+2026-02-10 11:07:04 | INFO | [trace=16-1770707224] intent=None conf=0.04
+2026-02-10 11:07:04 | INFO | [trace=16-1770707224] mode=dialogue_complaint (dialogue)
+2026-02-10 11:07:07 | INFO | [trace=16-1770707227] Q='فاتورة'
+2026-02-10 11:07:07 | INFO | [trace=16-1770707227] intent=None conf=0.05
+2026-02-10 11:07:08 | INFO | [trace=16-1770707227] mode=dialogue_complaint_direct (dialogue)
+2026-02-10 11:33:17 | INFO | [trace=17-1770708797] Q='ساعات العمل'
+2026-02-10 11:33:17 | INFO | [trace=17-1770708797] intent=None conf=0.04
+2026-02-10 11:33:17 | INFO | [trace=17-1770708797] best_score=37 top=1
+2026-02-10 11:33:22 | INFO | [trace=17-1770708797] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:33:22 | INFO | [trace=17-1770708797] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-10 11:33:31 | INFO | [trace=17-1770708811] Q='بدي افصل الاشتراك'
+2026-02-10 11:33:31 | INFO | [trace=17-1770708811] intent=None conf=0.05
+2026-02-10 11:33:31 | INFO | [trace=17-1770708811] best_score=46 top=5
+2026-02-10 11:33:35 | INFO | [trace=17-1770708811] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:33:35 | INFO | [trace=17-1770708811] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::42'}]
+2026-02-10 11:33:45 | INFO | [trace=17-1770708825] Q='العداد بفصل'
+2026-02-10 11:33:45 | INFO | [trace=17-1770708825] intent=None conf=0.05
+2026-02-10 11:33:45 | INFO | [trace=17-1770708825] best_score=29 top=5
+2026-02-10 11:33:49 | INFO | [trace=17-1770708825] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:33:49 | INFO | [trace=17-1770708825] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-10 11:33:55 | INFO | [trace=17-1770708835] Q='التيار ضعيف عندي'
+2026-02-10 11:33:55 | INFO | [trace=17-1770708835] intent=None conf=0.04
+2026-02-10 11:33:55 | INFO | [trace=17-1770708835] best_score=21 top=4
+2026-02-10 11:33:59 | INFO | [trace=17-1770708835] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:33:59 | INFO | [trace=17-1770708835] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::46'}]
+2026-02-10 11:34:06 | INFO | [trace=17-1770708846] Q='التيار ضعيف'
+2026-02-10 11:34:06 | INFO | [trace=17-1770708846] intent=None conf=0.04
+2026-02-10 11:34:06 | INFO | [trace=17-1770708846] best_score=15 top=1
+2026-02-10 11:34:06 | INFO | [trace=17-1770708846] mode=no_answer (no_rag_match)
+2026-02-10 11:34:19 | INFO | [trace=17-1770708859] Q='في تطبيق للبدلية'
+2026-02-10 11:34:19 | INFO | [trace=17-1770708859] intent=None conf=0.04
+2026-02-10 11:34:19 | INFO | [trace=17-1770708859] best_score=25 top=2
+2026-02-10 11:34:23 | INFO | [trace=17-1770708859] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:34:23 | INFO | [trace=17-1770708859] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-10 11:34:36 | INFO | [trace=17-1770708876] Q='بدي افصل الاشتراك'
+2026-02-10 11:34:36 | INFO | [trace=17-1770708876] intent=None conf=0.05
+2026-02-10 11:34:36 | INFO | [trace=17-1770708876] best_score=46 top=5
+2026-02-10 11:34:40 | INFO | [trace=17-1770708876] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:34:40 | INFO | [trace=17-1770708876] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::42'}]
+2026-02-10 11:34:49 | INFO | [trace=17-1770708889] Q='التيار ضعيف ليش'
+2026-02-10 11:34:49 | INFO | [trace=17-1770708889] intent=None conf=0.04
+2026-02-10 11:34:49 | INFO | [trace=17-1770708889] best_score=15 top=1
+2026-02-10 11:34:49 | INFO | [trace=17-1770708889] mode=no_answer (no_rag_match)
+2026-02-10 11:34:59 | INFO | [trace=17-1770708899] Q='بدي اقدم شكولالا'
+2026-02-10 11:34:59 | INFO | [trace=17-1770708899] intent=None conf=0.04
+2026-02-10 11:34:59 | INFO | [trace=17-1770708899] best_score=27 top=5
+2026-02-10 11:35:02 | INFO | [trace=17-1770708899] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:35:02 | INFO | [trace=17-1770708899] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::84'}]
+2026-02-10 11:35:17 | INFO | [trace=17-1770708917] Q='رقم'
+2026-02-10 11:35:17 | INFO | [trace=17-1770708917] intent=None conf=0.04
+2026-02-10 11:35:17 | INFO | [trace=17-1770708917] best_score=46 top=5
+2026-02-10 11:35:21 | INFO | [trace=17-1770708917] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-10 11:35:21 | INFO | [trace=17-1770708917] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-10 11:35:41 | INFO | [trace=17-1770708941] Q='الجيران بسرقو كهربا'
+2026-02-10 11:35:41 | INFO | [trace=17-1770708941] intent=None conf=0.05
+2026-02-10 11:35:41 | INFO | [trace=17-1770708941] best_score=12 top=3
+2026-02-10 11:35:41 | INFO | [trace=17-1770708941] mode=no_answer (no_rag_match)
+2026-02-10 11:43:01 | INFO | [trace=18-1770709381] Q='ساعات العمل'
+2026-02-10 11:43:01 | INFO | [trace=18-1770709381] intent=None conf=0.04
+2026-02-10 11:43:01 | INFO | [trace=18-1770709381] best_score=37 top=1
+2026-02-10 11:43:16 | INFO | [trace=18-1770709381] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-10 11:43:18 | INFO | [trace=18-1770709398] Q='بدي اشتكي'
+2026-02-10 11:43:18 | INFO | [trace=18-1770709398] intent=None conf=0.05
+2026-02-10 11:43:18 | INFO | [trace=18-1770709398] mode=dialogue_complaint (dialogue)
+2026-02-10 11:43:21 | INFO | [trace=18-1770709401] Q='فاتورة'
+2026-02-10 11:43:21 | INFO | [trace=18-1770709401] intent=None conf=0.05
+2026-02-10 11:43:21 | INFO | [trace=18-1770709401] mode=dialogue_complaint_direct (dialogue)
+2026-02-10 11:43:25 | INFO | [trace=18-1770709405] Q='العداد بفصل'
+2026-02-10 11:43:25 | INFO | [trace=18-1770709405] intent=None conf=0.05
+2026-02-10 11:43:25 | INFO | [trace=18-1770709405] best_score=29 top=5
+2026-02-10 11:43:36 | INFO | [trace=18-1770709405] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-10 11:44:00 | INFO | [trace=18-1770709440] Q='تيار عندي ضعيف'
+2026-02-10 11:44:00 | INFO | [trace=18-1770709440] intent=None conf=0.04
+2026-02-10 11:44:00 | INFO | [trace=18-1770709440] best_score=21 top=5
+2026-02-10 11:44:23 | INFO | [trace=18-1770709440] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::53'}]
+2026-02-11 17:10:58 | INFO | [trace=19-1770815458] Q='ساعات العمل'
+2026-02-11 17:10:58 | INFO | [trace=19-1770815458] intent=None conf=0.04
+2026-02-11 17:10:58 | INFO | [trace=19-1770815458] best_score=37 top=1
+2026-02-11 17:11:05 | INFO | [trace=19-1770815458] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-11 17:11:09 | INFO | [trace=19-1770815469] Q='العداد بفصل'
+2026-02-11 17:11:09 | INFO | [trace=19-1770815469] intent=None conf=0.05
+2026-02-11 17:11:09 | INFO | [trace=19-1770815469] best_score=29 top=5
+2026-02-11 17:11:31 | INFO | [trace=19-1770815469] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-11 17:12:20 | INFO | [trace=19-1770815540] Q='بدي اشتكي'
+2026-02-11 17:12:20 | INFO | [trace=19-1770815540] intent=None conf=0.05
+2026-02-11 17:12:20 | INFO | [trace=19-1770815540] mode=dialogue_complaint (dialogue)
+2026-02-11 17:12:23 | INFO | [trace=19-1770815543] Q='فاتورة'
+2026-02-11 17:12:23 | INFO | [trace=19-1770815543] intent=None conf=0.05
+2026-02-11 17:12:23 | INFO | [trace=19-1770815543] mode=dialogue_complaint_direct (dialogue)
+2026-02-11 18:45:03 | INFO | [trace=1-1770821103] Q='ساعات العمل'
+2026-02-11 18:45:03 | INFO | [trace=1-1770821103] intent=None conf=0.04
+2026-02-11 18:45:03 | INFO | [trace=1-1770821103] best_score=37 top=1
+2026-02-11 18:45:10 | INFO | [trace=1-1770821103] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-11 18:45:10 | INFO | [trace=1-1770821103] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-11 19:34:57 | INFO | [trace=1-1770824097] Q='ساعات العمل'
+2026-02-11 19:34:57 | INFO | [trace=1-1770824097] intent=None conf=0.04
+2026-02-11 19:34:57 | INFO | [trace=1-1770824097] best_score=37 top=1
+2026-02-11 19:35:03 | INFO | [trace=1-1770824097] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-11 19:35:03 | INFO | [trace=1-1770824097] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-12 00:44:35 | INFO | [trace=1-1770842675] Q='رقم الهاتف'
+2026-02-12 00:44:35 | INFO | [trace=1-1770842675] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-12 00:44:39 | INFO | [trace=1-1770842679] Q='بدي اشتكي'
+2026-02-12 00:44:39 | INFO | [trace=1-1770842679] intent=None conf=0.00
+2026-02-12 00:44:39 | INFO | [trace=1-1770842679] mode=dialogue_complaint (dialogue)
+2026-02-12 00:44:41 | INFO | [trace=1-1770842681] Q='فاتورة'
+2026-02-12 00:44:41 | INFO | [trace=1-1770842681] intent=None conf=0.00
+2026-02-12 00:44:41 | INFO | [trace=1-1770842681] mode=dialogue_complaint_direct (dialogue)
+2026-02-12 00:45:27 | INFO | [trace=1-1770842727] Q='العداد بفصل'
+2026-02-12 00:45:27 | INFO | [trace=1-1770842727] intent=None conf=0.00
+2026-02-12 00:45:28 | INFO | [trace=1-1770842727] best_score=29 top=5
+2026-02-12 00:46:07 | INFO | [trace=1-1770842727] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-13 15:34:55 | INFO | [trace=2-1770982495] Q='ساعات العمل'
+2026-02-13 15:34:55 | INFO | [trace=2-1770982495] intent=None conf=0.00
+2026-02-13 15:34:55 | INFO | [trace=2-1770982495] best_score=37 top=1
+2026-02-13 15:35:03 | INFO | [trace=2-1770982495] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-13 15:35:03 | INFO | [trace=2-1770982495] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-13 15:35:06 | INFO | [trace=2-1770982506] Q='بدي اشتكي'
+2026-02-13 15:35:06 | INFO | [trace=2-1770982506] intent=None conf=0.00
+2026-02-13 15:35:06 | INFO | [trace=2-1770982506] mode=dialogue_complaint (dialogue)
+2026-02-13 15:35:12 | INFO | [trace=2-1770982512] Q='فاتورة'
+2026-02-13 15:35:12 | INFO | [trace=2-1770982512] intent=None conf=0.00
+2026-02-13 15:35:12 | INFO | [trace=2-1770982512] mode=dialogue_complaint_direct (dialogue)
+2026-02-13 15:54:35 | INFO | [trace=3-1770983675] Q='ساعات العمل'
+2026-02-13 15:54:35 | INFO | [trace=3-1770983675] intent=None conf=0.00
+2026-02-13 15:54:35 | INFO | [trace=3-1770983675] best_score=37 top=1
+2026-02-13 15:54:48 | INFO | [trace=3-1770983675] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-13 15:54:48 | INFO | [trace=3-1770983675] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-13 17:35:56 | INFO | [trace=4-1770989756] Q='ساعات العمل'
+2026-02-13 17:35:56 | INFO | [trace=4-1770989756] intent=None conf=0.00
+2026-02-13 17:35:57 | INFO | [trace=4-1770989756] best_score=37 top=1
+2026-02-13 17:36:05 | INFO | [trace=4-1770989756] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-13 17:36:05 | INFO | [trace=4-1770989756] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-13 17:45:29 | INFO | [trace=5-1770990329] Q='بدي اتنازل'
+2026-02-13 17:45:29 | INFO | [trace=5-1770990329] intent=None conf=0.00
+2026-02-13 17:45:29 | INFO | [trace=5-1770990329] best_score=30 top=5
+2026-02-13 17:45:33 | INFO | [trace=5-1770990329] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-13 17:45:33 | INFO | [trace=5-1770990329] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-14 12:46:54 | INFO | [trace=6-1771058814] Q='رقم الهاتف'
+2026-02-14 12:46:54 | INFO | [trace=6-1771058814] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 12:46:58 | INFO | [trace=6-1771058818] Q='بدي اشتكي'
+2026-02-14 12:46:58 | INFO | [trace=6-1771058818] intent=None conf=0.00
+2026-02-14 12:46:58 | INFO | [trace=6-1771058818] mode=dialogue_complaint (dialogue)
+2026-02-14 12:47:02 | INFO | [trace=6-1771058822] Q='موظف'
+2026-02-14 12:47:02 | INFO | [trace=6-1771058822] intent=None conf=0.00
+2026-02-14 12:47:02 | INFO | [trace=6-1771058822] mode=dialogue_complaint_direct (dialogue)
+2026-02-14 12:47:04 | INFO | [trace=6-1771058824] Q='تمام'
+2026-02-14 12:47:04 | INFO | [trace=6-1771058824] intent=None conf=0.00
+2026-02-14 12:47:04 | INFO | [trace=6-1771058824] best_score=0 top=0
+2026-02-14 12:47:05 | INFO | [trace=6-1771058824] mode=dialogue_exit (dialogue_fallback)
+2026-02-14 12:47:07 | INFO | [trace=6-1771058827] Q='العداد بفصل'
+2026-02-14 12:47:07 | INFO | [trace=6-1771058827] intent=None conf=0.00
+2026-02-14 12:47:07 | INFO | [trace=6-1771058827] best_score=29 top=5
+2026-02-14 12:47:42 | INFO | [trace=6-1771058827] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-14 13:33:30 | INFO | [trace=7-1771061610] Q='ساعات العمل'
+2026-02-14 13:33:30 | INFO | [trace=7-1771061610] intent=None conf=0.00
+2026-02-14 13:33:30 | INFO | [trace=7-1771061610] best_score=37 top=1
+2026-02-14 13:33:36 | INFO | [trace=7-1771061610] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 13:33:36 | INFO | [trace=7-1771061610] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 13:34:27 | INFO | [trace=8-1771061667] Q='رقم الهاتف'
+2026-02-14 13:34:27 | INFO | [trace=8-1771061667] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 13:37:40 | INFO | [trace=9-1771061860] Q='ساعات العمل'
+2026-02-14 13:37:40 | INFO | [trace=9-1771061860] intent=None conf=0.00
+2026-02-14 13:37:40 | INFO | [trace=9-1771061860] best_score=37 top=1
+2026-02-14 13:37:44 | INFO | [trace=9-1771061860] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 13:37:44 | INFO | [trace=9-1771061860] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 13:39:53 | INFO | [trace=9-1771061993] Q='رقم الهاتف'
+2026-02-14 13:39:53 | INFO | [trace=9-1771061993] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 13:40:58 | INFO | [trace=10-1771062058] Q='ساعات العمل'
+2026-02-14 13:40:58 | INFO | [trace=10-1771062058] intent=None conf=0.00
+2026-02-14 13:40:58 | INFO | [trace=10-1771062058] best_score=37 top=1
+2026-02-14 13:41:01 | INFO | [trace=10-1771062058] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 13:41:02 | INFO | [trace=10-1771062058] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 13:42:11 | INFO | [trace=11-1771062131] Q='ساعات العمل'
+2026-02-14 13:42:11 | INFO | [trace=11-1771062131] intent=None conf=0.00
+2026-02-14 13:42:11 | INFO | [trace=11-1771062131] best_score=37 top=1
+2026-02-14 13:42:24 | INFO | [trace=11-1771062131] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 13:47:06 | INFO | [trace=12-1771062426] Q='ساعات العمل'
+2026-02-14 13:47:06 | INFO | [trace=12-1771062426] intent=None conf=0.00
+2026-02-14 13:47:07 | INFO | [trace=12-1771062426] best_score=37 top=1
+2026-02-14 13:47:10 | INFO | [trace=12-1771062426] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 13:53:22 | INFO | [trace=1-1771062802] Q='ساعات العمل'
+2026-02-14 13:53:22 | INFO | [trace=1-1771062802] intent=None conf=0.00
+2026-02-14 13:53:22 | INFO | [trace=1-1771062802] best_score=37 top=1
+2026-02-14 13:53:36 | INFO | [trace=1-1771062802] mode=rag_ollama src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 14:00:55 | INFO | [trace=2-1771063255] Q='ساعات العمل'
+2026-02-14 14:00:55 | INFO | [trace=2-1771063255] intent=None conf=0.00
+2026-02-14 14:00:55 | INFO | [trace=2-1771063255] best_score=37 top=1
+2026-02-14 14:00:57 | INFO | [trace=2-1771063255] ollama_error=ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-02-14 14:00:57 | INFO | [trace=2-1771063255] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 14:45:40 | INFO | [trace=1-1771065940] Q='ساعات العمل'
+2026-02-14 14:45:40 | INFO | [trace=1-1771065940] intent=None conf=0.00
+2026-02-14 14:45:40 | INFO | [trace=1-1771065940] best_score=37 top=1
+2026-02-14 14:45:42 | INFO | [trace=1-1771065940] ollama_error=ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-02-14 14:45:42 | INFO | [trace=1-1771065940] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 15:02:12 | INFO | [trace=2-1771066932] Q='ساعات العمل'
+2026-02-14 15:02:12 | INFO | [trace=2-1771066932] intent=None conf=0.00
+2026-02-14 15:02:12 | INFO | [trace=2-1771066932] best_score=37 top=1
+2026-02-14 15:02:32 | INFO | [trace=2-1771066932] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 15:02:32 | INFO | [trace=2-1771066932] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 15:06:33 | INFO | [trace=3-1771067193] Q='ساعات العمل'
+2026-02-14 15:06:33 | INFO | [trace=3-1771067193] intent=None conf=0.00
+2026-02-14 15:06:34 | INFO | [trace=3-1771067193] best_score=37 top=1
+2026-02-14 15:06:58 | INFO | [trace=3-1771067193] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 15:06:58 | INFO | [trace=3-1771067193] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 15:07:53 | INFO | [trace=4-1771067273] Q='رقم الهاتف'
+2026-02-14 15:07:54 | INFO | [trace=4-1771067273] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 15:19:07 | INFO | [trace=5-1771067947] Q='ساعات العمل'
+2026-02-14 15:19:07 | INFO | [trace=5-1771067947] intent=None conf=0.00
+2026-02-14 15:19:08 | INFO | [trace=5-1771067947] best_score=37 top=1
+2026-02-14 15:19:13 | INFO | [trace=5-1771067947] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 15:19:13 | INFO | [trace=5-1771067947] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 15:38:40 | INFO | [trace=6-1771069120] Q='ساعات العمل'
+2026-02-14 15:38:40 | INFO | [trace=6-1771069120] intent=None conf=0.00
+2026-02-14 15:38:40 | INFO | [trace=6-1771069120] best_score=37 top=1
+2026-02-14 15:38:42 | INFO | [trace=6-1771069120] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 15:38:42 | INFO | [trace=6-1771069120] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 15:57:20 | INFO | [trace=7-1771070240] Q='ساعات العمل'
+2026-02-14 15:57:20 | INFO | [trace=7-1771070240] intent=None conf=0.00
+2026-02-14 15:57:21 | INFO | [trace=7-1771070240] best_score=37 top=1
+2026-02-14 15:57:23 | INFO | [trace=7-1771070240] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 15:57:23 | INFO | [trace=7-1771070240] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 16:03:46 | INFO | [trace=1-1771070626] Q='ساعات العمل'
+2026-02-14 16:03:46 | INFO | [trace=1-1771070626] intent=None conf=0.00
+2026-02-14 16:03:46 | INFO | [trace=1-1771070626] best_score=37 top=1
+2026-02-14 16:03:48 | INFO | [trace=1-1771070626] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 16:03:48 | INFO | [trace=1-1771070626] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}] assistant_mid=2
+2026-02-14 16:04:28 | INFO | [trace=1-1771070668] Q='f]d'
+2026-02-14 16:04:28 | INFO | [trace=1-1771070668] intent=None conf=0.00
+2026-02-14 16:04:28 | INFO | [trace=1-1771070668] best_score=0 top=0
+2026-02-14 16:04:28 | INFO | [trace=1-1771070668] mode=no_answer assistant_mid=4
+2026-02-14 16:05:10 | INFO | [trace=1-1771070710] Q='lkj'
+2026-02-14 16:05:10 | INFO | [trace=1-1771070710] intent=None conf=0.00
+2026-02-14 16:05:10 | INFO | [trace=1-1771070710] best_score=0 top=0
+2026-02-14 16:05:10 | INFO | [trace=1-1771070710] mode=clarify assistant_mid=6
+2026-02-14 16:06:19 | INFO | [trace=1-1771070779] Q=',kmn'
+2026-02-14 16:06:19 | INFO | [trace=1-1771070779] intent=None conf=0.00
+2026-02-14 16:06:19 | INFO | [trace=1-1771070779] best_score=0 top=0
+2026-02-14 16:06:19 | INFO | [trace=1-1771070779] mode=clarify (no_rag_match)
+2026-02-14 16:18:52 | INFO | [trace=2-1771071532] Q='ساعات العمل'
+2026-02-14 16:18:52 | INFO | [trace=2-1771071532] intent=None conf=0.00
+2026-02-14 16:18:52 | INFO | [trace=2-1771071532] best_score=37 top=1
+2026-02-14 16:18:55 | INFO | [trace=2-1771071532] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 16:21:44 | INFO | [trace=2-1771071704] Q='بب'
+2026-02-14 16:21:44 | INFO | [trace=2-1771071704] intent=None conf=0.00
+2026-02-14 16:21:44 | INFO | [trace=2-1771071704] best_score=0 top=0
+2026-02-14 18:01:41 | INFO | [trace=3-1771077701] Q='ساعات العمل'
+2026-02-14 18:01:41 | INFO | [trace=3-1771077701] intent=None conf=0.00
+2026-02-14 18:01:41 | INFO | [trace=3-1771077701] best_score=37 top=1
+2026-02-14 18:08:24 | INFO | [trace=4-1771078104] Q='بدي اشتكي'
+2026-02-14 18:08:24 | INFO | [trace=4-1771078104] intent=None conf=0.00
+2026-02-14 18:08:24 | INFO | [trace=4-1771078104] mode=dialogue_complaint (dialogue)
+2026-02-14 18:09:31 | INFO | [trace=1-1771078171] Q='فاتورة'
+2026-02-14 18:09:31 | INFO | [trace=1-1771078171] intent=None conf=0.00
+2026-02-14 18:09:31 | INFO | [trace=1-1771078171] best_score=0 top=0
+2026-02-14 18:11:29 | INFO | [trace=2-1771078289] Q='ساعات العمل'
+2026-02-14 18:11:29 | INFO | [trace=2-1771078289] intent=None conf=0.00
+2026-02-14 18:11:29 | INFO | [trace=2-1771078289] best_score=37 top=1
+2026-02-14 18:11:37 | INFO | [trace=2-1771078289] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 18:15:53 | INFO | [trace=3-1771078553] Q='ساعات العمل'
+2026-02-14 18:15:53 | INFO | [trace=3-1771078553] intent=None conf=0.00
+2026-02-14 18:15:53 | INFO | [trace=3-1771078553] best_score=37 top=1
+2026-02-14 18:15:55 | INFO | [trace=3-1771078553] ollama_error=ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=11434): Max retries exceeded with url: /api/generate (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=11434): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-02-14 18:16:51 | INFO | [trace=4-1771078611] Q='ساعات العمل'
+2026-02-14 18:16:51 | INFO | [trace=4-1771078611] intent=None conf=0.00
+2026-02-14 18:16:51 | INFO | [trace=4-1771078611] best_score=37 top=1
+2026-02-14 18:16:51 | INFO | [trace=4-1771078611] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:19:41 | INFO | [trace=5-1771078781] Q='ساعات العمل'
+2026-02-14 18:19:41 | INFO | [trace=5-1771078781] intent=None conf=0.00
+2026-02-14 18:19:41 | INFO | [trace=5-1771078781] best_score=37 top=1
+2026-02-14 18:19:49 | INFO | [trace=5-1771078781] ollama_error=HTTPError: 500 Server Error: Internal Server Error for url: http://127.0.0.1:11434/api/generate
+2026-02-14 18:22:09 | INFO | [trace=6-1771078929] Q='ساعات العمل'
+2026-02-14 18:22:09 | INFO | [trace=6-1771078929] intent=None conf=0.00
+2026-02-14 18:22:09 | INFO | [trace=6-1771078929] best_score=37 top=1
+2026-02-14 18:22:09 | INFO | [trace=6-1771078929] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:23:02 | INFO | [trace=7-1771078982] Q='ساعات العمل'
+2026-02-14 18:23:02 | INFO | [trace=7-1771078982] intent=None conf=0.00
+2026-02-14 18:23:02 | INFO | [trace=7-1771078982] best_score=37 top=1
+2026-02-14 18:23:02 | INFO | [trace=7-1771078982] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:27:39 | INFO | [trace=1-1771079259] Q='ساعات العمل'
+2026-02-14 18:27:39 | INFO | [trace=1-1771079259] intent=None conf=0.04
+2026-02-14 18:27:39 | INFO | [trace=1-1771079259] best_score=37 top=1
+2026-02-14 18:27:39 | INFO | [trace=1-1771079259] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:31:00 | INFO | [trace=2-1771079460] Q='ساعات العمل'
+2026-02-14 18:31:00 | INFO | [trace=2-1771079460] intent=None conf=0.04
+2026-02-14 18:31:00 | INFO | [trace=2-1771079460] best_score=37 top=1
+2026-02-14 18:31:00 | INFO | [trace=2-1771079460] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:31:00 | INFO | [trace=2-1771079460] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 18:46:41 | INFO | [trace=3-1771080401] Q='ساعات العمل'
+2026-02-14 18:46:41 | INFO | [trace=3-1771080401] intent=None conf=0.04
+2026-02-14 18:46:41 | INFO | [trace=3-1771080401] best_score=37 top=1
+2026-02-14 18:46:41 | INFO | [trace=3-1771080401] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:46:41 | INFO | [trace=3-1771080401] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 18:47:11 | INFO | [trace=3-1771080431] Q='العداد بفصل'
+2026-02-14 18:47:11 | INFO | [trace=3-1771080431] intent=None conf=0.05
+2026-02-14 18:47:11 | INFO | [trace=3-1771080431] best_score=29 top=5
+2026-02-14 18:47:11 | INFO | [trace=3-1771080431] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:47:11 | INFO | [trace=3-1771080431] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-14 18:50:57 | INFO | [trace=4-1771080657] Q='ساعات العمل'
+2026-02-14 18:50:57 | INFO | [trace=4-1771080657] intent=None conf=0.04
+2026-02-14 18:50:57 | INFO | [trace=4-1771080657] best_score=37 top=1
+2026-02-14 18:50:57 | INFO | [trace=4-1771080657] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 18:50:57 | INFO | [trace=4-1771080657] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-14 18:54:10 | INFO | [trace=5-1771080850] Q='رقم الهاتف'
+2026-02-14 18:54:10 | INFO | [trace=5-1771080850] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 18:54:54 | INFO | [trace=6-1771080894] Q='رقم الهاتف'
+2026-02-14 18:54:54 | INFO | [trace=6-1771080894] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 18:55:50 | INFO | [trace=7-1771080950] Q='رقم الهاتف'
+2026-02-14 18:55:50 | INFO | [trace=7-1771080950] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 19:08:40 | INFO | [trace=8-1771081720] Q='بدي اشتكي'
+2026-02-14 19:08:40 | INFO | [trace=8-1771081720] intent=None conf=0.04
+2026-02-14 19:08:40 | INFO | [trace=8-1771081720] mode=dialogue_complaint (dialogue)
+2026-02-14 19:08:43 | INFO | [trace=8-1771081723] Q='فاتورة'
+2026-02-14 19:08:43 | INFO | [trace=8-1771081723] intent=None conf=0.05
+2026-02-14 19:08:43 | INFO | [trace=8-1771081723] mode=dialogue_complaint_direct (dialogue)
+2026-02-14 19:08:47 | INFO | [trace=8-1771081727] Q='العداد بفصل'
+2026-02-14 19:08:47 | INFO | [trace=8-1771081727] intent=None conf=0.05
+2026-02-14 19:08:47 | INFO | [trace=8-1771081727] best_score=29 top=5
+2026-02-14 19:08:47 | INFO | [trace=8-1771081727] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 19:08:47 | INFO | [trace=8-1771081727] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-14 19:08:54 | INFO | [trace=8-1771081734] Q='بدي اتنازل'
+2026-02-14 19:08:54 | INFO | [trace=8-1771081734] intent=None conf=0.05
+2026-02-14 19:08:54 | INFO | [trace=8-1771081734] best_score=30 top=5
+2026-02-14 19:08:54 | INFO | [trace=8-1771081734] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 19:08:54 | INFO | [trace=8-1771081734] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-14 19:08:57 | INFO | [trace=8-1771081737] Q='التيار ضعيف'
+2026-02-14 19:08:57 | INFO | [trace=8-1771081737] intent=None conf=0.04
+2026-02-14 19:08:57 | INFO | [trace=8-1771081737] best_score=15 top=1
+2026-02-14 19:08:57 | INFO | [trace=8-1771081737] mode=no_answer (no_rag_match)
+2026-02-14 19:11:07 | INFO | [trace=9-1771081867] Q='التيار ضعيف'
+2026-02-14 19:11:07 | INFO | [trace=9-1771081867] intent=None conf=0.04
+2026-02-14 19:11:07 | INFO | [trace=9-1771081867] best_score=15 top=1
+2026-02-14 19:11:07 | INFO | [trace=9-1771081867] mode=no_answer (no_rag_match)
+2026-02-14 19:11:18 | INFO | [trace=9-1771081878] Q='العداد بفضل'
+2026-02-14 19:11:18 | INFO | [trace=9-1771081878] intent=None conf=0.05
+2026-02-14 19:11:19 | INFO | [trace=9-1771081878] best_score=23 top=5
+2026-02-14 19:11:19 | INFO | [trace=9-1771081878] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 19:11:19 | INFO | [trace=9-1771081878] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-14 19:11:34 | INFO | [trace=9-1771081894] Q='ليش تيار عندي ضعيف'
+2026-02-14 19:11:34 | INFO | [trace=9-1771081894] intent=None conf=0.04
+2026-02-14 19:11:34 | INFO | [trace=9-1771081894] best_score=22 top=5
+2026-02-14 19:11:34 | INFO | [trace=9-1771081894] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 19:11:34 | INFO | [trace=9-1771081894] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::53'}]
+2026-02-14 19:11:44 | INFO | [trace=9-1771081904] Q='بدي اشتكي على سرقة'
+2026-02-14 19:11:44 | INFO | [trace=9-1771081904] intent=None conf=0.05
+2026-02-14 19:11:44 | INFO | [trace=9-1771081904] mode=dialogue_complaint_direct (dialogue)
+2026-02-14 19:11:50 | INFO | [trace=9-1771081910] Q='الرقم'
+2026-02-14 19:11:50 | INFO | [trace=9-1771081910] intent=None conf=0.04
+2026-02-14 19:11:50 | INFO | [trace=9-1771081910] best_score=0 top=0
+2026-02-14 19:11:51 | INFO | [trace=9-1771081910] mode=clarify (no_rag_match)
+2026-02-14 19:11:56 | INFO | [trace=9-1771081916] Q='رقم البلدية'
+2026-02-14 19:11:56 | INFO | [trace=9-1771081916] intent=None conf=0.04
+2026-02-14 19:11:56 | INFO | [trace=9-1771081916] best_score=49 top=5
+2026-02-14 19:11:56 | INFO | [trace=9-1771081916] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-14 19:11:56 | INFO | [trace=9-1771081916] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-14 19:12:01 | INFO | [trace=9-1771081921] Q='محطات الشحن'
+2026-02-14 19:12:02 | INFO | [trace=9-1771081921] mode=rule_charge_centers src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::6'}]
+2026-02-14 19:12:06 | INFO | [trace=9-1771081926] Q='بدي انتحر'
+2026-02-14 19:12:06 | INFO | [trace=9-1771081926] intent=None conf=0.04
+2026-02-14 19:12:06 | INFO | [trace=9-1771081926] best_score=0 top=0
+2026-02-14 19:12:06 | INFO | [trace=9-1771081926] mode=clarify (no_rag_match)
+2026-02-15 15:28:46 | INFO | [trace=10-1771154926] Q='تطبق اابلدية'
+2026-02-15 15:28:46 | INFO | [trace=10-1771154926] intent=None conf=0.04
+2026-02-15 15:28:46 | INFO | [trace=10-1771154926] best_score=0 top=0
+2026-02-15 15:28:46 | INFO | [trace=10-1771154926] mode=no_answer (no_rag_match)
+2026-02-15 15:28:53 | INFO | [trace=10-1771154933] Q='تطبيق البلدية'
+2026-02-15 15:28:53 | INFO | [trace=10-1771154933] intent=None conf=0.04
+2026-02-15 15:28:54 | INFO | [trace=10-1771154933] best_score=31 top=3
+2026-02-15 15:28:54 | INFO | [trace=10-1771154933] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-15 15:28:54 | INFO | [trace=10-1771154933] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-15 15:56:06 | INFO | [trace=11-1771156566] Q='ساعات العمل'
+2026-02-15 15:56:06 | INFO | [trace=11-1771156566] intent=None conf=0.04
+2026-02-15 15:56:06 | INFO | [trace=11-1771156566] best_score=37 top=1
+2026-02-15 15:56:06 | INFO | [trace=11-1771156566] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-15 15:56:06 | INFO | [trace=11-1771156566] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-15 16:04:12 | INFO | [trace=12-1771157052] Q='الفاتورة'
+2026-02-15 16:04:12 | INFO | [trace=12-1771157052] intent=None conf=0.04
+2026-02-15 16:04:12 | INFO | [trace=12-1771157052] best_score=0 top=0
+2026-02-15 16:04:12 | INFO | [trace=12-1771157052] mode=clarify (no_rag_match)
+2026-02-15 16:30:40 | INFO | [trace=13-1771158640] Q='بدي اشتكي'
+2026-02-15 16:30:40 | INFO | [trace=13-1771158640] intent=None conf=0.04
+2026-02-15 16:30:40 | INFO | [trace=13-1771158640] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-15 16:30:44 | INFO | [trace=13-1771158644] Q='فاتورة'
+2026-02-15 16:30:44 | INFO | [trace=13-1771158644] intent=None conf=0.05
+2026-02-15 16:30:44 | INFO | [trace=13-1771158644] mode=dialogue_complaint_bill (dialogue)
+2026-02-15 16:32:43 | INFO | [trace=13-1771158763] Q='بدي اشتكي'
+2026-02-15 16:32:43 | INFO | [trace=13-1771158763] intent=None conf=0.04
+2026-02-15 16:32:43 | INFO | [trace=13-1771158763] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-15 16:32:46 | INFO | [trace=13-1771158766] Q='عبث'
+2026-02-15 16:32:46 | INFO | [trace=13-1771158766] intent=None conf=0.04
+2026-02-15 16:32:46 | INFO | [trace=13-1771158766] mode=dialogue_complaint_theft (dialogue)
+2026-02-15 16:49:49 | INFO | [trace=14-1771159789] Q='ساعات العمل'
+2026-02-15 16:49:49 | INFO | [trace=14-1771159789] intent=None conf=0.04
+2026-02-15 16:49:49 | INFO | [trace=14-1771159789] best_score=37 top=1
+2026-02-15 16:49:49 | INFO | [trace=14-1771159789] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-15 16:49:49 | INFO | [trace=14-1771159789] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-15 16:51:06 | INFO | [trace=14-1771159866] Q='رقم الهاتف'
+2026-02-15 16:51:06 | INFO | [trace=14-1771159866] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-15 16:55:28 | INFO | [trace=15-1771160128] Q='ساعات العمل'
+2026-02-15 16:55:28 | INFO | [trace=15-1771160128] intent=None conf=0.04
+2026-02-15 16:55:28 | INFO | [trace=15-1771160128] best_score=37 top=1
+2026-02-15 16:55:28 | INFO | [trace=15-1771160128] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-15 16:55:28 | INFO | [trace=15-1771160128] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-15 16:55:36 | INFO | [trace=15-1771160136] Q='رقم الهاتف'
+2026-02-15 16:55:36 | INFO | [trace=15-1771160136] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-15 17:12:14 | INFO | [trace=16-1771161134] Q='اشتراك جديد'
+2026-02-15 17:12:14 | INFO | [trace=16-1771161134] intent=None conf=0.06
+2026-02-15 17:12:15 | INFO | [trace=16-1771161134] best_score=30 top=5
+2026-02-15 17:12:15 | INFO | [trace=16-1771161134] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-15 17:12:15 | INFO | [trace=16-1771161134] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::37'}]
+2026-02-15 17:36:08 | INFO | [trace=16-1771162568] Q='بدي اتنازل'
+2026-02-15 17:36:08 | INFO | [trace=16-1771162568] intent=None conf=0.05
+2026-02-15 17:36:08 | INFO | [trace=16-1771162568] best_score=30 top=5
+2026-02-15 17:36:08 | INFO | [trace=16-1771162568] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-15 17:36:08 | INFO | [trace=16-1771162568] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-16 20:39:59 | INFO | [trace=17-1771259999] Q='العداد بفصل'
+2026-02-16 20:39:59 | INFO | [trace=17-1771259999] intent=None conf=0.05
+2026-02-16 20:39:59 | INFO | [trace=17-1771259999] best_score=29 top=5
+2026-02-16 20:39:59 | INFO | [trace=17-1771259999] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-16 20:39:59 | INFO | [trace=17-1771259999] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-16 20:58:05 | INFO | [trace=18-1771261085] Q='الجيران بسرقة كهربا'
+2026-02-16 20:58:05 | INFO | [trace=18-1771261085] intent=None conf=0.05
+2026-02-16 20:58:06 | INFO | [trace=18-1771261085] best_score=12 top=3
+2026-02-16 20:58:06 | INFO | [trace=18-1771261085] mode=no_answer (no_rag_match)
+2026-02-16 20:59:35 | INFO | [trace=18-1771261175] Q='بدي اشتكي'
+2026-02-16 20:59:35 | INFO | [trace=18-1771261175] intent=None conf=0.04
+2026-02-16 20:59:35 | INFO | [trace=18-1771261175] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-16 20:59:39 | INFO | [trace=18-1771261179] Q='سرقة'
+2026-02-16 20:59:39 | INFO | [trace=18-1771261179] intent=None conf=0.04
+2026-02-16 20:59:39 | INFO | [trace=18-1771261179] mode=dialogue_complaint_theft (dialogue)
+2026-02-16 21:00:00 | INFO | [trace=18-1771261200] Q='الجيران بسرقو كهربا'
+2026-02-16 21:00:00 | INFO | [trace=18-1771261200] intent=None conf=0.05
+2026-02-16 21:00:00 | INFO | [trace=18-1771261200] best_score=12 top=3
+2026-02-16 21:00:00 | INFO | [trace=18-1771261200] mode=no_answer (no_rag_match)
+2026-02-16 21:05:01 | INFO | [trace=19-1771261501] Q='جيران بسرقو كهربا'
+2026-02-16 21:05:01 | INFO | [trace=19-1771261501] intent=None conf=0.05
+2026-02-16 21:12:19 | INFO | [trace=19-1771261939] Q='العداد بقطع'
+2026-02-16 21:12:19 | INFO | [trace=19-1771261939] intent=None conf=0.05
+2026-02-16 21:12:19 | INFO | [trace=19-1771261939] best_score=23 top=5
+2026-02-16 21:12:19 | INFO | [trace=19-1771261939] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-16 21:12:19 | INFO | [trace=19-1771261939] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-16 22:47:46 | INFO | [trace=20-1771267666] Q='جاري بسرق كهربا'
+2026-02-16 22:47:46 | INFO | [trace=20-1771267666] intent=None conf=0.05
+2026-02-17 09:32:09 | INFO | [trace=21-1771306329] Q='رقم الهاتف'
+2026-02-17 09:32:09 | INFO | [trace=21-1771306329] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-17 09:33:10 | INFO | [trace=21-1771306390] Q='الجيران بسرقو الكهربا'
+2026-02-17 09:33:10 | INFO | [trace=21-1771306390] intent=None conf=0.06
+2026-02-17 09:33:13 | INFO | [trace=21-1771306393] Q='العداد بفصل'
+2026-02-17 09:33:13 | INFO | [trace=21-1771306393] intent=None conf=0.05
+2026-02-17 09:33:14 | INFO | [trace=21-1771306393] best_score=29 top=5
+2026-02-17 09:33:14 | INFO | [trace=21-1771306393] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 09:33:14 | INFO | [trace=21-1771306393] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-17 10:17:05 | INFO | [trace=22-1771309025] Q='التيار ضعيف'
+2026-02-17 10:17:05 | INFO | [trace=22-1771309025] intent=None conf=0.04
+2026-02-17 10:17:05 | INFO | [trace=22-1771309025] best_score=15 top=1
+2026-02-17 10:17:05 | INFO | [trace=22-1771309025] mode=no_answer (no_rag_match)
+2026-02-17 10:17:12 | INFO | [trace=22-1771309032] Q='التيار عندي ضعيف ليش'
+2026-02-17 10:17:12 | INFO | [trace=22-1771309032] intent=None conf=0.04
+2026-02-17 10:17:12 | INFO | [trace=22-1771309032] best_score=20 top=4
+2026-02-17 10:17:12 | INFO | [trace=22-1771309032] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 10:17:12 | INFO | [trace=22-1771309032] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::46'}]
+2026-02-17 10:17:45 | INFO | [trace=22-1771309065] Q='التيار ضعيف'
+2026-02-17 10:17:45 | INFO | [trace=22-1771309065] intent=None conf=0.04
+2026-02-17 10:17:55 | INFO | [trace=22-1771309075] Q='بدي احول من 1 فاز الى 3'
+2026-02-17 10:17:55 | INFO | [trace=22-1771309075] intent=None conf=0.06
+2026-02-17 10:17:55 | INFO | [trace=22-1771309075] best_score=65 top=5
+2026-02-17 10:17:55 | INFO | [trace=22-1771309075] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 10:17:56 | INFO | [trace=22-1771309075] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-17 10:18:10 | INFO | [trace=22-1771309090] Q='الكهربا قاطعة'
+2026-02-17 10:18:10 | INFO | [trace=22-1771309090] intent=None conf=0.06
+2026-02-17 10:18:10 | INFO | [trace=22-1771309090] best_score=23 top=2
+2026-02-17 10:18:10 | INFO | [trace=22-1771309090] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 10:18:10 | INFO | [trace=22-1771309090] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-17 12:04:20 | INFO | [trace=23-1771315460] Q='ساعات العمل'
+2026-02-17 12:04:20 | INFO | [trace=23-1771315460] intent=None conf=0.04
+2026-02-17 12:04:20 | INFO | [trace=23-1771315460] best_score=37 top=1
+2026-02-17 12:04:21 | INFO | [trace=23-1771315460] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 12:04:21 | INFO | [trace=23-1771315460] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 12:04:37 | INFO | [trace=23-1771315477] Q='العداد بفصل'
+2026-02-17 12:04:37 | INFO | [trace=23-1771315477] intent=None conf=0.05
+2026-02-17 12:04:37 | INFO | [trace=23-1771315477] best_score=29 top=5
+2026-02-17 12:04:37 | INFO | [trace=23-1771315477] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 12:04:37 | INFO | [trace=23-1771315477] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-17 12:09:28 | INFO | [trace=23-1771315768] Q='متى بدها تقطع الكهربا اليوم في عين سارة'
+2026-02-17 12:09:28 | INFO | [trace=23-1771315768] intent=None conf=0.05
+2026-02-17 12:11:20 | INFO | [trace=23-1771315880] Q='العداد بفصل'
+2026-02-17 12:11:20 | INFO | [trace=23-1771315880] intent=None conf=0.05
+2026-02-17 12:11:29 | INFO | [trace=23-1771315889] Q='بدي اشتكي'
+2026-02-17 12:11:29 | INFO | [trace=23-1771315889] intent=None conf=0.04
+2026-02-17 12:11:29 | INFO | [trace=23-1771315889] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-17 12:22:30 | INFO | [trace=24-1771316550] Q='اشتراك جديد'
+2026-02-17 12:22:30 | INFO | [trace=24-1771316550] intent=None conf=0.06
+2026-02-17 12:22:30 | INFO | [trace=24-1771316550] best_score=30 top=5
+2026-02-17 12:22:30 | INFO | [trace=24-1771316550] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 12:22:30 | INFO | [trace=24-1771316550] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::37'}]
+2026-02-17 12:24:25 | INFO | [trace=24-1771316665] Q='بدي اشتكي'
+2026-02-17 12:24:25 | INFO | [trace=24-1771316665] intent=None conf=0.04
+2026-02-17 12:24:25 | INFO | [trace=24-1771316665] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-17 12:24:37 | INFO | [trace=24-1771316677] Q='عطل'
+2026-02-17 12:24:37 | INFO | [trace=24-1771316677] intent=None conf=0.05
+2026-02-17 12:24:37 | INFO | [trace=24-1771316677] mode=dialogue_complaint_fault (dialogue)
+2026-02-17 12:25:20 | INFO | [trace=24-1771316720] Q='ساعات العمل'
+2026-02-17 12:25:20 | INFO | [trace=24-1771316720] intent=None conf=0.04
+2026-02-17 12:25:20 | INFO | [trace=24-1771316720] best_score=37 top=1
+2026-02-17 12:25:20 | INFO | [trace=24-1771316720] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 12:25:20 | INFO | [trace=24-1771316720] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 12:27:16 | INFO | [trace=24-1771316836] Q='بكرهك'
+2026-02-17 12:27:16 | INFO | [trace=24-1771316836] intent=None conf=0.04
+2026-02-17 12:27:16 | INFO | [trace=24-1771316836] best_score=0 top=0
+2026-02-17 12:27:16 | INFO | [trace=24-1771316836] mode=clarify (no_rag_match)
+2026-02-17 15:10:40 | INFO | [trace=25-1771326640] Q='ساعات العمل'
+2026-02-17 15:10:40 | INFO | [trace=25-1771326640] intent=None conf=0.04
+2026-02-17 15:10:40 | INFO | [trace=25-1771326640] best_score=37 top=1
+2026-02-17 15:10:40 | INFO | [trace=25-1771326640] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 15:10:40 | INFO | [trace=25-1771326640] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 15:17:49 | INFO | [trace=26-1771327069] Q='ساعات العمل'
+2026-02-17 15:17:49 | INFO | [trace=26-1771327069] intent=None conf=0.04
+2026-02-17 15:17:50 | INFO | [trace=26-1771327069] best_score=37 top=1
+2026-02-17 15:17:50 | INFO | [trace=26-1771327069] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 15:17:50 | INFO | [trace=26-1771327069] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 15:17:52 | INFO | [trace=26-1771327072] Q='kvf'
+2026-02-17 15:17:52 | INFO | [trace=26-1771327072] intent=None conf=0.04
+2026-02-17 15:17:52 | INFO | [trace=26-1771327072] best_score=0 top=0
+2026-02-17 15:17:52 | INFO | [trace=26-1771327072] mode=clarify (no_rag_match)
+2026-02-17 15:17:53 | INFO | [trace=26-1771327073] Q='jxcv'
+2026-02-17 15:17:53 | INFO | [trace=26-1771327073] intent=None conf=0.04
+2026-02-17 15:17:54 | INFO | [trace=26-1771327073] best_score=0 top=0
+2026-02-17 15:17:54 | INFO | [trace=26-1771327073] mode=clarify (no_rag_match)
+2026-02-17 15:28:46 | INFO | [trace=27-1771327726] Q='ساعات العمل'
+2026-02-17 15:28:46 | INFO | [trace=27-1771327726] intent=None conf=0.04
+2026-02-17 15:28:46 | INFO | [trace=27-1771327726] best_score=37 top=1
+2026-02-17 15:28:46 | INFO | [trace=27-1771327726] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 15:28:46 | INFO | [trace=27-1771327726] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 15:44:36 | INFO | [trace=28-1771328676] Q='الفاتورة'
+2026-02-17 15:44:36 | INFO | [trace=28-1771328676] intent=None conf=0.04
+2026-02-17 15:44:36 | INFO | [trace=28-1771328676] best_score=0 top=0
+2026-02-17 15:44:36 | INFO | [trace=28-1771328676] mode=clarify (no_rag_match)
+2026-02-17 15:53:15 | INFO | [trace=29-1771329195] Q='ساعات العمل'
+2026-02-17 15:53:15 | INFO | [trace=29-1771329195] intent=None conf=0.04
+2026-02-17 15:53:16 | INFO | [trace=29-1771329195] best_score=37 top=1
+2026-02-17 15:53:16 | INFO | [trace=29-1771329195] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 15:53:16 | INFO | [trace=29-1771329195] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 15:54:16 | INFO | [trace=29-1771329256] Q='m'
+2026-02-17 15:54:16 | INFO | [trace=29-1771329256] intent=None conf=0.04
+2026-02-17 15:54:16 | INFO | [trace=29-1771329256] best_score=0 top=0
+2026-02-17 15:54:16 | INFO | [trace=29-1771329256] mode=clarify (no_rag_match)
+2026-02-17 16:01:54 | INFO | [trace=30-1771329714] Q='الفاتورة'
+2026-02-17 16:01:54 | INFO | [trace=30-1771329714] intent=None conf=0.04
+2026-02-17 16:01:55 | INFO | [trace=30-1771329714] best_score=0 top=0
+2026-02-17 16:01:55 | INFO | [trace=30-1771329714] mode=clarify (no_rag_match)
+2026-02-17 17:02:46 | INFO | [trace=31-1771333366] Q='ساعات العمل'
+2026-02-17 17:02:46 | INFO | [trace=31-1771333366] intent=None conf=0.04
+2026-02-17 17:02:46 | INFO | [trace=31-1771333366] best_score=37 top=1
+2026-02-17 17:02:46 | INFO | [trace=31-1771333366] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 17:02:46 | INFO | [trace=31-1771333366] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 17:02:54 | INFO | [trace=31-1771333374] Q='kln'
+2026-02-17 17:02:54 | INFO | [trace=31-1771333374] intent=None conf=0.04
+2026-02-17 17:02:54 | INFO | [trace=31-1771333374] best_score=0 top=0
+2026-02-17 17:02:54 | INFO | [trace=31-1771333374] mode=clarify (no_rag_match)
+2026-02-17 17:05:22 | INFO | [trace=31-1771333522] Q='نتا'
+2026-02-17 17:05:22 | INFO | [trace=31-1771333522] intent=None conf=0.04
+2026-02-17 17:05:22 | INFO | [trace=31-1771333522] best_score=0 top=0
+2026-02-17 17:05:22 | INFO | [trace=31-1771333522] mode=clarify (no_rag_match)
+2026-02-17 17:05:23 | INFO | [trace=31-1771333523] Q='ءنيىء'
+2026-02-17 17:05:23 | INFO | [trace=31-1771333523] intent=None conf=0.04
+2026-02-17 17:05:23 | INFO | [trace=31-1771333523] best_score=0 top=0
+2026-02-17 17:05:23 | INFO | [trace=31-1771333523] mode=clarify (no_rag_match)
+2026-02-17 17:40:25 | INFO | [trace=32-1771335625] Q='الفاتورة'
+2026-02-17 17:40:25 | INFO | [trace=32-1771335625] intent=None conf=0.04
+2026-02-17 17:40:25 | INFO | [trace=32-1771335625] best_score=0 top=0
+2026-02-17 17:40:25 | INFO | [trace=32-1771335625] mode=clarify (no_rag_match)
+2026-02-17 17:40:31 | INFO | [trace=32-1771335631] Q='مزنترا'
+2026-02-17 17:40:31 | INFO | [trace=32-1771335631] intent=None conf=0.05
+2026-02-17 17:40:31 | INFO | [trace=32-1771335631] best_score=0 top=0
+2026-02-17 17:40:31 | INFO | [trace=32-1771335631] mode=clarify (no_rag_match)
+2026-02-17 17:40:33 | INFO | [trace=32-1771335633] Q='لا'
+2026-02-17 17:40:33 | INFO | [trace=32-1771335633] intent=None conf=0.04
+2026-02-17 17:40:33 | INFO | [trace=32-1771335633] best_score=20 top=1
+2026-02-17 17:40:33 | INFO | [trace=32-1771335633] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 17:40:33 | INFO | [trace=32-1771335633] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::21'}]
+2026-02-17 17:43:36 | INFO | [trace=33-1771335816] Q='رقم الهاتف'
+2026-02-17 17:43:36 | INFO | [trace=33-1771335816] mode=rule_contact src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-17 17:50:44 | INFO | [trace=34-1771336244] Q='ساعات العمل'
+2026-02-17 17:50:44 | INFO | [trace=34-1771336244] intent=None conf=0.04
+2026-02-17 17:50:44 | INFO | [trace=34-1771336244] best_score=37 top=1
+2026-02-17 17:50:44 | INFO | [trace=34-1771336244] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 17:50:44 | INFO | [trace=34-1771336244] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 17:50:47 | INFO | [trace=34-1771336247] Q='بدي اشتكي'
+2026-02-17 17:50:47 | INFO | [trace=34-1771336247] intent=None conf=0.04
+2026-02-17 17:50:47 | INFO | [trace=34-1771336247] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-17 18:18:11 | INFO | [trace=35-1771337891] Q='ساعات العمل'
+2026-02-17 18:18:11 | INFO | [trace=35-1771337891] intent=None conf=0.04
+2026-02-17 18:18:11 | INFO | [trace=35-1771337891] best_score=37 top=1
+2026-02-17 18:18:11 | INFO | [trace=35-1771337891] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 18:18:11 | INFO | [trace=35-1771337891] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 18:18:16 | INFO | [trace=35-1771337896] Q='بدي اشتكي'
+2026-02-17 18:18:16 | INFO | [trace=35-1771337896] intent=None conf=0.04
+2026-02-17 18:18:16 | INFO | [trace=35-1771337896] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-17 18:54:15 | INFO | [trace=36-1771340055] Q='ساعات العمل'
+2026-02-17 18:54:15 | INFO | [trace=36-1771340055] intent=None conf=0.04
+2026-02-17 18:54:15 | INFO | [trace=36-1771340055] best_score=37 top=1
+2026-02-17 18:54:15 | INFO | [trace=36-1771340055] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 18:54:15 | INFO | [trace=36-1771340055] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 18:54:22 | INFO | [trace=36-1771340062] Q='بدي اشتكي'
+2026-02-17 18:54:22 | INFO | [trace=36-1771340062] intent=None conf=0.04
+2026-02-17 18:54:22 | INFO | [trace=36-1771340062] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-17 19:05:22 | INFO | [trace=37-1771340722] Q='ساعات العمل'
+2026-02-17 19:05:22 | INFO | [trace=37-1771340722] intent=None conf=0.04
+2026-02-17 19:05:22 | INFO | [trace=37-1771340722] best_score=37 top=1
+2026-02-17 19:05:22 | INFO | [trace=37-1771340722] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 19:05:22 | INFO | [trace=37-1771340722] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-17 19:05:28 | INFO | [trace=37-1771340728] Q='العداد بفصل'
+2026-02-17 19:05:28 | INFO | [trace=37-1771340728] intent=None conf=0.05
+2026-02-17 19:05:28 | INFO | [trace=37-1771340728] best_score=29 top=5
+2026-02-17 19:05:28 | INFO | [trace=37-1771340728] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-17 19:05:28 | INFO | [trace=37-1771340728] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-17 20:14:33 | INFO | [trace=38-1771344873] Q='تقديم شكوى'
+2026-02-17 20:14:33 | INFO | [trace=38-1771344873] intent=None conf=0.05
+2026-02-17 20:14:33 | INFO | [trace=38-1771344873] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-17 20:14:43 | INFO | [trace=38-1771344883] Q='عداد'
+2026-02-17 20:14:44 | INFO | [trace=38-1771344883] intent=None conf=0.05
+2026-02-17 20:14:44 | INFO | [trace=38-1771344883] mode=dialogue_complaint_prepaid (dialogue)
+2026-02-18 21:02:23 | INFO | [trace=39-1771434143] Q='ساعات العمل'
+2026-02-18 21:02:23 | INFO | [trace=39-1771434143] intent=None conf=0.04
+2026-02-18 21:02:23 | INFO | [trace=39-1771434143] best_score=37 top=1
+2026-02-18 21:02:23 | INFO | [trace=39-1771434143] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-18 21:02:23 | INFO | [trace=39-1771434143] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-18 21:02:27 | INFO | [trace=39-1771434147] Q='بدي اشتكي'
+2026-02-18 21:02:27 | INFO | [trace=39-1771434147] intent=None conf=0.04
+2026-02-18 21:02:27 | INFO | [trace=39-1771434147] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-18 21:02:29 | INFO | [trace=39-1771434149] Q='فاتورة'
+2026-02-18 21:02:29 | INFO | [trace=39-1771434149] intent=None conf=0.05
+2026-02-18 21:02:29 | INFO | [trace=39-1771434149] mode=dialogue_complaint_bill (dialogue)
+2026-02-19 13:36:18 | INFO | [trace=40-1771493778] Q='في تطبيق للبلدية'
+2026-02-19 13:36:18 | INFO | [trace=40-1771493778] intent=None conf=0.04
+2026-02-19 13:36:19 | INFO | [trace=40-1771493778] best_score=26 top=2
+2026-02-19 13:36:19 | INFO | [trace=40-1771493778] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 13:36:19 | INFO | [trace=40-1771493778] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-19 13:36:24 | INFO | [trace=40-1771493784] Q='تطبيق'
+2026-02-19 13:36:24 | INFO | [trace=40-1771493784] intent=None conf=0.04
+2026-02-19 13:36:24 | INFO | [trace=40-1771493784] best_score=22 top=2
+2026-02-19 13:36:24 | INFO | [trace=40-1771493784] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 13:36:24 | INFO | [trace=40-1771493784] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-19 13:36:30 | INFO | [trace=40-1771493790] Q='رقم ؟'
+2026-02-19 13:36:30 | INFO | [trace=40-1771493790] intent=None conf=0.04
+2026-02-19 13:36:30 | INFO | [trace=40-1771493790] best_score=48 top=5
+2026-02-19 13:36:30 | INFO | [trace=40-1771493790] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 13:36:30 | INFO | [trace=40-1771493790] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-19 13:36:38 | INFO | [trace=40-1771493798] Q='الجيران بسرقو'
+2026-02-19 13:36:38 | INFO | [trace=40-1771493798] intent=None conf=0.04
+2026-02-19 13:36:38 | INFO | [trace=40-1771493798] best_score=0 top=0
+2026-02-19 13:36:38 | INFO | [trace=40-1771493798] mode=no_answer (no_rag_match)
+2026-02-19 13:36:48 | INFO | [trace=40-1771493808] Q='جيران بسرقو كهربا من العامود'
+2026-02-19 13:36:48 | INFO | [trace=40-1771493808] intent=None conf=0.05
+2026-02-19 13:36:49 | INFO | [trace=40-1771493808] best_score=11 top=3
+2026-02-19 13:36:49 | INFO | [trace=40-1771493808] mode=no_answer (no_rag_match)
+2026-02-19 13:56:39 | INFO | [trace=41-1771494999] Q='ساعات العمل'
+2026-02-19 13:56:39 | INFO | [trace=41-1771494999] intent=None conf=0.04
+2026-02-19 13:56:39 | INFO | [trace=41-1771494999] best_score=37 top=1
+2026-02-19 13:56:39 | INFO | [trace=41-1771494999] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 13:56:39 | INFO | [trace=41-1771494999] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-19 13:56:43 | INFO | [trace=41-1771495003] Q='بدي اشتكي'
+2026-02-19 13:56:43 | INFO | [trace=41-1771495003] intent=None conf=0.04
+2026-02-19 13:56:43 | INFO | [trace=41-1771495003] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-19 13:56:46 | INFO | [trace=41-1771495006] Q='عبث'
+2026-02-19 13:56:46 | INFO | [trace=41-1771495006] intent=None conf=0.04
+2026-02-19 13:56:46 | INFO | [trace=41-1771495006] mode=dialogue_complaint_theft (dialogue)
+2026-02-19 13:56:53 | INFO | [trace=41-1771495013] Q='الجيران بسرقو كهربا'
+2026-02-19 13:56:53 | INFO | [trace=41-1771495013] intent=None conf=0.05
+2026-02-19 13:56:54 | INFO | [trace=41-1771495013] best_score=12 top=3
+2026-02-19 13:56:54 | INFO | [trace=41-1771495013] mode=no_answer (no_rag_match)
+2026-02-19 13:57:00 | INFO | [trace=41-1771495020] Q='التطبيق'
+2026-02-19 13:57:00 | INFO | [trace=41-1771495020] intent=None conf=0.04
+2026-02-19 13:57:00 | INFO | [trace=41-1771495020] best_score=14 top=2
+2026-02-19 13:57:00 | INFO | [trace=41-1771495020] mode=clarify (no_rag_match)
+2026-02-19 13:57:07 | INFO | [trace=41-1771495027] Q='تطيبق البلدية'
+2026-02-19 13:57:07 | INFO | [trace=41-1771495027] intent=None conf=0.04
+2026-02-19 13:57:07 | INFO | [trace=41-1771495027] best_score=12 top=2
+2026-02-19 13:57:07 | INFO | [trace=41-1771495027] mode=no_answer (no_rag_match)
+2026-02-19 13:58:01 | INFO | [trace=41-1771495081] Q='رقم'
+2026-02-19 13:58:01 | INFO | [trace=41-1771495081] intent=None conf=0.04
+2026-02-19 13:58:01 | INFO | [trace=41-1771495081] best_score=46 top=5
+2026-02-19 13:58:01 | INFO | [trace=41-1771495081] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 13:58:01 | INFO | [trace=41-1771495081] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-19 13:58:04 | INFO | [trace=41-1771495084] Q='تطبيق'
+2026-02-19 13:58:04 | INFO | [trace=41-1771495084] intent=None conf=0.04
+2026-02-19 13:58:04 | INFO | [trace=41-1771495084] best_score=22 top=2
+2026-02-19 13:58:04 | INFO | [trace=41-1771495084] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 13:58:04 | INFO | [trace=41-1771495084] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-19 14:21:12 | INFO | [trace=42-1771496472] Q='فاتورتي عاليه'
+2026-02-19 14:21:12 | INFO | [trace=42-1771496472] intent=None conf=0.04
+2026-02-19 14:21:12 | INFO | [trace=42-1771496472] best_score=0 top=0
+2026-02-19 14:21:12 | INFO | [trace=42-1771496472] mode=no_answer (no_rag_match)
+2026-02-19 14:21:17 | INFO | [trace=42-1771496477] Q='فاتورتي نار'
+2026-02-19 14:21:17 | INFO | [trace=42-1771496477] intent=None conf=0.04
+2026-02-19 14:21:17 | INFO | [trace=42-1771496477] best_score=0 top=0
+2026-02-19 14:21:17 | INFO | [trace=42-1771496477] mode=no_answer (no_rag_match)
+2026-02-19 14:21:33 | INFO | [trace=42-1771496493] Q='بدي اشتكي على الفاتورة'
+2026-02-19 14:21:33 | INFO | [trace=42-1771496493] intent=None conf=0.05
+2026-02-19 14:21:33 | INFO | [trace=42-1771496493] mode=dialogue_complaint_bill (dialogue)
+2026-02-19 14:22:03 | INFO | [trace=42-1771496523] Q='فاتروتي طلعت هاد شهر 300 وانا مش مشغله اشي'
+2026-02-19 14:22:03 | INFO | [trace=42-1771496523] intent=None conf=0.05
+2026-02-19 14:22:03 | INFO | [trace=42-1771496523] best_score=10 top=3
+2026-02-19 14:22:03 | INFO | [trace=42-1771496523] mode=no_answer (no_rag_match)
+2026-02-19 14:23:23 | INFO | [trace=43-1771496603] Q='العداد بفصل'
+2026-02-19 14:23:23 | INFO | [trace=43-1771496603] intent=None conf=0.05
+2026-02-19 14:23:23 | INFO | [trace=43-1771496603] best_score=29 top=5
+2026-02-19 14:23:23 | INFO | [trace=43-1771496603] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 14:23:23 | INFO | [trace=43-1771496603] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 14:23:27 | INFO | [trace=43-1771496607] Q='العداد'
+2026-02-19 14:23:27 | INFO | [trace=43-1771496607] intent=None conf=0.05
+2026-02-19 14:23:27 | INFO | [trace=43-1771496607] best_score=23 top=5
+2026-02-19 14:23:27 | INFO | [trace=43-1771496607] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 14:23:27 | INFO | [trace=43-1771496607] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::22'}]
+2026-02-19 14:23:42 | INFO | [trace=43-1771496622] Q='فاتورتي عاليه'
+2026-02-19 14:23:42 | INFO | [trace=43-1771496622] intent=None conf=0.04
+2026-02-19 14:23:43 | INFO | [trace=43-1771496622] best_score=0 top=0
+2026-02-19 14:23:43 | INFO | [trace=43-1771496622] mode=no_answer (no_rag_match)
+2026-02-19 14:23:47 | INFO | [trace=43-1771496627] Q='بدي اتنازل'
+2026-02-19 14:23:47 | INFO | [trace=43-1771496627] intent=None conf=0.05
+2026-02-19 14:23:47 | INFO | [trace=43-1771496627] best_score=30 top=5
+2026-02-19 14:23:47 | INFO | [trace=43-1771496627] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 14:23:47 | INFO | [trace=43-1771496627] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-19 14:23:56 | INFO | [trace=43-1771496636] Q='بدي احول من 1 الى3'
+2026-02-19 14:23:56 | INFO | [trace=43-1771496636] intent=None conf=0.05
+2026-02-19 14:23:56 | INFO | [trace=43-1771496636] best_score=26 top=5
+2026-02-19 14:23:56 | INFO | [trace=43-1771496636] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 14:23:56 | INFO | [trace=43-1771496636] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-19 14:40:35 | INFO | [trace=44-1771497635] Q='فاتورتي عاليه'
+2026-02-19 14:40:35 | INFO | [trace=44-1771497635] intent=complaint_bill conf=0.99
+2026-02-19 14:40:35 | INFO | [trace=44-1771497635] best_score=0 top=0
+2026-02-19 14:40:35 | INFO | [trace=44-1771497635] mode=no_answer (no_rag_match)
+2026-02-19 14:40:58 | INFO | [trace=44-1771497658] Q='فاتورتي عاليه'
+2026-02-19 14:40:58 | INFO | [trace=44-1771497658] intent=complaint_bill conf=0.99
+2026-02-19 14:40:58 | INFO | [trace=44-1771497658] best_score=0 top=0
+2026-02-19 14:40:58 | INFO | [trace=44-1771497658] mode=no_answer (no_rag_match)
+2026-02-19 14:41:56 | INFO | [trace=45-1771497716] Q='فاتورتي نار'
+2026-02-19 14:41:56 | INFO | [trace=45-1771497716] intent=complaint_bill conf=0.99
+2026-02-19 14:41:56 | INFO | [trace=45-1771497716] best_score=0 top=0
+2026-02-19 14:41:56 | INFO | [trace=45-1771497716] mode=no_answer (no_rag_match)
+2026-02-19 14:42:01 | INFO | [trace=45-1771497721] Q='فاتورتي عاليه'
+2026-02-19 14:42:01 | INFO | [trace=45-1771497721] intent=complaint_bill conf=0.99
+2026-02-19 14:42:01 | INFO | [trace=45-1771497721] best_score=0 top=0
+2026-02-19 14:42:01 | INFO | [trace=45-1771497721] mode=no_answer (no_rag_match)
+2026-02-19 14:44:35 | INFO | [trace=45-1771497875] Q='العداد بفصل'
+2026-02-19 14:44:35 | INFO | [trace=45-1771497875] intent=None conf=0.05
+2026-02-19 14:44:35 | INFO | [trace=45-1771497875] best_score=29 top=5
+2026-02-19 14:44:35 | INFO | [trace=45-1771497875] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 14:44:35 | INFO | [trace=45-1771497875] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 14:44:40 | INFO | [trace=45-1771497880] Q='تطبيق'
+2026-02-19 14:44:40 | INFO | [trace=45-1771497880] intent=None conf=0.04
+2026-02-19 14:44:40 | INFO | [trace=45-1771497880] best_score=22 top=2
+2026-02-19 14:44:40 | INFO | [trace=45-1771497880] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 14:44:40 | INFO | [trace=45-1771497880] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-19 14:44:45 | INFO | [trace=45-1771497885] Q='فاتورتي عاليه'
+2026-02-19 14:44:45 | INFO | [trace=45-1771497885] intent=complaint_bill conf=0.99
+2026-02-19 14:44:45 | INFO | [trace=45-1771497885] best_score=0 top=0
+2026-02-19 14:44:45 | INFO | [trace=45-1771497885] mode=no_answer (no_rag_match)
+2026-02-19 14:44:52 | INFO | [trace=45-1771497892] Q='جيران بتسرق كهربا'
+2026-02-19 14:44:52 | INFO | [trace=45-1771497892] intent=None conf=0.05
+2026-02-19 14:44:52 | INFO | [trace=45-1771497892] best_score=12 top=3
+2026-02-19 14:44:52 | INFO | [trace=45-1771497892] mode=no_answer (no_rag_match)
+2026-02-19 22:10:00 | INFO | [trace=46-1771524600] Q='فاتورتي نار'
+2026-02-19 22:10:00 | INFO | [trace=46-1771524600] intent=complaint_bill conf=0.99
+2026-02-19 22:10:00 | INFO | [trace=46-1771524600] best_score=0 top=0
+2026-02-19 22:10:00 | INFO | [trace=46-1771524600] mode=no_answer (no_rag_match)
+2026-02-19 22:10:03 | INFO | [trace=46-1771524603] Q='بكرهك'
+2026-02-19 22:10:03 | INFO | [trace=46-1771524603] intent=None conf=0.04
+2026-02-19 22:10:03 | INFO | [trace=46-1771524603] best_score=0 top=0
+2026-02-19 22:10:03 | INFO | [trace=46-1771524603] mode=clarify (no_rag_match)
+2026-02-19 22:10:08 | INFO | [trace=46-1771524608] Q='فاتورتي عاليه'
+2026-02-19 22:10:08 | INFO | [trace=46-1771524608] intent=complaint_bill conf=0.99
+2026-02-19 22:10:08 | INFO | [trace=46-1771524608] best_score=0 top=0
+2026-02-19 22:10:08 | INFO | [trace=46-1771524608] mode=no_answer (no_rag_match)
+2026-02-19 22:12:31 | INFO | [trace=47-1771524751] Q='فاتورتي عاليه'
+2026-02-19 22:12:31 | INFO | [trace=47-1771524751] intent=complaint_bill conf=0.99
+2026-02-19 22:12:32 | INFO | [trace=47-1771524751] best_score=0 top=0
+2026-02-19 22:12:32 | INFO | [trace=47-1771524751] mode=no_answer (no_rag_match)
+2026-02-19 22:12:38 | INFO | [trace=47-1771524758] Q='بدي اشتكي على شرقه'
+2026-02-19 22:12:38 | INFO | [trace=47-1771524758] intent=None conf=0.05
+2026-02-19 22:12:38 | INFO | [trace=47-1771524758] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-19 22:12:42 | INFO | [trace=47-1771524762] Q='انارة'
+2026-02-19 22:12:42 | INFO | [trace=47-1771524762] intent=None conf=0.04
+2026-02-19 22:12:42 | INFO | [trace=47-1771524762] mode=dialogue_complaint_street_light (dialogue)
+2026-02-19 22:12:52 | INFO | [trace=47-1771524772] Q='العداد بقطع'
+2026-02-19 22:12:52 | INFO | [trace=47-1771524772] intent=None conf=0.05
+2026-02-19 22:12:52 | INFO | [trace=47-1771524772] best_score=23 top=5
+2026-02-19 22:12:52 | INFO | [trace=47-1771524772] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:12:52 | INFO | [trace=47-1771524772] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:15:26 | INFO | [trace=47-1771524926] Q='تطبيق'
+2026-02-19 22:15:26 | INFO | [trace=47-1771524926] intent=None conf=0.04
+2026-02-19 22:15:26 | INFO | [trace=47-1771524926] best_score=22 top=2
+2026-02-19 22:15:26 | INFO | [trace=47-1771524926] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:15:26 | INFO | [trace=47-1771524926] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-19 22:15:32 | INFO | [trace=47-1771524932] Q='الاشتراك'
+2026-02-19 22:15:32 | INFO | [trace=47-1771524932] intent=None conf=0.06
+2026-02-19 22:15:32 | INFO | [trace=47-1771524932] best_score=24 top=5
+2026-02-19 22:15:32 | INFO | [trace=47-1771524932] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:15:32 | INFO | [trace=47-1771524932] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::42'}]
+2026-02-19 22:15:37 | INFO | [trace=47-1771524937] Q='الا'
+2026-02-19 22:15:37 | INFO | [trace=47-1771524937] intent=None conf=0.04
+2026-02-19 22:15:37 | INFO | [trace=47-1771524937] best_score=0 top=0
+2026-02-19 22:15:37 | INFO | [trace=47-1771524937] mode=clarify (no_rag_match)
+2026-02-19 22:15:48 | INFO | [trace=47-1771524948] Q='شخنت العداد وما حول المصاري'
+2026-02-19 22:15:48 | INFO | [trace=47-1771524948] intent=None conf=0.04
+2026-02-19 22:15:49 | INFO | [trace=47-1771524948] best_score=30 top=5
+2026-02-19 22:15:49 | INFO | [trace=47-1771524948] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:15:49 | INFO | [trace=47-1771524948] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:16:01 | INFO | [trace=47-1771524961] Q='شحنت العداد وما استقبل'
+2026-02-19 22:16:02 | INFO | [trace=47-1771524961] intent=None conf=0.04
+2026-02-19 22:16:02 | INFO | [trace=47-1771524961] best_score=35 top=5
+2026-02-19 22:16:02 | INFO | [trace=47-1771524961] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:16:02 | INFO | [trace=47-1771524961] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:26:01 | INFO | [trace=48-1771525561] Q='فاتورتي عاليه'
+2026-02-19 22:26:01 | INFO | [trace=48-1771525561] intent=complaint_bill conf=0.99
+2026-02-19 22:26:01 | INFO | [trace=48-1771525561] best_score=0 top=0
+2026-02-19 22:26:01 | INFO | [trace=48-1771525561] mode=no_answer (no_rag_match)
+2026-02-19 22:26:13 | INFO | [trace=48-1771525573] Q='شحنت 50 وما شحن'
+2026-02-19 22:26:13 | INFO | [trace=48-1771525573] intent=None conf=0.04
+2026-02-19 22:26:13 | INFO | [trace=48-1771525573] best_score=63 top=5
+2026-02-19 22:26:13 | INFO | [trace=48-1771525573] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:26:13 | INFO | [trace=48-1771525573] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::7'}]
+2026-02-19 22:26:28 | INFO | [trace=48-1771525588] Q='جيران بسرقو كهربا'
+2026-02-19 22:26:28 | INFO | [trace=48-1771525588] intent=None conf=0.05
+2026-02-19 22:26:28 | INFO | [trace=48-1771525588] best_score=12 top=4
+2026-02-19 22:26:28 | INFO | [trace=48-1771525588] mode=no_answer (no_rag_match)
+2026-02-19 22:26:47 | INFO | [trace=48-1771525607] Q='العداد بفصل'
+2026-02-19 22:26:47 | INFO | [trace=48-1771525607] intent=None conf=0.05
+2026-02-19 22:26:47 | INFO | [trace=48-1771525607] best_score=29 top=5
+2026-02-19 22:26:47 | INFO | [trace=48-1771525607] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:26:47 | INFO | [trace=48-1771525607] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:29:54 | INFO | [trace=48-1771525794] Q='فاتورتي عاليه'
+2026-02-19 22:29:54 | INFO | [trace=48-1771525794] intent=complaint_bill conf=0.99
+2026-02-19 22:29:55 | INFO | [trace=48-1771525794] best_score=0 top=0
+2026-02-19 22:29:55 | INFO | [trace=48-1771525794] mode=no_answer (no_rag_match)
+2026-02-19 22:30:07 | INFO | [trace=48-1771525807] Q='فاتورتي عاليه'
+2026-02-19 22:30:07 | INFO | [trace=48-1771525807] intent=complaint_bill conf=0.99
+2026-02-19 22:30:07 | INFO | [trace=48-1771525807] mode=dialogue_complaint_bill_direct (dialogue_first)
+2026-02-19 22:30:14 | INFO | [trace=48-1771525814] Q='فاتورتي نلر'
+2026-02-19 22:30:14 | INFO | [trace=48-1771525814] intent=None conf=0.05
+2026-02-19 22:30:14 | INFO | [trace=48-1771525814] best_score=0 top=0
+2026-02-19 22:30:14 | INFO | [trace=48-1771525814] mode=no_answer (no_rag_match)
+2026-02-19 22:30:19 | INFO | [trace=48-1771525819] Q='فاتورتي نار'
+2026-02-19 22:30:19 | INFO | [trace=48-1771525819] intent=complaint_bill conf=0.99
+2026-02-19 22:30:19 | INFO | [trace=48-1771525819] mode=dialogue_complaint_bill_direct (dialogue_first)
+2026-02-19 22:30:27 | INFO | [trace=48-1771525827] Q='شحنت العداد وما حول'
+2026-02-19 22:30:27 | INFO | [trace=48-1771525827] intent=None conf=0.04
+2026-02-19 22:30:28 | INFO | [trace=48-1771525827] best_score=35 top=5
+2026-02-19 22:30:28 | INFO | [trace=48-1771525827] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:30:28 | INFO | [trace=48-1771525827] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:30:37 | INFO | [trace=48-1771525837] Q='شحنت العداد وما استقبل'
+2026-02-19 22:30:37 | INFO | [trace=48-1771525837] intent=None conf=0.04
+2026-02-19 22:30:37 | INFO | [trace=48-1771525837] best_score=35 top=5
+2026-02-19 22:30:37 | INFO | [trace=48-1771525837] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:30:37 | INFO | [trace=48-1771525837] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:32:21 | INFO | [trace=48-1771525941] Q='فصل الاشتراك'
+2026-02-19 22:32:21 | INFO | [trace=48-1771525941] intent=None conf=0.05
+2026-02-19 22:32:22 | INFO | [trace=48-1771525941] best_score=35 top=5
+2026-02-19 22:32:22 | INFO | [trace=48-1771525941] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:32:22 | INFO | [trace=48-1771525941] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::42'}]
+2026-02-19 22:32:38 | INFO | [trace=48-1771525958] Q='التيار ضعيف'
+2026-02-19 22:32:38 | INFO | [trace=48-1771525958] intent=None conf=0.04
+2026-02-19 22:32:38 | INFO | [trace=48-1771525958] best_score=15 top=1
+2026-02-19 22:32:38 | INFO | [trace=48-1771525958] mode=no_answer (no_rag_match)
+2026-02-19 22:32:46 | INFO | [trace=48-1771525966] Q='ليش تيار عني ضعيف'
+2026-02-19 22:32:46 | INFO | [trace=48-1771525966] intent=None conf=0.04
+2026-02-19 22:32:46 | INFO | [trace=48-1771525966] best_score=22 top=4
+2026-02-19 22:32:47 | INFO | [trace=48-1771525966] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:32:47 | INFO | [trace=48-1771525966] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::53'}]
+2026-02-19 22:38:19 | INFO | [trace=49-1771526299] Q='ساعات العمل'
+2026-02-19 22:38:19 | INFO | [trace=49-1771526299] intent=None conf=0.04
+2026-02-19 22:38:19 | INFO | [trace=49-1771526299] best_score=37 top=1
+2026-02-19 22:38:19 | INFO | [trace=49-1771526299] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:38:19 | INFO | [trace=49-1771526299] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-19 22:38:22 | INFO | [trace=49-1771526302] Q='فاتورتي نار'
+2026-02-19 22:38:22 | INFO | [trace=49-1771526302] intent=None conf=0.04
+2026-02-19 22:38:22 | INFO | [trace=49-1771526302] best_score=0 top=0
+2026-02-19 22:38:22 | INFO | [trace=49-1771526302] mode=no_answer (no_rag_match)
+2026-02-19 22:38:25 | INFO | [trace=49-1771526305] Q='بدي اشتكي'
+2026-02-19 22:38:25 | INFO | [trace=49-1771526305] intent=None conf=0.04
+2026-02-19 22:38:25 | INFO | [trace=49-1771526305] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-19 22:38:27 | INFO | [trace=49-1771526307] Q='عطل'
+2026-02-19 22:38:27 | INFO | [trace=49-1771526307] intent=None conf=0.05
+2026-02-19 22:38:27 | INFO | [trace=49-1771526307] mode=dialogue_complaint_fault (dialogue)
+2026-02-19 22:39:36 | INFO | [trace=49-1771526376] Q='العداد بفصل'
+2026-02-19 22:39:36 | INFO | [trace=49-1771526376] intent=None conf=0.05
+2026-02-19 22:39:36 | INFO | [trace=49-1771526376] best_score=29 top=5
+2026-02-19 22:42:53 | INFO | [trace=50-1771526573] Q='ساعات العمل'
+2026-02-19 22:42:53 | INFO | [trace=50-1771526573] intent=None conf=0.04
+2026-02-19 22:42:53 | INFO | [trace=50-1771526573] best_score=37 top=1
+2026-02-19 22:42:53 | INFO | [trace=50-1771526573] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:42:53 | INFO | [trace=50-1771526573] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-19 22:42:59 | INFO | [trace=50-1771526579] Q='العداد بفصل'
+2026-02-19 22:42:59 | INFO | [trace=50-1771526579] intent=None conf=0.05
+2026-02-19 22:43:00 | INFO | [trace=50-1771526579] best_score=29 top=5
+2026-02-19 22:43:00 | INFO | [trace=50-1771526579] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:43:00 | INFO | [trace=50-1771526579] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:43:06 | INFO | [trace=50-1771526586] Q='فاتورتي عاليه'
+2026-02-19 22:43:06 | INFO | [trace=50-1771526586] intent=None conf=0.04
+2026-02-19 22:43:06 | INFO | [trace=50-1771526586] best_score=0 top=0
+2026-02-19 22:43:06 | INFO | [trace=50-1771526586] mode=no_answer (no_rag_match)
+2026-02-19 22:43:11 | INFO | [trace=50-1771526591] Q='الفاتورة'
+2026-02-19 22:43:11 | INFO | [trace=50-1771526591] intent=None conf=0.04
+2026-02-19 22:43:11 | INFO | [trace=50-1771526591] best_score=0 top=0
+2026-02-19 22:43:11 | INFO | [trace=50-1771526591] mode=clarify (no_rag_match)
+2026-02-19 22:43:17 | INFO | [trace=50-1771526597] Q='مراكز الشحن'
+2026-02-19 22:43:17 | INFO | [trace=50-1771526597] mode=rule_charge_centers src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::6'}]
+2026-02-19 22:43:22 | INFO | [trace=50-1771526602] Q='تطيبق'
+2026-02-19 22:43:22 | INFO | [trace=50-1771526602] intent=None conf=0.04
+2026-02-19 22:43:23 | INFO | [trace=50-1771526602] best_score=0 top=0
+2026-02-19 22:43:23 | INFO | [trace=50-1771526602] mode=clarify (no_rag_match)
+2026-02-19 22:43:28 | INFO | [trace=50-1771526608] Q='تطبيق البلبدية'
+2026-02-19 22:43:28 | INFO | [trace=50-1771526608] intent=None conf=0.04
+2026-02-19 22:43:28 | INFO | [trace=50-1771526608] best_score=25 top=2
+2026-02-19 22:43:28 | INFO | [trace=50-1771526608] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:43:28 | INFO | [trace=50-1771526608] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-19 22:44:10 | INFO | [trace=50-1771526650] Q='شحنت العداد وما حول'
+2026-02-19 22:44:10 | INFO | [trace=50-1771526650] intent=None conf=0.04
+2026-02-19 22:44:10 | INFO | [trace=50-1771526650] best_score=35 top=5
+2026-02-19 22:44:10 | INFO | [trace=50-1771526650] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-19 22:44:10 | INFO | [trace=50-1771526650] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-19 22:44:47 | INFO | [trace=51-1771526687] Q='التيار ضعيف'
+2026-02-19 22:44:47 | INFO | [trace=51-1771526687] intent=None conf=0.04
+2026-02-19 22:44:47 | INFO | [trace=51-1771526687] best_score=15 top=1
+2026-02-19 22:44:47 | INFO | [trace=51-1771526687] mode=no_answer (no_rag_match)
+2026-02-20 13:58:51 | INFO | [trace=52-1771581531] Q='ساعات العمل'
+2026-02-20 13:58:51 | INFO | [trace=52-1771581531] intent=None conf=0.04
+2026-02-20 13:58:51 | INFO | [trace=52-1771581531] best_score=37 top=1
+2026-02-20 13:58:51 | INFO | [trace=52-1771581531] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 13:58:51 | INFO | [trace=52-1771581531] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-20 13:59:01 | INFO | [trace=52-1771581541] Q='فاتورتي نار'
+2026-02-20 13:59:01 | INFO | [trace=52-1771581541] intent=None conf=0.04
+2026-02-20 13:59:01 | INFO | [trace=52-1771581541] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 13:59:07 | INFO | [trace=52-1771581547] Q='جيران بسرقو كهربا'
+2026-02-20 13:59:07 | INFO | [trace=52-1771581547] intent=None conf=0.05
+2026-02-20 13:59:07 | INFO | [trace=52-1771581547] mode=dialogue_complaint_theft (dialogue)
+2026-02-20 13:59:13 | INFO | [trace=52-1771581553] Q='العداد بفصل'
+2026-02-20 13:59:13 | INFO | [trace=52-1771581553] intent=None conf=0.05
+2026-02-20 13:59:13 | INFO | [trace=52-1771581553] best_score=29 top=5
+2026-02-20 13:59:13 | INFO | [trace=52-1771581553] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 13:59:13 | INFO | [trace=52-1771581553] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 13:59:19 | INFO | [trace=52-1771581559] Q='شحنت العداد وما حول'
+2026-02-20 13:59:19 | INFO | [trace=52-1771581559] intent=None conf=0.04
+2026-02-20 13:59:20 | INFO | [trace=52-1771581559] best_score=35 top=5
+2026-02-20 13:59:20 | INFO | [trace=52-1771581559] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 13:59:20 | INFO | [trace=52-1771581559] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 13:59:40 | INFO | [trace=52-1771581580] Q='شجنت العداد وما استقبل'
+2026-02-20 13:59:40 | INFO | [trace=52-1771581580] intent=None conf=0.04
+2026-02-20 13:59:40 | INFO | [trace=52-1771581580] best_score=29 top=5
+2026-02-20 13:59:40 | INFO | [trace=52-1771581580] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 13:59:40 | INFO | [trace=52-1771581580] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 13:59:43 | INFO | [trace=52-1771581583] Q='تطبيق'
+2026-02-20 13:59:43 | INFO | [trace=52-1771581583] intent=None conf=0.04
+2026-02-20 13:59:43 | INFO | [trace=52-1771581583] best_score=22 top=2
+2026-02-20 13:59:43 | INFO | [trace=52-1771581583] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 13:59:43 | INFO | [trace=52-1771581583] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-20 13:59:51 | INFO | [trace=52-1771581591] Q='نسيت كلمة سر'
+2026-02-20 13:59:51 | INFO | [trace=52-1771581591] intent=None conf=0.04
+2026-02-20 13:59:51 | INFO | [trace=52-1771581591] best_score=44 top=2
+2026-02-20 13:59:51 | INFO | [trace=52-1771581591] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 13:59:51 | INFO | [trace=52-1771581591] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::95'}]
+2026-02-20 13:59:57 | INFO | [trace=52-1771581597] Q='كيف اسجل دخول'
+2026-02-20 13:59:57 | INFO | [trace=52-1771581597] intent=None conf=0.04
+2026-02-20 13:59:57 | INFO | [trace=52-1771581597] best_score=44 top=5
+2026-02-20 13:59:57 | INFO | [trace=52-1771581597] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 13:59:57 | INFO | [trace=52-1771581597] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::78'}]
+2026-02-20 14:00:04 | INFO | [trace=52-1771581604] Q='بدي اعمل حساب'
+2026-02-20 14:00:04 | INFO | [trace=52-1771581604] intent=None conf=0.04
+2026-02-20 14:00:05 | INFO | [trace=52-1771581604] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 14:00:57 | INFO | [trace=52-1771581657] Q='جوابك غلط'
+2026-02-20 14:00:57 | INFO | [trace=52-1771581657] intent=None conf=0.04
+2026-02-20 14:00:57 | INFO | [trace=52-1771581657] best_score=9 top=1
+2026-02-20 14:00:57 | INFO | [trace=52-1771581657] mode=no_answer (no_rag_match)
+2026-02-20 14:01:23 | INFO | [trace=52-1771581683] Q='بدي اتنازل'
+2026-02-20 14:01:23 | INFO | [trace=52-1771581683] intent=None conf=0.05
+2026-02-20 14:01:23 | INFO | [trace=52-1771581683] best_score=30 top=5
+2026-02-20 14:01:23 | INFO | [trace=52-1771581683] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:01:23 | INFO | [trace=52-1771581683] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-20 14:01:33 | INFO | [trace=52-1771581693] Q='الفواتير'
+2026-02-20 14:01:33 | INFO | [trace=52-1771581693] intent=None conf=0.04
+2026-02-20 14:01:33 | INFO | [trace=52-1771581693] best_score=12 top=2
+2026-02-20 14:01:33 | INFO | [trace=52-1771581693] mode=clarify (no_rag_match)
+2026-02-20 14:01:44 | INFO | [trace=52-1771581704] Q='مين وين اطلع الفواتير'
+2026-02-20 14:01:45 | INFO | [trace=52-1771581704] intent=None conf=0.04
+2026-02-20 14:01:45 | INFO | [trace=52-1771581704] best_score=13 top=4
+2026-02-20 14:01:45 | INFO | [trace=52-1771581704] mode=no_answer (no_rag_match)
+2026-02-20 14:01:59 | INFO | [trace=52-1771581719] Q='كيف يتم إصدار الفواتير؟'
+2026-02-20 14:01:59 | INFO | [trace=52-1771581719] intent=None conf=0.04
+2026-02-20 14:01:59 | INFO | [trace=52-1771581719] best_score=69 top=2
+2026-02-20 14:01:59 | INFO | [trace=52-1771581719] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:01:59 | INFO | [trace=52-1771581719] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::33'}]
+2026-02-20 14:02:45 | INFO | [trace=52-1771581765] Q='بدي افصل الاشتراك'
+2026-02-20 14:02:45 | INFO | [trace=52-1771581765] intent=None conf=0.05
+2026-02-20 14:02:45 | INFO | [trace=52-1771581765] best_score=46 top=5
+2026-02-20 14:02:45 | INFO | [trace=52-1771581765] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:02:45 | INFO | [trace=52-1771581765] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::42'}]
+2026-02-20 14:03:07 | INFO | [trace=52-1771581787] Q='كيف ارجع الاشتراك'
+2026-02-20 14:03:07 | INFO | [trace=52-1771581787] intent=None conf=0.05
+2026-02-20 14:03:07 | INFO | [trace=52-1771581787] best_score=26 top=5
+2026-02-20 14:03:07 | INFO | [trace=52-1771581787] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:03:07 | INFO | [trace=52-1771581787] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::42'}]
+2026-02-20 14:03:31 | INFO | [trace=52-1771581811] Q='التيار ضعيف'
+2026-02-20 14:03:31 | INFO | [trace=52-1771581811] intent=None conf=0.04
+2026-02-20 14:03:31 | INFO | [trace=52-1771581811] best_score=15 top=1
+2026-02-20 14:03:31 | INFO | [trace=52-1771581811] mode=no_answer (no_rag_match)
+2026-02-20 14:03:54 | INFO | [trace=52-1771581834] Q='بدي احول من تجاري لمنزلي'
+2026-02-20 14:03:54 | INFO | [trace=52-1771581834] intent=None conf=0.04
+2026-02-20 14:03:55 | INFO | [trace=52-1771581834] best_score=46 top=5
+2026-02-20 14:03:55 | INFO | [trace=52-1771581834] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:03:55 | INFO | [trace=52-1771581834] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::51'}]
+2026-02-20 14:04:13 | INFO | [trace=52-1771581853] Q='علي دين كبير للكهربا'
+2026-02-20 14:04:13 | INFO | [trace=52-1771581853] intent=None conf=0.05
+2026-02-20 14:04:13 | INFO | [trace=52-1771581853] best_score=27 top=5
+2026-02-20 14:04:13 | INFO | [trace=52-1771581853] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:04:13 | INFO | [trace=52-1771581853] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::52'}]
+2026-02-20 14:05:25 | INFO | [trace=52-1771581925] Q='بطاقتي ضاعت'
+2026-02-20 14:05:25 | INFO | [trace=52-1771581925] intent=None conf=0.04
+2026-02-20 14:05:25 | INFO | [trace=52-1771581925] best_score=54 top=5
+2026-02-20 14:05:25 | INFO | [trace=52-1771581925] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:05:25 | INFO | [trace=52-1771581925] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::76'}]
+2026-02-20 14:05:36 | INFO | [trace=52-1771581936] Q='العنوان'
+2026-02-20 14:05:36 | INFO | [trace=52-1771581936] intent=None conf=0.04
+2026-02-20 14:05:36 | INFO | [trace=52-1771581936] best_score=0 top=0
+2026-02-20 14:05:36 | INFO | [trace=52-1771581936] mode=clarify (no_rag_match)
+2026-02-20 14:05:43 | INFO | [trace=52-1771581943] Q='كراكز الشحن'
+2026-02-20 14:05:43 | INFO | [trace=52-1771581943] mode=rule_charge_centers src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::6'}]
+2026-02-20 14:06:16 | INFO | [trace=52-1771581976] Q='كشف اللوازم'
+2026-02-20 14:06:16 | INFO | [trace=52-1771581976] intent=None conf=0.06
+2026-02-20 14:06:16 | INFO | [trace=52-1771581976] best_score=24 top=2
+2026-02-20 14:06:16 | INFO | [trace=52-1771581976] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:06:16 | INFO | [trace=52-1771581976] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::55'}]
+2026-02-20 14:07:08 | INFO | [trace=52-1771582028] Q='بدي انقل العداد'
+2026-02-20 14:07:08 | INFO | [trace=52-1771582028] intent=None conf=0.05
+2026-02-20 14:07:08 | INFO | [trace=52-1771582028] best_score=32 top=5
+2026-02-20 14:07:08 | INFO | [trace=52-1771582028] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:07:08 | INFO | [trace=52-1771582028] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::40'}]
+2026-02-20 14:07:25 | INFO | [trace=52-1771582045] Q='كيف أنقل عداد الكهرباء داخل البناء في نفس الموقع؟'
+2026-02-20 14:07:25 | INFO | [trace=52-1771582045] intent=None conf=0.05
+2026-02-20 14:07:25 | INFO | [trace=52-1771582045] best_score=145 top=5
+2026-02-20 14:07:25 | INFO | [trace=52-1771582045] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:07:25 | INFO | [trace=52-1771582045] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::49'}]
+2026-02-20 14:07:34 | INFO | [trace=52-1771582054] Q='بدي انقل عداد الكهربا'
+2026-02-20 14:07:34 | INFO | [trace=52-1771582054] intent=None conf=0.06
+2026-02-20 14:07:34 | INFO | [trace=52-1771582054] best_score=44 top=5
+2026-02-20 14:07:34 | INFO | [trace=52-1771582054] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:07:34 | INFO | [trace=52-1771582054] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::49'}]
+2026-02-20 14:07:42 | INFO | [trace=52-1771582062] Q='العداد بفصل'
+2026-02-20 14:07:42 | INFO | [trace=52-1771582062] intent=None conf=0.05
+2026-02-20 14:07:42 | INFO | [trace=52-1771582062] best_score=29 top=5
+2026-02-20 14:07:42 | INFO | [trace=52-1771582062] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 14:07:42 | INFO | [trace=52-1771582062] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 14:07:45 | INFO | [trace=52-1771582065] Q='بدي اشترك'
+2026-02-20 14:07:45 | INFO | [trace=52-1771582065] intent=None conf=0.05
+2026-02-20 14:07:45 | INFO | [trace=52-1771582065] best_score=0 top=0
+2026-02-20 14:07:45 | INFO | [trace=52-1771582065] mode=clarify (no_rag_match)
+2026-02-20 14:10:26 | INFO | [trace=52-1771582226] Q='فاتورتي طلعت 300'
+2026-02-20 14:10:26 | INFO | [trace=52-1771582226] intent=None conf=0.05
+2026-02-20 14:10:26 | INFO | [trace=52-1771582226] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 14:10:35 | INFO | [trace=52-1771582235] Q='جيران بسرقو كهراب'
+2026-02-20 14:10:35 | INFO | [trace=52-1771582235] intent=None conf=0.04
+2026-02-20 14:10:35 | INFO | [trace=52-1771582235] mode=dialogue_complaint_theft (dialogue)
+2026-02-20 16:13:13 | INFO | [trace=53-1771589593] Q='رقم الهاتف'
+2026-02-20 16:13:24 | INFO | [trace=53-1771589604] Q='شحنت العداد وما حول'
+2026-02-20 16:13:30 | INFO | [trace=53-1771589610] Q='العداد بفصل'
+2026-02-20 16:13:30 | INFO | [trace=53-1771589610] intent_light=prepaid_disconnect_with_balance intent_ml=None conf=0.90
+2026-02-20 16:13:30 | INFO | [trace=53-1771589610] best_score=29 top=1
+2026-02-20 16:13:31 | INFO | [trace=53-1771589610] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:13:34 | INFO | [trace=53-1771589614] Q='فاتورتي نار'
+2026-02-20 16:13:34 | INFO | [trace=53-1771589614] intent_light=billing_issue intent_ml=None conf=0.90
+2026-02-20 16:13:34 | INFO | [trace=53-1771589614] best_score=0 top=0
+2026-02-20 16:13:55 | INFO | [trace=54-1771589635] Q='فاتورتي نار'
+2026-02-20 16:13:55 | INFO | [trace=54-1771589635] intent=None conf=0.04
+2026-02-20 16:13:55 | INFO | [trace=54-1771589635] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 16:13:59 | INFO | [trace=54-1771589639] Q='العداد بفصل'
+2026-02-20 16:13:59 | INFO | [trace=54-1771589639] intent=None conf=0.05
+2026-02-20 16:13:59 | INFO | [trace=54-1771589639] best_score=29 top=5
+2026-02-20 16:13:59 | INFO | [trace=54-1771589639] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:13:59 | INFO | [trace=54-1771589639] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 16:14:00 | INFO | [trace=54-1771589640] Q='تطبيق'
+2026-02-20 16:14:00 | INFO | [trace=54-1771589640] intent=None conf=0.04
+2026-02-20 16:14:00 | INFO | [trace=54-1771589640] best_score=22 top=2
+2026-02-20 16:14:00 | INFO | [trace=54-1771589640] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:14:00 | INFO | [trace=54-1771589640] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-20 16:14:08 | INFO | [trace=54-1771589648] Q='كلمة سر نسيتها'
+2026-02-20 16:14:08 | INFO | [trace=54-1771589648] intent=None conf=0.04
+2026-02-20 16:14:08 | INFO | [trace=54-1771589648] best_score=23 top=2
+2026-02-20 16:14:08 | INFO | [trace=54-1771589648] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:14:08 | INFO | [trace=54-1771589648] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::93'}]
+2026-02-20 16:14:24 | INFO | [trace=54-1771589664] Q='شحنت العداد وما حول'
+2026-02-20 16:14:24 | INFO | [trace=54-1771589664] intent=None conf=0.04
+2026-02-20 16:14:24 | INFO | [trace=54-1771589664] best_score=35 top=5
+2026-02-20 16:14:24 | INFO | [trace=54-1771589664] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:14:24 | INFO | [trace=54-1771589664] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 16:37:56 | INFO | [trace=55-1771591076] Q='ساعات العمل'
+2026-02-20 16:37:56 | INFO | [trace=55-1771591076] intent=None conf=0.04
+2026-02-20 16:37:57 | INFO | [trace=55-1771591076] best_score=37 top=1
+2026-02-20 16:37:57 | INFO | [trace=55-1771591076] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:37:57 | INFO | [trace=55-1771591076] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-20 16:38:13 | INFO | [trace=55-1771591093] Q='قاتورتي نار'
+2026-02-20 16:38:13 | INFO | [trace=55-1771591093] intent=None conf=0.04
+2026-02-20 16:38:13 | INFO | [trace=55-1771591093] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 16:38:21 | INFO | [trace=55-1771591101] Q='جيران بسرقو كهربا'
+2026-02-20 16:38:21 | INFO | [trace=55-1771591101] intent=None conf=0.05
+2026-02-20 16:38:22 | INFO | [trace=55-1771591101] mode=dialogue_complaint_theft (dialogue)
+2026-02-20 16:38:25 | INFO | [trace=55-1771591105] Q='العداد بفصل'
+2026-02-20 16:38:25 | INFO | [trace=55-1771591105] intent=None conf=0.05
+2026-02-20 16:38:25 | INFO | [trace=55-1771591105] best_score=29 top=5
+2026-02-20 16:38:25 | INFO | [trace=55-1771591105] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:38:25 | INFO | [trace=55-1771591105] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 16:38:28 | INFO | [trace=55-1771591108] Q='العداد بقطع'
+2026-02-20 16:38:28 | INFO | [trace=55-1771591108] intent=None conf=0.05
+2026-02-20 16:38:28 | INFO | [trace=55-1771591108] best_score=23 top=5
+2026-02-20 16:38:28 | INFO | [trace=55-1771591108] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:38:28 | INFO | [trace=55-1771591108] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 16:38:37 | INFO | [trace=55-1771591117] Q='شحنت العداد وما حول'
+2026-02-20 16:38:37 | INFO | [trace=55-1771591117] intent=None conf=0.04
+2026-02-20 16:38:38 | INFO | [trace=55-1771591117] best_score=35 top=5
+2026-02-20 16:38:38 | INFO | [trace=55-1771591117] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:38:38 | INFO | [trace=55-1771591117] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 16:38:41 | INFO | [trace=55-1771591121] Q='العداد'
+2026-02-20 16:38:41 | INFO | [trace=55-1771591121] intent=None conf=0.05
+2026-02-20 16:38:42 | INFO | [trace=55-1771591121] best_score=23 top=5
+2026-02-20 16:38:42 | INFO | [trace=55-1771591121] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:38:42 | INFO | [trace=55-1771591121] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::22'}]
+2026-02-20 16:38:51 | INFO | [trace=55-1771591131] Q='بدي اشتكي'
+2026-02-20 16:38:51 | INFO | [trace=55-1771591131] intent=None conf=0.04
+2026-02-20 16:38:51 | INFO | [trace=55-1771591131] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-20 16:38:56 | INFO | [trace=55-1771591136] Q='عداد'
+2026-02-20 16:38:56 | INFO | [trace=55-1771591136] intent=None conf=0.05
+2026-02-20 16:38:56 | INFO | [trace=55-1771591136] mode=dialogue_complaint_prepaid (dialogue)
+2026-02-20 16:39:05 | INFO | [trace=55-1771591145] Q='تطبيق'
+2026-02-20 16:39:05 | INFO | [trace=55-1771591145] intent=None conf=0.04
+2026-02-20 16:39:06 | INFO | [trace=55-1771591145] best_score=22 top=2
+2026-02-20 16:39:06 | INFO | [trace=55-1771591145] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:39:06 | INFO | [trace=55-1771591145] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::100'}]
+2026-02-20 16:39:10 | INFO | [trace=55-1771591150] Q='رقم'
+2026-02-20 16:39:10 | INFO | [trace=55-1771591150] intent=None conf=0.04
+2026-02-20 16:39:11 | INFO | [trace=55-1771591150] best_score=46 top=5
+2026-02-20 16:39:11 | INFO | [trace=55-1771591150] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:39:11 | INFO | [trace=55-1771591150] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-20 16:39:15 | INFO | [trace=55-1771591155] Q='نسيت كلمة السر'
+2026-02-20 16:39:15 | INFO | [trace=55-1771591155] intent=None conf=0.04
+2026-02-20 16:39:15 | INFO | [trace=55-1771591155] best_score=51 top=2
+2026-02-20 16:39:15 | INFO | [trace=55-1771591155] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:39:15 | INFO | [trace=55-1771591155] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::95'}]
+2026-02-20 16:39:20 | INFO | [trace=55-1771591160] Q='بكرهك'
+2026-02-20 16:39:20 | INFO | [trace=55-1771591160] intent=None conf=0.04
+2026-02-20 16:39:20 | INFO | [trace=55-1771591160] best_score=0 top=0
+2026-02-20 16:39:20 | INFO | [trace=55-1771591160] mode=clarify (no_rag_match)
+2026-02-20 16:39:29 | INFO | [trace=55-1771591169] Q='مراكز الشحن'
+2026-02-20 16:39:29 | INFO | [trace=55-1771591169] mode=rule_charge_centers intent=locations src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::6'}]
+2026-02-20 16:39:37 | INFO | [trace=55-1771591177] Q='شحنت العداد وما استقبل'
+2026-02-20 16:39:37 | INFO | [trace=55-1771591177] intent=None conf=0.04
+2026-02-20 16:39:37 | INFO | [trace=55-1771591177] best_score=35 top=5
+2026-02-20 16:39:37 | INFO | [trace=55-1771591177] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:39:37 | INFO | [trace=55-1771591177] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 16:59:25 | INFO | [trace=56-1771592365] Q='ساعات العمل'
+2026-02-20 16:59:25 | INFO | [trace=56-1771592365] group=None conf=0.14
+2026-02-20 16:59:25 | INFO | [trace=56-1771592365] best_score=37 top=1
+2026-02-20 16:59:25 | INFO | [trace=56-1771592365] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:59:29 | INFO | [trace=56-1771592369] Q='فاتورتي نار'
+2026-02-20 16:59:29 | INFO | [trace=56-1771592369] group=None conf=0.14
+2026-02-20 16:59:32 | INFO | [trace=56-1771592372] Q='العداد بفصل'
+2026-02-20 16:59:32 | INFO | [trace=56-1771592372] group=None conf=0.25
+2026-02-20 16:59:32 | INFO | [trace=56-1771592372] best_score=29 top=5
+2026-02-20 16:59:32 | INFO | [trace=56-1771592372] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:59:37 | INFO | [trace=56-1771592377] Q='شحنت العداد وما حول'
+2026-02-20 16:59:46 | INFO | [trace=56-1771592386] Q='شحنت العداد وما استقبل'
+2026-02-20 16:59:52 | INFO | [trace=56-1771592392] Q='تطبيق'
+2026-02-20 16:59:52 | INFO | [trace=56-1771592392] group=None conf=0.13
+2026-02-20 16:59:52 | INFO | [trace=56-1771592392] best_score=22 top=2
+2026-02-20 16:59:52 | INFO | [trace=56-1771592392] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 16:59:56 | INFO | [trace=56-1771592396] Q='فاتورتي عاليه'
+2026-02-20 16:59:56 | INFO | [trace=56-1771592396] group=None conf=0.14
+2026-02-20 17:00:04 | INFO | [trace=56-1771592404] Q='الجيران بسرقو كهربا'
+2026-02-20 17:00:04 | INFO | [trace=56-1771592404] group=None conf=0.12
+2026-02-20 17:04:04 | INFO | [trace=56-1771592644] Q='حمار'
+2026-02-20 17:13:58 | INFO | [trace=57-1771593238] Q='ساعات العمل'
+2026-02-20 17:13:58 | INFO | [trace=57-1771593238] intent=None conf=0.00
+2026-02-20 17:13:58 | INFO | [trace=57-1771593238] best_score=37 top=1
+2026-02-20 17:13:59 | INFO | [trace=57-1771593238] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 17:13:59 | INFO | [trace=57-1771593238] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-20 17:14:04 | INFO | [trace=57-1771593244] Q='شحنت العداد وما حول'
+2026-02-20 17:14:10 | INFO | [trace=57-1771593250] Q='العداد بفصل'
+2026-02-20 17:14:10 | INFO | [trace=57-1771593250] intent=None conf=0.00
+2026-02-20 17:14:10 | INFO | [trace=57-1771593250] best_score=29 top=5
+2026-02-20 17:14:10 | INFO | [trace=57-1771593250] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 17:14:10 | INFO | [trace=57-1771593250] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 17:14:13 | INFO | [trace=57-1771593253] Q='بدي اتنازل'
+2026-02-20 17:14:13 | INFO | [trace=57-1771593253] intent=None conf=0.00
+2026-02-20 17:14:13 | INFO | [trace=57-1771593253] best_score=24 top=1
+2026-02-20 17:14:13 | INFO | [trace=57-1771593253] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 17:14:13 | INFO | [trace=57-1771593253] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-20 19:19:28 | INFO | [trace=58-1771600768] Q='شحنت العداد وما حول'
+2026-02-20 19:19:38 | INFO | [trace=58-1771600778] Q='عبيت العداد وما شحن'
+2026-02-20 19:23:44 | INFO | [trace=59-1771601024] Q='بدي اتنازل'
+2026-02-20 19:23:44 | INFO | [trace=59-1771601024] intent=None conf=0.00
+2026-02-20 19:23:44 | INFO | [trace=59-1771601024] best_score=24 top=1
+2026-02-20 19:23:44 | INFO | [trace=59-1771601024] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:23:44 | INFO | [trace=59-1771601024] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::77'}]
+2026-02-20 19:23:58 | INFO | [trace=59-1771601038] Q='بدي احول من موقت ل دائم'
+2026-02-20 19:23:58 | INFO | [trace=59-1771601038] intent=None conf=0.00
+2026-02-20 19:23:59 | INFO | [trace=59-1771601038] best_score=24 top=5
+2026-02-20 19:23:59 | INFO | [trace=59-1771601038] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:23:59 | INFO | [trace=59-1771601038] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-20 19:24:53 | INFO | [trace=59-1771601093] Q='من وين بعرف اديش ضايل بالعداد'
+2026-02-20 19:24:53 | INFO | [trace=59-1771601093] intent=None conf=0.00
+2026-02-20 19:24:53 | INFO | [trace=59-1771601093] best_score=0 top=0
+2026-02-20 19:24:53 | INFO | [trace=59-1771601093] mode=no_answer (no_rag_match)
+2026-02-20 19:26:14 | INFO | [trace=59-1771601174] Q='مؤقت ل دائم'
+2026-02-20 19:26:14 | INFO | [trace=59-1771601174] intent=None conf=0.00
+2026-02-20 19:26:14 | INFO | [trace=59-1771601174] best_score=8 top=1
+2026-02-20 19:26:14 | INFO | [trace=59-1771601174] mode=no_answer (no_rag_match)
+2026-02-20 19:26:49 | INFO | [trace=59-1771601209] Q='العداد بفصل وانا معبيه مبارح'
+2026-02-20 19:26:49 | INFO | [trace=59-1771601209] intent=None conf=0.00
+2026-02-20 19:26:49 | INFO | [trace=59-1771601209] best_score=29 top=5
+2026-02-20 19:26:49 | INFO | [trace=59-1771601209] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:26:49 | INFO | [trace=59-1771601209] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-20 19:27:04 | INFO | [trace=59-1771601224] Q='شحنت الكرت والعداد وما وصلو'
+2026-02-20 19:27:20 | INFO | [trace=59-1771601240] Q='بدي اغير لنظام دفع'
+2026-02-20 19:27:20 | INFO | [trace=59-1771601240] intent=None conf=0.00
+2026-02-20 19:27:20 | INFO | [trace=59-1771601240] best_score=26 top=5
+2026-02-20 19:27:20 | INFO | [trace=59-1771601240] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:27:20 | INFO | [trace=59-1771601240] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::24'}]
+2026-02-20 19:27:49 | INFO | [trace=59-1771601269] Q='ومن وين ا'
+2026-02-20 19:27:49 | INFO | [trace=59-1771601269] intent=None conf=0.00
+2026-02-20 19:27:49 | INFO | [trace=59-1771601269] best_score=0 top=0
+2026-02-20 19:27:49 | INFO | [trace=59-1771601269] mode=no_answer (no_rag_match)
+2026-02-20 19:27:57 | INFO | [trace=59-1771601277] Q='من وين اطلع فاتوره'
+2026-02-20 19:27:57 | INFO | [trace=59-1771601277] intent=None conf=0.00
+2026-02-20 19:27:57 | INFO | [trace=59-1771601277] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 19:29:07 | INFO | [trace=59-1771601347] Q='بدي اغير من مؤقت لدائم'
+2026-02-20 19:29:07 | INFO | [trace=59-1771601347] intent=None conf=0.00
+2026-02-20 19:29:08 | INFO | [trace=59-1771601347] best_score=25 top=5
+2026-02-20 19:29:08 | INFO | [trace=59-1771601347] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:29:08 | INFO | [trace=59-1771601347] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::44'}]
+2026-02-20 19:29:26 | INFO | [trace=59-1771601366] Q='بدي احول من موقت ل دائم'
+2026-02-20 19:29:26 | INFO | [trace=59-1771601366] intent=None conf=0.00
+2026-02-20 19:29:26 | INFO | [trace=59-1771601366] best_score=24 top=5
+2026-02-20 19:29:26 | INFO | [trace=59-1771601366] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:29:26 | INFO | [trace=59-1771601366] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-20 19:30:05 | INFO | [trace=59-1771601405] Q='التيار ضعيف'
+2026-02-20 19:30:05 | INFO | [trace=59-1771601405] intent=None conf=0.00
+2026-02-20 19:30:05 | INFO | [trace=59-1771601405] best_score=15 top=1
+2026-02-20 19:30:05 | INFO | [trace=59-1771601405] mode=no_answer (no_rag_match)
+2026-02-20 19:30:56 | INFO | [trace=59-1771601456] Q='علي كتير ديون للكهربا'
+2026-02-20 19:30:56 | INFO | [trace=59-1771601456] intent=None conf=0.00
+2026-02-20 19:30:56 | INFO | [trace=59-1771601456] best_score=23 top=5
+2026-02-20 19:30:56 | INFO | [trace=59-1771601456] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:30:56 | INFO | [trace=59-1771601456] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::7'}]
+2026-02-20 19:33:02 | INFO | [trace=60-1771601582] Q='علي ديون كتير'
+2026-02-20 19:33:02 | INFO | [trace=60-1771601582] intent=None conf=0.00
+2026-02-20 19:33:02 | INFO | [trace=60-1771601582] best_score=28 top=5
+2026-02-20 19:33:02 | INFO | [trace=60-1771601582] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:33:02 | INFO | [trace=60-1771601582] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::52'}]
+2026-02-20 19:33:12 | INFO | [trace=60-1771601592] Q='من وين اطلع الفاتورة'
+2026-02-20 19:33:12 | INFO | [trace=60-1771601592] intent=None conf=0.00
+2026-02-20 19:33:12 | INFO | [trace=60-1771601592] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 19:33:21 | INFO | [trace=60-1771601601] Q='من وين اطلع الفواتير'
+2026-02-20 19:33:21 | INFO | [trace=60-1771601601] intent=None conf=0.00
+2026-02-20 19:33:21 | INFO | [trace=60-1771601601] best_score=18 top=3
+2026-02-20 19:33:21 | INFO | [trace=60-1771601601] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:33:21 | INFO | [trace=60-1771601601] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::33'}]
+2026-02-20 19:33:55 | INFO | [trace=60-1771601635] Q='بدي احول من دائم لمؤقت'
+2026-02-20 19:33:55 | INFO | [trace=60-1771601635] intent=None conf=0.00
+2026-02-20 19:33:55 | INFO | [trace=60-1771601635] best_score=24 top=5
+2026-02-20 19:33:55 | INFO | [trace=60-1771601635] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:33:55 | INFO | [trace=60-1771601635] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-20 19:45:39 | INFO | [trace=61-1771602339] Q='الفاتورة'
+2026-02-20 19:45:39 | INFO | [trace=61-1771602339] intent=None conf=0.00
+2026-02-20 19:45:39 | INFO | [trace=61-1771602339] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 19:48:40 | INFO | [trace=62-1771602520] Q='فاتورتي نار'
+2026-02-20 19:48:40 | INFO | [trace=62-1771602520] intent=None conf=0.00
+2026-02-20 19:48:40 | INFO | [trace=62-1771602520] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 19:48:48 | INFO | [trace=62-1771602528] Q='من وين اطلع الفواتير'
+2026-02-20 19:48:48 | INFO | [trace=62-1771602528] intent=None conf=0.00
+2026-02-20 19:48:48 | INFO | [trace=62-1771602528] best_score=18 top=3
+2026-02-20 19:48:48 | INFO | [trace=62-1771602528] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:48:48 | INFO | [trace=62-1771602528] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::33'}]
+2026-02-20 19:48:55 | INFO | [trace=62-1771602535] Q='من وبن اطلع الفاتوره'
+2026-02-20 19:48:55 | INFO | [trace=62-1771602535] intent=None conf=0.00
+2026-02-20 19:48:55 | INFO | [trace=62-1771602535] best_score=23 top=2
+2026-02-20 19:48:55 | INFO | [trace=62-1771602535] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:48:55 | INFO | [trace=62-1771602535] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::33'}]
+2026-02-20 19:49:09 | INFO | [trace=62-1771602549] Q='فاتورة'
+2026-02-20 19:49:09 | INFO | [trace=62-1771602549] intent=None conf=0.00
+2026-02-20 19:49:09 | INFO | [trace=62-1771602549] best_score=12 top=1
+2026-02-20 19:49:09 | INFO | [trace=62-1771602549] mode=clarify (no_rag_match)
+2026-02-20 19:49:18 | INFO | [trace=62-1771602558] Q='من وين اشحن الكرت'
+2026-02-20 19:49:23 | INFO | [trace=62-1771602563] Q='من وين اعبي الكرت'
+2026-02-20 19:49:23 | INFO | [trace=62-1771602563] intent=None conf=0.00
+2026-02-20 19:49:23 | INFO | [trace=62-1771602563] best_score=21 top=3
+2026-02-20 19:49:23 | INFO | [trace=62-1771602563] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:49:23 | INFO | [trace=62-1771602563] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::21'}]
+2026-02-20 19:49:29 | INFO | [trace=62-1771602569] Q='وين اعبي الكرت'
+2026-02-20 19:49:29 | INFO | [trace=62-1771602569] intent=None conf=0.00
+2026-02-20 19:49:29 | INFO | [trace=62-1771602569] best_score=21 top=3
+2026-02-20 19:49:29 | INFO | [trace=62-1771602569] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:49:29 | INFO | [trace=62-1771602569] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::21'}]
+2026-02-20 19:50:12 | INFO | [trace=62-1771602612] Q='كيف ادفع'
+2026-02-20 19:50:12 | INFO | [trace=62-1771602612] intent=None conf=0.00
+2026-02-20 19:50:12 | INFO | [trace=62-1771602612] best_score=0 top=0
+2026-02-20 19:50:12 | INFO | [trace=62-1771602612] mode=clarify (no_rag_match)
+2026-02-20 19:50:35 | INFO | [trace=62-1771602635] Q='بدي ادفع'
+2026-02-20 19:50:35 | INFO | [trace=62-1771602635] intent=None conf=0.00
+2026-02-20 19:50:35 | INFO | [trace=62-1771602635] best_score=0 top=0
+2026-02-20 19:50:35 | INFO | [trace=62-1771602635] mode=clarify (no_rag_match)
+2026-02-20 19:50:44 | INFO | [trace=62-1771602644] Q='بدي ادفع على الموقع'
+2026-02-20 19:50:44 | INFO | [trace=62-1771602644] intent=None conf=0.00
+2026-02-20 19:50:44 | INFO | [trace=62-1771602644] best_score=24 top=5
+2026-02-20 19:50:44 | INFO | [trace=62-1771602644] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:50:44 | INFO | [trace=62-1771602644] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::7'}]
+2026-02-20 19:51:00 | INFO | [trace=62-1771602660] Q='وسائل الدفع المتاحة'
+2026-02-20 19:51:00 | INFO | [trace=62-1771602660] intent=None conf=0.00
+2026-02-20 19:51:01 | INFO | [trace=62-1771602660] best_score=64 top=5
+2026-02-20 19:51:01 | INFO | [trace=62-1771602660] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:51:01 | INFO | [trace=62-1771602660] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::67'}]
+2026-02-20 19:51:10 | INFO | [trace=62-1771602670] Q='الدفع عبر الموقع'
+2026-02-20 19:51:10 | INFO | [trace=62-1771602670] intent=None conf=0.00
+2026-02-20 19:51:10 | INFO | [trace=62-1771602670] best_score=28 top=5
+2026-02-20 19:51:10 | INFO | [trace=62-1771602670] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 19:51:10 | INFO | [trace=62-1771602670] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::97'}]
+2026-02-20 20:06:15 | INFO | [trace=63-1771603575] Q='ساعات العمل'
+2026-02-20 20:06:15 | INFO | [trace=63-1771603575] llm_route=None
+2026-02-20 20:06:15 | INFO | [trace=63-1771603575] intent=None conf=0.00
+2026-02-20 20:06:16 | INFO | [trace=63-1771603575] best_score=37 top=1
+2026-02-20 20:06:19 | INFO | [trace=63-1771603579] Q='فاتورتي نار'
+2026-02-20 20:06:19 | INFO | [trace=63-1771603579] llm_route=None
+2026-02-20 20:06:19 | INFO | [trace=63-1771603579] intent=None conf=0.00
+2026-02-20 20:06:19 | INFO | [trace=63-1771603579] best_score=11 top=1
+2026-02-20 20:06:24 | INFO | [trace=63-1771603584] Q='فاتورتي عاليه'
+2026-02-20 20:06:24 | INFO | [trace=63-1771603584] llm_route=None
+2026-02-20 20:06:24 | INFO | [trace=63-1771603584] intent=None conf=0.00
+2026-02-20 20:06:24 | INFO | [trace=63-1771603584] best_score=11 top=1
+2026-02-20 20:06:44 | INFO | [trace=63-1771603604] Q='جيرات بسرقو كهراب'
+2026-02-20 20:06:44 | INFO | [trace=63-1771603604] llm_route=None
+2026-02-20 20:06:44 | INFO | [trace=63-1771603604] intent=None conf=0.00
+2026-02-20 20:06:44 | INFO | [trace=63-1771603604] best_score=0 top=0
+2026-02-20 20:07:11 | INFO | [trace=64-1771603631] Q='رقم الهاتف'
+2026-02-20 20:07:11 | INFO | [trace=64-1771603631] llm_route=None
+2026-02-20 20:07:11 | INFO | [trace=64-1771603631] intent=None conf=0.00
+2026-02-20 20:07:11 | INFO | [trace=64-1771603631] best_score=58 top=5
+2026-02-20 20:07:17 | INFO | [trace=64-1771603637] Q='فاتروتي عاليه'
+2026-02-20 20:07:17 | INFO | [trace=64-1771603637] llm_route=None
+2026-02-20 20:07:17 | INFO | [trace=64-1771603637] intent=None conf=0.00
+2026-02-20 20:07:17 | INFO | [trace=64-1771603637] best_score=11 top=1
+2026-02-20 20:07:21 | INFO | [trace=64-1771603641] Q='بدي اشتكي'
+2026-02-20 20:07:21 | INFO | [trace=64-1771603641] llm_route=None
+2026-02-20 20:07:21 | INFO | [trace=64-1771603641] intent=None conf=0.00
+2026-02-20 20:07:21 | INFO | [trace=64-1771603641] best_score=21 top=5
+2026-02-20 20:07:29 | INFO | [trace=64-1771603649] Q='العداد بفصل'
+2026-02-20 20:07:29 | INFO | [trace=64-1771603649] llm_route=None
+2026-02-20 20:07:29 | INFO | [trace=64-1771603649] intent=None conf=0.00
+2026-02-20 20:07:29 | INFO | [trace=64-1771603649] best_score=29 top=5
+2026-02-20 20:07:37 | INFO | [trace=64-1771603657] Q='شحنت وما حول'
+2026-02-20 20:07:37 | INFO | [trace=64-1771603657] llm_route=None
+2026-02-20 20:07:37 | INFO | [trace=64-1771603657] intent=None conf=0.00
+2026-02-20 20:07:37 | INFO | [trace=64-1771603657] best_score=23 top=2
+2026-02-20 20:07:55 | INFO | [trace=64-1771603675] Q='من وين اطلع الفاتورى'
+2026-02-20 20:07:55 | INFO | [trace=64-1771603675] llm_route=None
+2026-02-20 20:07:55 | INFO | [trace=64-1771603675] intent=None conf=0.00
+2026-02-20 20:07:55 | INFO | [trace=64-1771603675] best_score=11 top=2
+2026-02-20 20:08:01 | INFO | [trace=64-1771603681] Q='من وين اطلع الفاتورة'
+2026-02-20 20:08:01 | INFO | [trace=64-1771603681] llm_route=None
+2026-02-20 20:08:01 | INFO | [trace=64-1771603681] intent=None conf=0.00
+2026-02-20 20:08:01 | INFO | [trace=64-1771603681] best_score=23 top=2
+2026-02-20 20:08:10 | INFO | [trace=64-1771603690] Q='تطبيق'
+2026-02-20 20:08:10 | INFO | [trace=64-1771603690] llm_route=None
+2026-02-20 20:08:10 | INFO | [trace=64-1771603690] intent=None conf=0.00
+2026-02-20 20:08:10 | INFO | [trace=64-1771603690] best_score=22 top=2
+2026-02-20 20:08:55 | INFO | [trace=64-1771603735] Q='بدي اشتكي على سرقة'
+2026-02-20 20:08:55 | INFO | [trace=64-1771603735] llm_route=None
+2026-02-20 20:08:55 | INFO | [trace=64-1771603735] intent=None conf=0.00
+2026-02-20 20:08:55 | INFO | [trace=64-1771603735] best_score=46 top=5
+2026-02-20 20:09:08 | INFO | [trace=64-1771603748] Q='جيران بسرقو كرهاب'
+2026-02-20 20:09:08 | INFO | [trace=64-1771603748] llm_route=None
+2026-02-20 20:09:08 | INFO | [trace=64-1771603748] intent=None conf=0.00
+2026-02-20 20:09:08 | INFO | [trace=64-1771603748] best_score=0 top=0
+2026-02-20 20:09:17 | INFO | [trace=64-1771603757] Q='جيران بسرقو كهربا'
+2026-02-20 20:09:17 | INFO | [trace=64-1771603757] llm_route=None
+2026-02-20 20:09:17 | INFO | [trace=64-1771603757] intent=None conf=0.00
+2026-02-20 20:09:17 | INFO | [trace=64-1771603757] best_score=12 top=4
+2026-02-20 20:09:33 | INFO | [trace=64-1771603773] Q='كيف اعرف انو المصاري وصلت'
+2026-02-20 20:09:33 | INFO | [trace=64-1771603773] llm_route=None
+2026-02-20 20:09:33 | INFO | [trace=64-1771603773] intent=None conf=0.00
+2026-02-20 20:09:34 | INFO | [trace=64-1771603773] best_score=46 top=5
+2026-02-20 20:12:25 | INFO | [trace=64-1771603945] Q='فاتورتي عاليه'
+2026-02-20 20:12:25 | INFO | [trace=64-1771603945] llm_route=None
+2026-02-20 20:12:25 | INFO | [trace=64-1771603945] intent=None conf=0.00
+2026-02-20 20:12:25 | INFO | [trace=64-1771603945] best_score=11 top=1
+2026-02-20 20:12:42 | INFO | [trace=65-1771603962] Q='قاتورتي عاليه'
+2026-02-20 20:12:42 | INFO | [trace=65-1771603962] llm_route=None
+2026-02-20 20:12:42 | INFO | [trace=65-1771603962] intent=None conf=0.00
+2026-02-20 20:12:42 | INFO | [trace=65-1771603962] best_score=11 top=1
+2026-02-20 20:12:47 | INFO | [trace=65-1771603967] Q='فاتورتي عاليه'
+2026-02-20 20:12:47 | INFO | [trace=65-1771603967] llm_route=None
+2026-02-20 20:12:47 | INFO | [trace=65-1771603967] intent=None conf=0.00
+2026-02-20 20:12:47 | INFO | [trace=65-1771603967] best_score=11 top=1
+2026-02-20 20:12:50 | INFO | [trace=65-1771603970] Q='بدي اشتكي'
+2026-02-20 20:12:50 | INFO | [trace=65-1771603970] llm_route=None
+2026-02-20 20:12:50 | INFO | [trace=65-1771603970] intent=None conf=0.00
+2026-02-20 20:12:50 | INFO | [trace=65-1771603970] best_score=21 top=5
+2026-02-20 20:13:01 | INFO | [trace=65-1771603981] Q='فاتورتي عاليه'
+2026-02-20 20:13:01 | INFO | [trace=65-1771603981] llm_route=None
+2026-02-20 20:13:01 | INFO | [trace=65-1771603981] intent=None conf=0.00
+2026-02-20 20:13:01 | INFO | [trace=65-1771603981] best_score=11 top=1
+2026-02-20 20:13:39 | INFO | [trace=66-1771604019] Q='فاتورتي عاليه'
+2026-02-20 20:13:39 | INFO | [trace=66-1771604019] llm_route=None
+2026-02-20 20:13:39 | INFO | [trace=66-1771604019] intent=None conf=0.00
+2026-02-20 20:13:39 | INFO | [trace=66-1771604019] best_score=11 top=1
+2026-02-20 20:13:43 | INFO | [trace=66-1771604023] Q='العداد بفصل'
+2026-02-20 20:13:43 | INFO | [trace=66-1771604023] llm_route=None
+2026-02-20 20:13:43 | INFO | [trace=66-1771604023] intent=None conf=0.00
+2026-02-20 20:13:43 | INFO | [trace=66-1771604023] best_score=29 top=5
+2026-02-20 20:13:51 | INFO | [trace=66-1771604031] Q='بدي اشتكي على اسرقة'
+2026-02-20 20:13:51 | INFO | [trace=66-1771604031] llm_route=None
+2026-02-20 20:13:51 | INFO | [trace=66-1771604031] intent=None conf=0.00
+2026-02-20 20:13:51 | INFO | [trace=66-1771604031] best_score=29 top=5
+2026-02-20 20:14:11 | INFO | [trace=66-1771604051] Q='بدي اطلع فاتورة'
+2026-02-20 20:14:11 | INFO | [trace=66-1771604051] llm_route=None
+2026-02-20 20:14:11 | INFO | [trace=66-1771604051] intent=None conf=0.00
+2026-02-20 20:14:11 | INFO | [trace=66-1771604051] best_score=20 top=2
+2026-02-20 20:14:22 | INFO | [trace=66-1771604062] Q='وين ادفع الفاتورة'
+2026-02-20 20:14:22 | INFO | [trace=66-1771604062] llm_route=None
+2026-02-20 20:14:22 | INFO | [trace=66-1771604062] intent=None conf=0.00
+2026-02-20 20:14:22 | INFO | [trace=66-1771604062] best_score=18 top=2
+2026-02-20 20:14:39 | INFO | [trace=66-1771604079] Q='فاتورتي نار'
+2026-02-20 20:14:39 | INFO | [trace=66-1771604079] llm_route=None
+2026-02-20 20:14:39 | INFO | [trace=66-1771604079] intent=None conf=0.00
+2026-02-20 20:14:39 | INFO | [trace=66-1771604079] best_score=11 top=1
+2026-02-20 20:14:46 | INFO | [trace=67-1771604086] Q='الفاتورة'
+2026-02-20 20:14:46 | INFO | [trace=67-1771604086] intent=None conf=0.00
+2026-02-20 20:14:47 | INFO | [trace=67-1771604086] best_score=16 top=1
+2026-02-20 20:14:47 | INFO | [trace=67-1771604086] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 20:14:47 | INFO | [trace=67-1771604086] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::33'}]
+2026-02-20 20:14:54 | INFO | [trace=67-1771604094] Q='فاتورتي نار'
+2026-02-20 20:14:54 | INFO | [trace=67-1771604094] intent=None conf=0.00
+2026-02-20 20:14:54 | INFO | [trace=67-1771604094] mode=dialogue_complaint_bill (dialogue)
+2026-02-20 20:15:01 | INFO | [trace=67-1771604101] Q='جيران بسرقو'
+2026-02-20 20:15:01 | INFO | [trace=67-1771604101] intent=None conf=0.00
+2026-02-20 20:15:01 | INFO | [trace=67-1771604101] mode=dialogue_complaint_theft (dialogue)
+2026-02-20 20:52:05 | INFO | [trace=68-1771606325] Q='رقم الهاتف'
+2026-02-20 23:09:32 | INFO | [trace=69-1771614572] Q='ساعات العمل'
+2026-02-20 23:09:32 | INFO | [trace=69-1771614572] intent=None conf=0.00
+2026-02-20 23:09:32 | INFO | [trace=69-1771614572] best_score=37 top=1
+2026-02-20 23:09:32 | INFO | [trace=69-1771614572] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-20 23:09:32 | INFO | [trace=69-1771614572] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-20 23:09:37 | INFO | [trace=69-1771614577] Q='بدي اشتكي'
+2026-02-20 23:09:37 | INFO | [trace=69-1771614577] intent=None conf=0.00
+2026-02-20 23:09:37 | INFO | [trace=69-1771614577] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-21 10:28:51 | INFO | [trace=70-1771655331] Q='ساعات العمل'
+2026-02-21 10:28:51 | INFO | [trace=70-1771655331] intent=None conf=0.00
+2026-02-21 10:28:51 | INFO | [trace=70-1771655331] best_score=37 top=1
+2026-02-21 10:28:51 | INFO | [trace=70-1771655331] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:28:51 | INFO | [trace=70-1771655331] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-21 10:31:26 | INFO | [trace=70-1771655486] Q='متى بدها تقطع الكهربا اليوم في عين سارة'
+2026-02-21 10:31:26 | INFO | [trace=70-1771655486] intent=None conf=0.00
+2026-02-21 10:31:27 | INFO | [trace=70-1771655486] best_score=24 top=4
+2026-02-21 10:31:27 | INFO | [trace=70-1771655486] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:31:27 | INFO | [trace=70-1771655486] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::12'}]
+2026-02-21 10:38:24 | INFO | [trace=71-1771655904] Q='ساعات العمل'
+2026-02-21 10:38:24 | INFO | [trace=71-1771655904] intent=None conf=0.00
+2026-02-21 10:38:24 | INFO | [trace=71-1771655904] best_score=37 top=1
+2026-02-21 10:38:24 | INFO | [trace=71-1771655904] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:38:24 | INFO | [trace=71-1771655904] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-21 10:38:34 | INFO | [trace=71-1771655914] Q='فاتورتي نار'
+2026-02-21 10:38:34 | INFO | [trace=71-1771655914] intent=None conf=0.00
+2026-02-21 10:38:34 | INFO | [trace=71-1771655914] mode=dialogue_complaint_bill (dialogue)
+2026-02-21 10:38:39 | INFO | [trace=71-1771655919] Q='جيران بسرقو كهربا'
+2026-02-21 10:38:39 | INFO | [trace=71-1771655919] intent=None conf=0.00
+2026-02-21 10:38:39 | INFO | [trace=71-1771655919] mode=dialogue_complaint_theft (dialogue)
+2026-02-21 10:38:44 | INFO | [trace=71-1771655924] Q='العداد بفصل'
+2026-02-21 10:38:44 | INFO | [trace=71-1771655924] intent=None conf=0.00
+2026-02-21 10:38:44 | INFO | [trace=71-1771655924] best_score=29 top=5
+2026-02-21 10:38:44 | INFO | [trace=71-1771655924] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:38:44 | INFO | [trace=71-1771655924] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-21 10:38:49 | INFO | [trace=71-1771655929] Q='شحنت العداد وما حول'
+2026-02-21 10:38:57 | INFO | [trace=71-1771655937] Q='تعرفة الاشتراك'
+2026-02-21 10:38:57 | INFO | [trace=71-1771655937] intent=None conf=0.00
+2026-02-21 10:38:57 | INFO | [trace=71-1771655937] best_score=44 top=5
+2026-02-21 10:38:57 | INFO | [trace=71-1771655937] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:38:57 | INFO | [trace=71-1771655937] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::51'}]
+2026-02-21 10:39:08 | INFO | [trace=71-1771655948] Q='كيف احسب قيمة الشحن'
+2026-02-21 10:39:37 | INFO | [trace=71-1771655977] Q='التتيار ضعيف'
+2026-02-21 10:39:37 | INFO | [trace=71-1771655977] intent=None conf=0.00
+2026-02-21 10:39:37 | INFO | [trace=71-1771655977] best_score=9 top=1
+2026-02-21 10:39:37 | INFO | [trace=71-1771655977] mode=no_answer (no_rag_match)
+2026-02-21 10:39:49 | INFO | [trace=71-1771655989] Q='ليش لازم اقرأ وصل الشحن'
+2026-02-21 10:39:58 | INFO | [trace=71-1771655998] Q='ليش لازم اقرأ وصل الدفع'
+2026-02-21 10:39:58 | INFO | [trace=71-1771655998] intent=None conf=0.00
+2026-02-21 10:39:58 | INFO | [trace=71-1771655998] mode=dialogue_complaint_ask_type (dialogue)
+2026-02-21 10:40:11 | INFO | [trace=72-1771656011] Q='ساعات العمل'
+2026-02-21 10:40:11 | INFO | [trace=72-1771656011] intent=None conf=0.00
+2026-02-21 10:40:11 | INFO | [trace=72-1771656011] best_score=37 top=1
+2026-02-21 10:40:11 | INFO | [trace=72-1771656011] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:40:11 | INFO | [trace=72-1771656011] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::1'}]
+2026-02-21 10:41:09 | INFO | [trace=72-1771656069] Q='العداد بفصل'
+2026-02-21 10:41:09 | INFO | [trace=72-1771656069] intent=None conf=0.00
+2026-02-21 10:41:09 | INFO | [trace=72-1771656069] best_score=29 top=5
+2026-02-21 10:41:09 | INFO | [trace=72-1771656069] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:41:09 | INFO | [trace=72-1771656069] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]
+2026-02-21 10:41:23 | INFO | [trace=72-1771656083] Q='بدي احول من التعرفة مؤقتة للدائمة'
+2026-02-21 10:41:23 | INFO | [trace=72-1771656083] intent=None conf=0.00
+2026-02-21 10:41:23 | INFO | [trace=72-1771656083] best_score=34 top=5
+2026-02-21 10:41:23 | INFO | [trace=72-1771656083] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:41:23 | INFO | [trace=72-1771656083] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::12'}]
+2026-02-21 10:42:07 | INFO | [trace=72-1771656127] Q='بدي احول من تجاري لمنزلي'
+2026-02-21 10:42:07 | INFO | [trace=72-1771656127] intent=None conf=0.00
+2026-02-21 10:42:07 | INFO | [trace=72-1771656127] best_score=46 top=5
+2026-02-21 10:42:07 | INFO | [trace=72-1771656127] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:42:07 | INFO | [trace=72-1771656127] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::51'}]
+2026-02-21 10:42:22 | INFO | [trace=72-1771656142] Q='علي دين كبير للكهربا'
+2026-02-21 10:42:22 | INFO | [trace=72-1771656142] intent=None conf=0.00
+2026-02-21 10:42:22 | INFO | [trace=72-1771656142] best_score=39 top=5
+2026-02-21 10:42:22 | INFO | [trace=72-1771656142] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:42:22 | INFO | [trace=72-1771656142] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::52'}]
+2026-02-21 10:42:38 | INFO | [trace=72-1771656158] Q='بطاقتي ضاعت'
+2026-02-21 10:42:38 | INFO | [trace=72-1771656158] intent=None conf=0.00
+2026-02-21 10:42:38 | INFO | [trace=72-1771656158] best_score=54 top=5
+2026-02-21 10:42:38 | INFO | [trace=72-1771656158] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:42:38 | INFO | [trace=72-1771656158] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::76'}]
+2026-02-21 10:42:51 | INFO | [trace=72-1771656171] Q='طلب كشف اللوازم'
+2026-02-21 10:42:51 | INFO | [trace=72-1771656171] intent=None conf=0.00
+2026-02-21 10:42:51 | INFO | [trace=72-1771656171] best_score=44 top=5
+2026-02-21 10:42:51 | INFO | [trace=72-1771656171] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:42:51 | INFO | [trace=72-1771656171] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::55'}]
+2026-02-21 10:43:14 | INFO | [trace=72-1771656194] Q='من وين اطلع الفاتورة'
+2026-02-21 10:43:14 | INFO | [trace=72-1771656194] intent=None conf=0.00
+2026-02-21 10:43:14 | INFO | [trace=72-1771656194] best_score=23 top=2
+2026-02-21 10:43:14 | INFO | [trace=72-1771656194] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:43:14 | INFO | [trace=72-1771656194] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::33'}]
+2026-02-21 10:43:29 | INFO | [trace=72-1771656209] Q='بدي احول من 1 فاز ل 3'
+2026-02-21 10:43:29 | INFO | [trace=72-1771656209] intent=None conf=0.00
+2026-02-21 10:43:29 | INFO | [trace=72-1771656209] best_score=46 top=5
+2026-02-21 10:43:29 | INFO | [trace=72-1771656209] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:43:29 | INFO | [trace=72-1771656209] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-21 10:43:47 | INFO | [trace=72-1771656227] Q='وين مراكز الشحن'
+2026-02-21 10:43:58 | INFO | [trace=72-1771656238] Q='نسيت كلمة السر'
+2026-02-21 10:43:58 | INFO | [trace=72-1771656238] intent=None conf=0.00
+2026-02-21 10:43:58 | INFO | [trace=72-1771656238] best_score=51 top=2
+2026-02-21 10:43:58 | INFO | [trace=72-1771656238] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:43:58 | INFO | [trace=72-1771656238] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::95'}]
+2026-02-21 10:44:31 | INFO | [trace=72-1771656271] Q='بددي افصل الاشترلك المؤقت'
+2026-02-21 10:44:31 | INFO | [trace=72-1771656271] intent=None conf=0.00
+2026-02-21 10:44:31 | INFO | [trace=72-1771656271] best_score=28 top=1
+2026-02-21 10:44:31 | INFO | [trace=72-1771656271] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:44:31 | INFO | [trace=72-1771656271] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::42'}]
+2026-02-21 10:46:10 | INFO | [trace=72-1771656370] Q='شحنت الكرت وما حول'
+2026-02-21 10:46:25 | INFO | [trace=72-1771656385] Q='رقم الخدمة'
+2026-02-21 10:46:25 | INFO | [trace=72-1771656385] intent=None conf=0.00
+2026-02-21 10:46:25 | INFO | [trace=72-1771656385] best_score=48 top=5
+2026-02-21 10:46:25 | INFO | [trace=72-1771656385] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 10:46:25 | INFO | [trace=72-1771656385] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-21 11:07:51 | INFO | [trace=72-1771657671] Q='كيف ارفع القدرة ل 3 فاز'
+2026-02-21 11:07:51 | INFO | [trace=72-1771657671] intent=None conf=0.00
+2026-02-21 11:07:51 | INFO | [trace=72-1771657671] best_score=25 top=5
+2026-02-21 11:07:51 | INFO | [trace=72-1771657671] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:07:51 | INFO | [trace=72-1771657671] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::38'}]
+2026-02-21 11:08:28 | INFO | [trace=72-1771657708] Q='شحنت وما حول'
+2026-02-21 11:10:04 | INFO | [trace=72-1771657804] Q='رقم'
+2026-02-21 11:10:04 | INFO | [trace=72-1771657804] intent=None conf=0.00
+2026-02-21 11:10:04 | INFO | [trace=72-1771657804] best_score=46 top=5
+2026-02-21 11:10:04 | INFO | [trace=72-1771657804] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:10:04 | INFO | [trace=72-1771657804] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-21 11:10:13 | INFO | [trace=72-1771657813] Q='رقم الطوارئ'
+2026-02-21 11:10:29 | INFO | [trace=72-1771657829] Q='رقم الدعم'
+2026-02-21 11:10:29 | INFO | [trace=72-1771657829] intent=None conf=0.00
+2026-02-21 11:10:29 | INFO | [trace=72-1771657829] best_score=49 top=5
+2026-02-21 11:10:29 | INFO | [trace=72-1771657829] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:10:29 | INFO | [trace=72-1771657829] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-21 11:13:23 | INFO | [trace=72-1771658003] Q='خدمة'
+2026-02-21 11:13:23 | INFO | [trace=72-1771658003] intent=None conf=0.00
+2026-02-21 11:13:23 | INFO | [trace=72-1771658003] best_score=21 top=5
+2026-02-21 11:13:23 | INFO | [trace=72-1771658003] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:13:23 | INFO | [trace=72-1771658003] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::70'}]
+2026-02-21 11:13:35 | INFO | [trace=72-1771658015] Q='خدمة جديدة'
+2026-02-21 11:13:35 | INFO | [trace=72-1771658015] intent=None conf=0.00
+2026-02-21 11:13:35 | INFO | [trace=72-1771658015] best_score=22 top=5
+2026-02-21 11:13:35 | INFO | [trace=72-1771658015] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:13:35 | INFO | [trace=72-1771658015] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::70'}]
+2026-02-21 11:13:44 | INFO | [trace=72-1771658024] Q='اشتراك'
+2026-02-21 11:13:44 | INFO | [trace=72-1771658024] intent=None conf=0.00
+2026-02-21 11:13:44 | INFO | [trace=72-1771658024] best_score=23 top=5
+2026-02-21 11:13:44 | INFO | [trace=72-1771658024] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:13:44 | INFO | [trace=72-1771658024] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::39'}]
+2026-02-21 11:13:50 | INFO | [trace=72-1771658030] Q='اشتراك جديد'
+2026-02-21 11:13:50 | INFO | [trace=72-1771658030] intent=None conf=0.00
+2026-02-21 11:13:50 | INFO | [trace=72-1771658030] best_score=30 top=5
+2026-02-21 11:13:50 | INFO | [trace=72-1771658030] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:13:50 | INFO | [trace=72-1771658030] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::37'}]
+2026-02-21 11:16:02 | INFO | [trace=72-1771658162] Q='رقم'
+2026-02-21 11:16:02 | INFO | [trace=72-1771658162] intent=None conf=0.00
+2026-02-21 11:16:02 | INFO | [trace=72-1771658162] best_score=46 top=5
+2026-02-21 11:16:02 | INFO | [trace=72-1771658162] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:16:02 | INFO | [trace=72-1771658162] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-21 11:16:12 | INFO | [trace=72-1771658172] Q='رقم الطوارئ'
+2026-02-21 11:16:18 | INFO | [trace=72-1771658178] Q='رقم الدعم'
+2026-02-21 11:16:18 | INFO | [trace=72-1771658178] intent=None conf=0.00
+2026-02-21 11:16:18 | INFO | [trace=72-1771658178] best_score=49 top=5
+2026-02-21 11:16:18 | INFO | [trace=72-1771658178] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-21 11:16:18 | INFO | [trace=72-1771658178] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-21 11:16:26 | INFO | [trace=72-1771658186] Q='الدعم'
+2026-02-21 11:16:26 | INFO | [trace=72-1771658186] intent=None conf=0.00
+2026-02-21 11:16:26 | INFO | [trace=72-1771658186] best_score=7 top=2
+2026-02-21 11:16:26 | INFO | [trace=72-1771658186] mode=clarify (no_rag_match)
+2026-02-21 11:16:36 | INFO | [trace=72-1771658196] Q='بدي رقم طوارئ'
+2026-02-22 11:32:29 | INFO | [trace=73-1771745549] Q_raw='رقم طوارئ' | Q_norm='رقم طواري'
+2026-02-22 11:33:48 | INFO | [trace=73-1771745628] Q_raw='ما رقم الطوارئ' | Q_norm='ما رقم الطواري'
+2026-02-22 13:05:15 | INFO | [trace=73-1771751115] Q_raw='رقم الخدمة' | Q_norm='رقم الخدمه'
+2026-02-22 13:05:15 | INFO | [trace=73-1771751115] intent=None conf=0.00
+2026-02-22 13:05:19 | INFO | [trace=73-1771751115] best_score=48 top=5
+2026-02-22 13:05:19 | INFO | [trace=73-1771751115] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-22 13:05:19 | INFO | [trace=73-1771751115] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::3'}]
+2026-02-22 13:05:33 | INFO | [trace=73-1771751133] Q_raw='العداد بفصل' | Q_norm='العداد بفصل'
+2026-02-22 13:05:33 | INFO | [trace=73-1771751133] intent=None conf=0.00
+2026-02-22 13:05:37 | INFO | [trace=73-1771751133] best_score=29 top=5
+2026-02-22 13:05:37 | INFO | [trace=73-1771751133] ollama_error=HTTPError: 404 Client Error: Not Found for url: http://127.0.0.1:8010/api/generate
+2026-02-22 13:05:37 | INFO | [trace=73-1771751133] mode=excel_fallback_ollama_error src=[{'file': 'knowledge_base.xlsx', 'chunk_id': 'excel::row::19'}]

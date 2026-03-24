@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────
+# Hebron Electricity — Backend
+# ─────────────────────────────────────────────
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# مكتبات النظام المطلوبة لـ pypdf + lxml + sentence-transformers
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libxml2-dev \
+    libxslt-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# تثبيت المكتبات أولاً (cache layer)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# نسخ الكود
+COPY . .
+
+# مجلد النسخ الاحتياطية
+RUN mkdir -p /app/backups /app/logs
+
+# expose المنفذ
+EXPOSE 8010
+
+# تشغيل الـ server
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8010"]
+

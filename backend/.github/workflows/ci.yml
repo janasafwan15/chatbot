@@ -1,0 +1,131 @@
+name: CI/CD — HEPCO Backend
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ══════════════════════════════════════════════════════════════
+  # Job 1: اختبارات الـ Backend
+  # ══════════════════════════════════════════════════════════════
+  test-backend:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER:     hepco
+          POSTGRES_PASSWORD: hepco_secret
+          POSTGRES_DB:       hepco_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U hepco"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL:      postgresql://hepco:hepco_secret@localhost:5432/hepco_test
+      TEST_DATABASE_URL: postgresql://hepco:hepco_secret@localhost:5432/hepco_test
+      SECRET_KEY:        test-secret-key-ci-only
+      OLLAMA_BASE:       http://localhost:11434
+      EMBED_BASE:        http://localhost:11434
+      LOGS_DIR:          /tmp/hepco_logs
+      LOG_LEVEL:         WARNING
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        working-directory: backend
+        run: pip install -r requirements.txt pytest httpx --quiet
+
+      - name: Run tests
+        working-directory: backend
+        run: pytest tests/ -v --tb=short -x
+
+      - name: Upload test results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: backend/logs/
+
+  # ══════════════════════════════════════════════════════════════
+  # Job 2: بناء الـ Frontend
+  # ══════════════════════════════════════════════════════════════
+  build-frontend:
+    name: Frontend Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Build
+        working-directory: frontend
+        env:
+          VITE_API_BASE: http://localhost:8000
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist/
+          retention-days: 7
+
+  # ══════════════════════════════════════════════════════════════
+  # Job 3: نشر على الـ server (main branch فقط)
+  # ══════════════════════════════════════════════════════════════
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [test-backend, build-frontend]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host:     ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key:      ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /opt/hepco
+            git pull origin main
+            docker compose pull
+            docker compose up -d --build backend frontend
+            docker compose exec -T backend python -m app.db
+            echo "✅ Deploy done: $(date)"
+
+      - name: Health check
+        run: |
+          sleep 15
+          curl -f http://${{ secrets.DEPLOY_HOST }}/api/health || exit 1

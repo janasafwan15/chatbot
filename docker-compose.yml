@@ -1,0 +1,100 @@
+   
+services:
+
+  # ── PostgreSQL ────────────────────────────────────────────────
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: hepco_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     ${POSTGRES_USER:-hepco}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hepco_secret}
+      POSTGRES_DB:       ${POSTGRES_DB:-hepco_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-hepco}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Qdrant (Vector DB) ────────────────────────────────────────
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: hepco_qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  # ── Backend (FastAPI) ─────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: backend_Dockerfile
+    container_name: hepco_backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-hepco}:${POSTGRES_PASSWORD:-hepco_secret}@postgres:5432/${POSTGRES_DB:-hepco_db}
+      QDRANT_URL:   http://qdrant:6333
+      OLLAMA_BASE:  ${OLLAMA_BASE:-http://host.docker.internal:11434}
+      EMBED_BASE:   ${EMBED_BASE:-http://host.docker.internal:11434}
+    ports:
+      - "8000:8010"
+    volumes:
+      - ./backend/logs:/app/logs
+      - ./backend/data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8010/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Frontend (React + Nginx) ──────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: frontend_Dockerfile
+    container_name: hepco_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./frontend/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+      - certbot_www:/var/www/certbot:ro
+
+  # ── Certbot (SSL) — يجدد الشهادات تلقائياً ───────────────────
+  certbot:
+    image: certbot/certbot:latest
+    container_name: hepco_certbot
+    restart: unless-stopped
+    volumes:
+      - ./certs:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
+    entrypoint: >
+      /bin/sh -c "
+        trap exit TERM;
+        while :; do
+          certbot renew --webroot -w /var/www/certbot --quiet;
+          sleep 12h & wait $${!};
+        done
+      "
+
+volumes:
+  postgres_data:
+  qdrant_data:
+  certbot_www:
