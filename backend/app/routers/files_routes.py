@@ -130,6 +130,10 @@ def upload_file(body: FileUploadIn, request: Request):
     if body.file_type not in allowed_types:
         raise HTTPException(status_code=400, detail=f"نوع الملف غير مدعوم: {body.file_type}")
 
+    # Strip NUL bytes (0x00) — PostgreSQL text columns reject them.
+    # Binary files sent as raw text may contain NUL characters.
+    safe_content = body.content.replace("\x00", "")
+
     con = connect()
     cur = con.cursor()
     cur.execute(
@@ -138,7 +142,7 @@ def upload_file(body: FileUploadIn, request: Request):
            VALUES (%s, %s, %s, %s, %s, NOW(), 'pending')
            RETURNING file_id, name, file_type, size_bytes, uploaded_by,
                      uploaded_at, status, rejection_reason, reviewed_by, reviewed_at, kb_id, content""",
-        (body.name.strip(), body.content, body.file_type, body.size_bytes, int(me["user_id"])),
+        (body.name.strip(), safe_content, body.file_type, body.size_bytes, int(me["user_id"])),
     )
     row = dict(cur.fetchone())
     row["uploaded_by_name"] = me.get("full_name")

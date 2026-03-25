@@ -29,9 +29,9 @@ export interface FileStats {
 
 // ── Upload ──────────────────────────────────────────────────
 
-/** يقرأ ملف كنص ويرفعه للسيرفر */
+/** يقرأ ملف كـ base64 ويرفعه للسيرفر */
 export async function uploadFile(file: File): Promise<FileDetailOut> {
-  const content = await readFileAsText(file);
+  const content = await readFileAsBase64(file);
 
   return apiFetch<FileDetailOut>("/files", {
     method: "POST",
@@ -44,12 +44,16 @@ export async function uploadFile(file: File): Promise<FileDetailOut> {
   });
 }
 
-function readFileAsText(file: File): Promise<string> {
+/** يقرأ الملف كـ base64 (data URL) — آمن مع الملفات الثنائية */
+function readFileAsBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload  = () => resolve(reader.result as string);
+    reader.onload  = () => {
+      // reader.result is "data:<mime>;base64,<data>" — we keep the full data URL
+      resolve(reader.result as string);
+    };
     reader.onerror = () => reject(new Error("فشل قراءة الملف"));
-    reader.readAsText(file, "utf-8");
+    reader.readAsDataURL(file);
   });
 }
 
