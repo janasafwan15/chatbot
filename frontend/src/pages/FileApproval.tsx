@@ -1,7 +1,7 @@
 // src/pages/FileApproval.tsx
 import { useState, useEffect, useCallback } from "react";
 import { FileText, CheckCircle, XCircle, Clock, Eye, RefreshCw } from "lucide-react";
-import { listFiles, getFile, approveFile, rejectFile, type FileOut, type FileDetailOut } from "../api/files";
+import { listFiles, getFilePreviewText, approveFile, rejectFile, type FileOut, type FilePreviewText } from "../api/files";
 
 export function FileApproval() {
   const [files, setFiles]                 = useState<FileOut[]>([]);
@@ -11,7 +11,8 @@ export function FileApproval() {
   const [toast, setToast]                 = useState<{ msg: string; ok: boolean } | null>(null);
 
   // نافذة المعاينة
-  const [preview, setPreview]             = useState<FileDetailOut | null>(null);
+  const [preview, setPreview]             = useState<FilePreviewText | null>(null);
+  const [previewFile, setPreviewFile]     = useState<FileOut | null>(null);
   const [previewOpen, setPreviewOpen]     = useState(false);
   const [previewLoading, setPreviewLoading] = useState(false);
 
@@ -55,8 +56,8 @@ export function FileApproval() {
   };
 
   const handlePreview = async (file: FileOut) => {
-    setPreviewOpen(true); setPreviewLoading(true);
-    try { setPreview(await getFile(file.file_id)); }
+    setPreviewOpen(true); setPreviewLoading(true); setPreviewFile(file);
+    try { setPreview(await getFilePreviewText(file.file_id)); }
     catch { showToast("فشل تحميل المحتوى", false); setPreviewOpen(false); }
     finally { setPreviewLoading(false); }
   };
@@ -167,26 +168,56 @@ export function FileApproval() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setPreviewOpen(false)}>
           <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[80vh] flex flex-col" dir="rtl" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between p-4 border-b">
-              <h3 className="font-bold text-gray-800">{preview?.name ?? "معاينة الملف"}</h3>
+              <h3 className="font-bold text-gray-800">{preview?.name ?? previewFile?.name ?? "معاينة الملف"}</h3>
               <button onClick={() => setPreviewOpen(false)} className="p-1 rounded hover:bg-gray-100 text-gray-500">✕</button>
             </div>
             <div className="flex-1 overflow-y-auto p-4">
               {previewLoading ? (
                 <div className="text-center py-8"><RefreshCw className="w-6 h-6 mx-auto animate-spin text-gray-400"/></div>
               ) : (
-                <pre className="whitespace-pre-wrap text-sm font-mono text-right bg-gray-50 rounded-lg p-4">
-                  {preview?.content?.substring(0, 2000)}
-                  {(preview?.content?.length ?? 0) > 2000 && "\n\n... (تم اقتطاع المحتوى)"}
-                </pre>
+                <>
+                  {/* معلومات الملف */}
+                  <div className="mb-3 flex flex-wrap gap-3 text-xs text-gray-500">
+                    <span>📄 {preview?.file_type ?? previewFile?.file_type}</span>
+                    <span>📦 {((previewFile?.size_bytes ?? 0) / 1024).toFixed(1)} كيلوبايت</span>
+                    <span>👤 {previewFile?.uploaded_by_name ?? "موظف"}</span>
+                    {preview && <span>🔤 {preview.char_count.toLocaleString()} حرف</span>}
+                  </div>
+
+                  {/* محتوى الملف */}
+                  {preview?.text_preview ? (
+                    <>
+                      <pre className="whitespace-pre-wrap text-sm text-right bg-gray-50 rounded-lg p-4 leading-relaxed max-h-96 overflow-y-auto" dir="rtl">
+                        {preview.text_preview}
+                      </pre>
+                      {preview.truncated && (
+                        <p className="text-xs text-gray-400 mt-2 text-center">
+                          ... تم عرض أول 5000 حرف فقط من أصل {preview.char_count.toLocaleString()} حرف
+                        </p>
+                      )}
+                    </>
+                  ) : (
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
+                      ⚠️ تعذّر استخراج النص من هذا الملف. يمكنك الموافقة وسيحاول النظام استخراجه تلقائياً.
+                    </div>
+                  )}
+
+                  {/* تنبيه الـ RAG */}
+                  {previewFile?.status === "pending" && (
+                    <div className="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-700">
+                      ✨ عند الموافقة، سيُضاف هذا الملف تلقائيًا لقاعدة المعرفة وتُحسب له Embeddings حتى يجيب عنه النظام.
+                    </div>
+                  )}
+                </>
               )}
             </div>
-            {preview?.status === "pending" && (
+            {previewFile?.status === "pending" && (
               <div className="flex gap-3 justify-end p-4 border-t">
-                <button disabled={actionLoading} onClick={() => handleApprove(preview.file_id)}
+                <button disabled={actionLoading} onClick={() => handleApprove(previewFile.file_id)}
                   className="flex items-center gap-1 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white text-sm disabled:opacity-50">
                   <CheckCircle className="w-4 h-4"/> موافقة
                 </button>
-                <button disabled={actionLoading} onClick={() => { setRejectTarget(preview); setPreviewOpen(false); setRejectOpen(true); }}
+                <button disabled={actionLoading} onClick={() => { setRejectTarget(previewFile); setPreviewOpen(false); setRejectOpen(true); }}
                   className="flex items-center gap-1 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm disabled:opacity-50">
                   <XCircle className="w-4 h-4"/> رفض
                 </button>

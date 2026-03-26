@@ -5,7 +5,6 @@ import { ragService } from "../services/ragService";
 import { OllamaSettings } from "./OllamaSettings";
 import { RatingModal } from "../app/components/RatingModal";
 import { submitConversationRating } from "../api/conversationRating";
-import { submitUnanswered } from "../api/unanswered";
 
 // ─── Types ────────────────────────────────────────────────
 interface Message {
@@ -186,16 +185,6 @@ export function CitizenChatbot() {
       const data = await ragService.ask(userText, conversationId);
 
       if (data?.conversation_id) setConversationId(data.conversation_id);
-
-      // ── كشف الأسئلة غير المجابة ────────────────────────────
-      // لو الـ AI بدأ الإجابة بـ UNCERTAIN: يعني ما عنده إجابة واثقة
-      if (typeof data.answer === "string" && data.answer.trimStart().startsWith("UNCERTAIN:")) {
-        try {
-          await submitUnanswered(userText, data.conversation_id ?? conversationId ?? undefined);
-        } catch {
-          // نتجاهل الخطأ — ما نريد يأثر على تجربة المواطن
-        }
-      }
 
       setMessages((prev) => [
         ...prev,

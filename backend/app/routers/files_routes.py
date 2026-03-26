@@ -76,9 +76,78 @@ def _row_to_out(row: dict, include_content: bool = False) -> dict:
     return data
 
 
-def _add_to_kb(file_id: int, name: str, content: str, user_id: int) -> int:
+def _extract_text_from_bytes(raw_bytes: bytes, file_type: str, name: str) -> str:
+    """يستخرج النص من bytes حسب نوع الملف."""
+    # PDF
+    if file_type == "application/pdf" or name.lower().endswith(".pdf"):
+        try:
+            import io
+            import pypdf
+            reader = pypdf.PdfReader(io.BytesIO(raw_bytes))
+            pages_text = []
+            for page in reader.pages:
+                t = page.extract_text() or ""
+                if t.strip():
+                    pages_text.append(t.strip())
+            text = "\n\n".join(pages_text)
+            if text.strip():
+                logger.info(f"[files] extracted {len(text)} chars from PDF via pypdf")
+                return text
+        except ImportError:
+            logger.warning("[files] pypdf not installed, falling back to raw decode")
+        except Exception as e:
+            logger.warning(f"[files] pypdf failed: {e}")
+
+    # DOCX
+    if (file_type in ("application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                       "application/msword")
+            or name.lower().endswith((".docx", ".doc"))):
+        try:
+            import io
+            import mammoth
+            result = mammoth.extract_raw_text(io.BytesIO(raw_bytes))
+            text = result.value
+            if text.strip():
+                logger.info(f"[files] extracted {len(text)} chars from DOCX via mammoth")
+                return text
+        except ImportError:
+            logger.warning("[files] mammoth not installed, falling back to raw decode")
+        except Exception as e:
+            logger.warning(f"[files] mammoth failed: {e}")
+
+    # Fallback: UTF-8
+    try:
+        return raw_bytes.decode("utf-8", errors="replace")
+    except Exception:
+        return raw_bytes.decode("latin-1", errors="replace")
+
+
+def _add_to_kb(file_id: int, name: str, content: str, user_id: int, file_type: str = "text/plain") -> int:
     """يضيف محتوى الملف لـ knowledge_base ويعيد kb_id."""
     from ..main import sync_kb_to_rag  # import هنا لتجنب circular
+
+    # ── تنظيف المحتوى ──────────────────────────────────────
+    # إذا كان المحتوى data URL قديم (base64) نستخرج النص منه
+    clean_content = content
+    if content.startswith("data:"):
+        try:
+            import base64
+            # data:<mime>;base64,<data>
+            header, encoded = content.split(",", 1)
+            raw_bytes = base64.b64decode(encoded + "==")  # padding safe
+            clean_content = _extract_text_from_bytes(raw_bytes, file_type, name)
+            logger.info(f"[files] converted base64 content for file_id={file_id} ({len(clean_content)} chars)")
+        except Exception as e:
+            logger.warning(f"[files] failed to decode base64 for file_id={file_id}: {e}")
+            clean_content = content  # keep as-is
+
+    # إزالة null bytes
+    clean_content = clean_content.replace("\x00", "").strip()
+
+    if not clean_content:
+        logger.warning(f"[files] empty content after cleaning for file_id={file_id}")
+        clean_content = f"ملف: {name}"
+
     con = connect()
     cur = con.cursor()
     title = f"[ملف] {name}"
@@ -88,24 +157,25 @@ def _add_to_kb(file_id: int, name: str, content: str, user_id: int) -> int:
               category, is_active, created_by_user_id, updated_at)
            VALUES (NULL, 'ar', %s, %s, NULL, 'ملفات_مرفوعة', 1, %s, NOW())
            RETURNING kb_id""",
-        (title, content, user_id),
+        (title, clean_content, user_id),
     )
     kb_id = cur.fetchone()["kb_id"]
     con.commit()
     con.close()
 
-    # تزامن مع RAG بشكل async-safe
+    # تزامن مع RAG + Embeddings
     try:
         sync_kb_to_rag(
             kb_id=kb_id,
             title=title,
-            content=content,
+            content=clean_content,
             category="ملفات_مرفوعة",
             intent_code=None,
             is_active=True,
         )
+        logger.info(f"[files] ✅ RAG + Embedding done for file_id={file_id} → kb_id={kb_id} ({len(clean_content)} chars)")
     except Exception as e:
-        logger.warning(f"[files] RAG sync failed for kb_{kb_id}: {e}")
+        logger.warning(f"[files] ⚠️ RAG sync failed for kb_{kb_id}: {e}")
 
     return kb_id
 
@@ -195,6 +265,59 @@ def list_files(request: Request, status: Optional[str] = None):
     return [FileOut(**_row_to_out(dict(r))) for r in rows]
 
 
+@router.get("/{file_id}/preview-text")
+def preview_file_text(file_id: int, request: Request):
+    """يرجع النص المقروء من الملف للمعاينة — يستخرجه من base64 لو لزم"""
+    me = require_auth(request)
+    require_roles(me, ["employee", "supervisor", "admin"])
+
+    con = connect()
+    cur = con.cursor()
+    cur.execute(
+        "SELECT file_id, name, file_type, content, uploaded_by FROM uploaded_file WHERE file_id = %s LIMIT 1",
+        (file_id,),
+    )
+    row = cur.fetchone()
+    con.close()
+
+    if not row:
+        raise HTTPException(status_code=404, detail="الملف غير موجود")
+
+    row = dict(row)
+    if me["role"] == "employee" and row.get("uploaded_by") != int(me["user_id"]):
+        raise HTTPException(status_code=403, detail="غير مسموح")
+
+    content = row["content"] or ""
+    file_type = row["file_type"] or "text/plain"
+    name = row["name"] or ""
+
+    # استخرج النص من base64
+    if content.startswith("data:"):
+        try:
+            import base64 as b64mod
+            _, encoded = content.split(",", 1)
+            raw_bytes = b64mod.b64decode(encoded + "==")
+            text = _extract_text_from_bytes(raw_bytes, file_type, name)
+        except Exception as e:
+            logger.warning(f"[preview] failed to extract text for file_id={file_id}: {e}")
+            text = ""
+    else:
+        text = content
+
+    text = text.replace("\x00", "").strip()
+    preview = text[:5000]  # أول 5000 حرف للمعاينة
+    truncated = len(text) > 5000
+
+    return {
+        "file_id": file_id,
+        "name": name,
+        "file_type": file_type,
+        "text_preview": preview,
+        "truncated": truncated,
+        "char_count": len(text),
+    }
+
+
 @router.get("/{file_id}", response_model=FileDetailOut)
 def get_file(file_id: int, request: Request):
     """موظف يشوف ملفه، إدارة تشوف أي ملف"""
@@ -249,6 +372,7 @@ def approve_file(file_id: int, request: Request):
         name=row["name"],
         content=row["content"],
         user_id=int(me["user_id"]),
+        file_type=row.get("file_type", "text/plain"),
     )
 
     cur.execute(

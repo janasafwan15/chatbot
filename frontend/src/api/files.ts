@@ -29,9 +29,9 @@ export interface FileStats {
 
 // ── Upload ──────────────────────────────────────────────────
 
-/** يقرأ ملف كـ base64 ويرفعه للسيرفر */
+/** يقرأ ملف كنص ويرفعه للسيرفر */
 export async function uploadFile(file: File): Promise<FileDetailOut> {
-  const content = await readFileAsBase64(file);
+  const content = await readFileAsText(file);
 
   return apiFetch<FileDetailOut>("/files", {
     method: "POST",
@@ -44,14 +44,35 @@ export async function uploadFile(file: File): Promise<FileDetailOut> {
   });
 }
 
-/** يقرأ الملف كـ base64 (data URL) — آمن مع الملفات الثنائية */
-function readFileAsBase64(file: File): Promise<string> {
+/**
+ * يقرأ الملف ويحوّله لنص قابل للإرسال للسيرفر.
+ * - النصية (.txt): يقرأها مباشرة كـ UTF-8.
+ * - PDF / DOCX / DOC: يحوّلها لـ base64 data URL — الباكند يستخرج النص منها.
+ */
+async function readFileAsText(file: File): Promise<string> {
+  // ملفات نصية عادية فقط
+  if (file.type === "text/plain" || file.name.endsWith(".txt")) {
+    return readPlainText(file);
+  }
+
+  // PDF و DOCX و DOC — نرسلها كـ base64 والباكند يفكّها
+  return readAsBase64DataUrl(file);
+}
+
+function readPlainText(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload  = () => {
-      // reader.result is "data:<mime>;base64,<data>" — we keep the full data URL
-      resolve(reader.result as string);
-    };
+    reader.onload  = () => resolve(reader.result as string);
+    reader.onerror = () => reject(new Error("فشل قراءة الملف"));
+    reader.readAsText(file, "UTF-8");
+  });
+}
+
+/** يقرأ الملف كـ base64 data URL */
+function readAsBase64DataUrl(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload  = () => resolve(reader.result as string);
     reader.onerror = () => reject(new Error("فشل قراءة الملف"));
     reader.readAsDataURL(file);
   });
@@ -62,6 +83,21 @@ function readFileAsBase64(file: File): Promise<string> {
 export async function listFiles(status?: "pending" | "approved" | "rejected"): Promise<FileOut[]> {
   const qs = status ? `?status=${status}` : "";
   return apiFetch<FileOut[]>(`/files${qs}`);
+}
+
+// ── Preview Text ─────────────────────────────────────────────
+
+export interface FilePreviewText {
+  file_id: number;
+  name: string;
+  file_type: string;
+  text_preview: string;
+  truncated: boolean;
+  char_count: number;
+}
+
+export async function getFilePreviewText(fileId: number): Promise<FilePreviewText> {
+  return apiFetch<FilePreviewText>(`/files/${fileId}/preview-text`);
 }
 
 // ── Detail ──────────────────────────────────────────────────

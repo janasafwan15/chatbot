@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+import logging
 import os
 import time
 from collections import defaultdict
 from typing import Any, Dict, Optional
+
+logger = logging.getLogger(__name__)
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, Field, field_validator
@@ -315,6 +318,32 @@ def chat(req: ChatRequest, request: Request):
         intent_conf=getattr(res, "confidence", None),
         category=getattr(res, "category", None),
     )
+
+    # ✅ حفظ السؤال تلقائياً في unanswered_question لو ما لقى جواب
+    if not res.sources:
+        try:
+            con2 = connect()
+            cur2 = con2.cursor()
+            # تجنب التكرار خلال 10 دقائق
+            cur2.execute(
+                """SELECT question_id FROM unanswered_question
+                   WHERE question = %s AND status = 'pending'
+                     AND asked_at > NOW() - INTERVAL '10 minutes'
+                   LIMIT 1""",
+                (question_raw,),
+            )
+            if not cur2.fetchone():
+                cur2.execute(
+                    """INSERT INTO unanswered_question
+                         (question, asked_by, asked_at, status, conversation_id)
+                       VALUES (%s, 'مواطن', NOW(), 'pending', %s)""",
+                    (question_raw, cid),
+                )
+                con2.commit()
+                logger.info(f"[unanswered] auto-saved question from chat: conv={cid}")
+            con2.close()
+        except Exception as e:
+            logger.warning(f"[unanswered] failed to auto-save: {e}")
 
     # ✅ RAG Evaluation Metrics (Precision / Recall / F1) — يحفظ في rag_eval_log
     try:
