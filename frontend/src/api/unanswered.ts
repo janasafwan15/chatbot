@@ -59,6 +59,22 @@ export async function deleteQuestion(questionId: number): Promise<{ ok: boolean 
   return apiFetch(`/unanswered/${questionId}`, { method: "DELETE" });
 }
 
+// ── My Answers (مواطن) ───────────────────────────────────
+
+export interface MyAnswerOut {
+  question_id:      number;
+  question:         string;
+  asked_at:         string;
+  status:           "pending" | "answered";
+  answer?:          string | null;
+  answered_at?:     string | null;
+  answered_by_name?: string | null;
+}
+
+export async function getMyAnswers(conversationId: number): Promise<MyAnswerOut[]> {
+  return apiFetch<MyAnswerOut[]>(`/unanswered/my-answers?conversation_id=${conversationId}`);
+}
+
 // ── Stats ────────────────────────────────────────────────────
 
 export async function getUnansweredStats(): Promise<QuestionStats> {

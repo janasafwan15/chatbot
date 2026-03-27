@@ -224,6 +224,45 @@ def delete_question(question_id: int, request: Request):
     return {"ok": True}
 
 
+# ── Citizen: تحقق من إجابات أسئلتك ────────────────────────
+
+@router.get("/my-answers")
+def get_my_answers(conversation_id: int):
+    """
+    المواطن يتحقق من إجابات أسئلته بناءً على conversation_id.
+    لا يحتاج مصادقة — المواطن يرسله مباشرة.
+    يرجع فقط الأسئلة التي تم الإجابة عليها.
+    """
+    con = connect()
+    cur = con.cursor()
+    cur.execute(
+        """SELECT uq.question_id, uq.question, uq.asked_at,
+                  uq.status, uq.answer, uq.answered_at,
+                  u.full_name AS answered_by_name
+           FROM unanswered_question uq
+           LEFT JOIN app_user u ON u.user_id = uq.answered_by
+           WHERE uq.conversation_id = %s
+           ORDER BY uq.asked_at DESC""",
+        (conversation_id,),
+    )
+    rows = cur.fetchall()
+    con.close()
+
+    result = []
+    for r in rows:
+        row = dict(r)
+        result.append({
+            "question_id":      row["question_id"],
+            "question":         row["question"],
+            "asked_at":         str(row["asked_at"]),
+            "status":           row["status"],
+            "answer":           row.get("answer"),
+            "answered_at":      str(row["answered_at"]) if row.get("answered_at") else None,
+            "answered_by_name": row.get("answered_by_name"),
+        })
+    return result
+
+
 # ── Stats ─────────────────────────────────────────────────
 
 @router.get("/stats/summary")
