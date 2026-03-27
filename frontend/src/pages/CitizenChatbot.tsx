@@ -5,7 +5,7 @@ import { ragService } from "../services/ragService";
 import { OllamaSettings } from "./OllamaSettings";
 import { RatingModal } from "../app/components/RatingModal";
 import { submitConversationRating } from "../api/conversationRating";
-import { submitUnanswered } from "../api/unanswered";
+import { getMyAnswers } from "../api/unanswered";
 
 // ─── Types ────────────────────────────────────────────────
 interface Message {
@@ -13,7 +13,7 @@ interface Message {
   text: string;
   sender: "user" | "bot";
   timestamp: Date;
-  type?: "text" | "link" | "info" | "error";
+  type?: "text" | "link" | "info" | "error" | "pending_answer";
   links?: { text: string; url: string }[];
   // meta مخفية — مش للمستخدم العادي
   meta?: { intent?: string | null; category?: string | null; mode?: string | null; score?: number | null };
@@ -170,6 +170,46 @@ export function CitizenChatbot() {
     inputRef.current?.focus();
   }, []);
 
+  // ─── تحقق من إجابات الموظف على أسئلة المواطن ────────────
+  const checkMyAnswers = async (convId: number) => {
+    try {
+      const answers = await getMyAnswers(convId);
+      const answered = answers.filter((a) => a.status === "answered");
+      const pending  = answers.filter((a) => a.status === "pending");
+
+      if (answered.length === 0 && pending.length === 0) {
+        setMessages((prev) => [...prev, {
+          id: Date.now(), sender: "bot", timestamp: new Date(), type: "text",
+          text: "⏳ لم يتم الرد على أسئلتك بعد، يرجى المحاولة لاحقاً.",
+        }]);
+        return;
+      }
+
+      if (answered.length === 0) {
+        setMessages((prev) => [...prev, {
+          id: Date.now(), sender: "bot", timestamp: new Date(), type: "text",
+          text: `⏳ سؤالك لا يزال في الانتظار، سيقوم الموظفون بالرد قريباً.\n\nيمكنك الضغط على "تحقق من الجواب" مجدداً بعد قليل.`,
+        }]);
+        return;
+      }
+
+      answered.forEach((a) => {
+        setMessages((prev) => [...prev, {
+          id: Date.now() + Math.random(),
+          sender: "bot",
+          timestamp: new Date(),
+          type: "text",
+          text: `✅ تم الرد على سؤالك من قِبَل فريق الدعم:\n\n❓ ${a.question}\n\n💬 ${a.answer}`,
+        }]);
+      });
+    } catch {
+      setMessages((prev) => [...prev, {
+        id: Date.now(), sender: "bot", timestamp: new Date(), type: "error",
+        text: "⚠️ تعذّر التحقق من الإجابات، يرجى المحاولة لاحقاً.",
+      }]);
+    }
+  };
+
   // ─── FIX 4: RAG مع timeout ───────────────────────────────
   const handleSendWithRAG = async (userText: string) => {
     setIsTyping(true);
@@ -185,17 +225,10 @@ export function CitizenChatbot() {
     try {
       const data = await ragService.ask(userText, conversationId);
 
+      const activeConvId = data?.conversation_id ?? conversationId;
       if (data?.conversation_id) setConversationId(data.conversation_id);
 
-      // ── كشف الأسئلة غير المجابة ────────────────────────────
-      // لو الـ AI بدأ الإجابة بـ UNCERTAIN: يعني ما عنده إجابة واثقة
-      if (typeof data.answer === "string" && data.answer.trimStart().startsWith("UNCERTAIN:")) {
-        try {
-          await submitUnanswered(userText, data.conversation_id ?? conversationId ?? undefined);
-        } catch {
-          // نتجاهل الخطأ — ما نريد يأثر على تجربة المواطن
-        }
-      }
+      const noAnswer = !data.sources || (Array.isArray(data.sources) && data.sources.length === 0);
 
       setMessages((prev) => [
         ...prev,
@@ -205,7 +238,6 @@ export function CitizenChatbot() {
           sender: "bot",
           timestamp: new Date(),
           type: "text",
-          // FIX 3: meta موجودة بس مش بنعرضها للمستخدم
           meta: {
             intent: data.intent ?? null,
             category: data.category ?? null,
@@ -214,6 +246,23 @@ export function CitizenChatbot() {
           },
         },
       ]);
+
+      // لو AI ما عنده جواب → أضف رسالة تنبيه للمواطن بعد ثانية
+      if (noAnswer && activeConvId) {
+        setTimeout(() => {
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: Date.now() + 1,
+              text: "📋 سؤالك وصل إلى فريق الموظفين وسيتم الرد عليه قريباً.\n\nيمكنك الضغط على الزر أدناه للتحقق من وصول الإجابة.",
+              sender: "bot",
+              timestamp: new Date(),
+              type: "pending_answer",
+              meta: { intent: null, category: null, mode: null, score: null },
+            },
+          ]);
+        }, 800);
+      }
     } catch (error: any) {
       const isTimeout = error?.name === "AbortError" || String(error?.message).includes("abort");
       setMessages((prev) => [
@@ -351,10 +400,22 @@ export function CitizenChatbot() {
                       ? "bg-blue-600 text-white"
                       : m.type === "error"
                       ? "bg-red-50 text-red-800 border border-red-200"
+                      : m.type === "pending_answer"
+                      ? "bg-amber-50 text-amber-900 border border-amber-200"
                       : "bg-white text-gray-800 shadow-md"
                   }`}
                 >
                   <p className="whitespace-pre-line leading-relaxed text-sm">{m.text}</p>
+
+                  {/* زر تحقق من الجواب — يظهر فقط لرسائل pending_answer */}
+                  {m.type === "pending_answer" && conversationId && (
+                    <button
+                      onClick={() => checkMyAnswers(conversationId)}
+                      className="mt-3 flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-sm font-semibold transition-colors shadow-sm"
+                    >
+                      🔄 تحقق من الجواب
+                    </button>
+                  )}
 
                   {m.links?.length ? (
                     <div className="mt-3 space-y-2">
@@ -370,8 +431,8 @@ export function CitizenChatbot() {
                     </div>
                   ) : null}
 
-                  {/* FIX 7: زر Copy — بس للبوت */}
-                  {m.sender === "bot" && m.type !== "error" && (
+                  {/* FIX 7: زر Copy — بس للبوت بدون pending_answer */}
+                  {m.sender === "bot" && m.type !== "error" && m.type !== "pending_answer" && (
                     <CopyButton text={m.text} />
                   )}
 

@@ -787,7 +787,7 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
                           )}
 
                           <h4 className="text-lg font-bold mb-2">{item.question}</h4>
-                          <p className="text-gray-600">{item.answer}</p>
+                          <p className="text-gray-500 text-sm mt-1 overflow-hidden" style={{display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{item.answer}</p>
 
                           <p className="text-xs text-gray-400 mt-2">آخر تحديث: {item.updatedAt.toLocaleDateString("ar-PS")}</p>
                         </div>
