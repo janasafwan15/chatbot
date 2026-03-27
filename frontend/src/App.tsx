@@ -9,6 +9,8 @@ import { EmployeeDashboard } from "./pages/EmployeeDashboard";
 import { AdminDashboard } from "./pages/AdminDashboard";
 import { ForceChangePassword } from "./pages/ForceChangePassword";
 import AdvancedAnalytics from "./pages/AdvancedAnalytics";
+import { RatingsAnalytics } from "./pages/RatingsAnalytics";
+
 
 type AppRole = "citizen" | "employee" | "admin";
 type AuthRole = "employee" | "supervisor" | "admin";
@@ -101,6 +103,7 @@ function AppRoutes() {
       />
 
       <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="/ratings" element={<RatingsAnalytics showDetails={true} />} />
     </Routes>
   );
 }

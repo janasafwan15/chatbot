@@ -6,7 +6,6 @@ import { OllamaSettings } from "./OllamaSettings";
 import { RatingModal } from "../app/components/RatingModal";
 import { submitConversationRating } from "../api/conversationRating";
 import { getMyAnswers } from "../api/unanswered";
-
 // ─── Types ────────────────────────────────────────────────
 interface Message {
   id: number;

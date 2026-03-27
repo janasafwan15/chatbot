@@ -1,22 +1,20 @@
-import { useState } from "react";
-import { Star, Send, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from 'react';
+import { Star, Send, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface RatingModalProps {
   onClose: () => void;
-  onRate: (rating: number, feedback: string) => void | Promise<void>;
-  disabled?: boolean;
+  onRate: (rating: number, feedback: string) => void;
 }
 
-export function RatingModal({ onClose, onRate, disabled = false }: RatingModalProps) {
+export function RatingModal({ onClose, onRate }: RatingModalProps) {
   const [rating, setRating] = useState(0);
   const [hoveredRating, setHoveredRating] = useState(0);
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState('');
 
-  const handleSubmit = async () => {
-    if (disabled) return;
+  const handleSubmit = () => {
     if (rating > 0) {
-      await onRate(rating, feedback);
+      onRate(rating, feedback);
       onClose();
     }
   };
@@ -38,70 +36,78 @@ export function RatingModal({ onClose, onRate, disabled = false }: RatingModalPr
           onClick={(e) => e.stopPropagation()}
           className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8"
         >
+          {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-gray-800">قيّم تجربتك</h2>
-            <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <button
+              onClick={onClose}
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            >
               <X className="w-5 h-5 text-gray-500" />
             </button>
           </div>
 
+          {/* Rating Stars */}
           <div className="text-center mb-6">
             <p className="text-gray-600 mb-4">كيف كانت تجربتك مع نظام الدعم الذكي؟</p>
-
-            <div className="flex justify-center gap-2 mb-2" dir="ltr">
+            <div className="flex justify-center gap-2 mb-2">
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
                   key={star}
-                  disabled={disabled}
                   onClick={() => setRating(star)}
                   onMouseEnter={() => setHoveredRating(star)}
                   onMouseLeave={() => setHoveredRating(0)}
-                  className={`transform transition-transform ${
-                    disabled ? "opacity-60 cursor-not-allowed" : "hover:scale-110"
-                  }`}
+                  className="transform transition-transform hover:scale-110"
                 >
                   <Star
                     className={`w-12 h-12 transition-colors ${
-                      star <= (hoveredRating || rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                      star <= (hoveredRating || rating)
+                        ? 'fill-yellow-400 text-yellow-400'
+                        : 'text-gray-300'
                     }`}
                   />
                 </button>
               ))}
             </div>
-
             {rating > 0 && (
-              <motion.p initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="text-sm font-semibold text-blue-600">
-                {rating === 1 && "سيء جداً 😞"}
-                {rating === 2 && "سيء 😕"}
-                {rating === 3 && "مقبول 😐"}
-                {rating === 4 && "جيد 😊"}
-                {rating === 5 && "ممتاز 🤩"}
+              <motion.p
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-sm font-semibold text-blue-600"
+              >
+                {rating === 1 && 'سيء جداً 😞'}
+                {rating === 2 && 'سيء 😕'}
+                {rating === 3 && 'مقبول 😐'}
+                {rating === 4 && 'جيد 😊'}
+                {rating === 5 && 'ممتاز 🤩'}
               </motion.p>
             )}
           </div>
 
+          {/* Feedback Input */}
           <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">هل لديك أي ملاحظات أو اقتراحات؟ (اختياري)</label>
+            <label className="block text-gray-700 font-semibold mb-2">
+              هل لديك أي ملاحظات أو اقتراحات؟ (اختياري)
+            </label>
             <textarea
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               rows={4}
-              disabled={disabled}
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none disabled:bg-gray-50"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               placeholder="أخبرنا عن تجربتك..."
             />
           </div>
 
+          {/* Actions */}
           <div className="flex gap-3">
             <button
               onClick={handleSubmit}
-              disabled={rating === 0 || disabled}
+              disabled={rating === 0}
               className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
             >
               <Send className="w-5 h-5" />
               إرسال التقييم
             </button>
-
             <button
               onClick={onClose}
               className="px-6 py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
@@ -110,7 +116,10 @@ export function RatingModal({ onClose, onRate, disabled = false }: RatingModalPr
             </button>
           </div>
 
-          <p className="text-xs text-gray-500 text-center mt-4">تقييمك يساعدنا على تحسين خدماتنا</p>
+          {/* Footer Note */}
+          <p className="text-xs text-gray-500 text-center mt-4">
+            تقييمك يساعدنا على تحسين خدماتنا
+          </p>
         </motion.div>
       </motion.div>
     </AnimatePresence>

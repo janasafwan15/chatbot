@@ -54,7 +54,11 @@ import { AnalyticsAPI } from "../api/stats";
 import { downloadBlob } from "../utils/download";
 import { getApiBase } from "../api/http";
 import { FileApproval } from "./FileApproval";
+import { Link } from "react-router-dom";
 
+<Link to="/ratings">
+  عرض تحليلات التقييم
+</Link>
 interface AdminDashboardProps {
   onLogout: () => void;
 }
