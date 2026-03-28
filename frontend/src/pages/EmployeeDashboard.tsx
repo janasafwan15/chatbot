@@ -50,6 +50,7 @@ import { getMemToken } from "../api/auth";
 import { RatingsAnalytics } from "../app/components/RatingsAnalytics";
 import { FileManagement } from "./FileManagement";
 import { UnansweredQuestions } from "./UnansweredQuestions";
+import { EmployeePerformance } from "./EmployeePerformance";
 import { downloadBlob } from "../utils/download";
 
 interface EmployeeDashboardProps {
@@ -439,7 +440,7 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
             }`}
           >
             <MessageSquare className="w-5 h-5" />
-            <span>إدارة الردود</span>
+            <span>إدارة الردود الذكية</span>
           </button>
 
           {canViewReports && (
@@ -462,7 +463,7 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
               }`}
             >
               <Star className="w-5 h-5" />
-              <span>التقييمات</span>
+              <span>تقييمات العملاء</span>
             </button>
           )}
 
@@ -502,20 +503,20 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-2">
-              {activeTab === "overview" && "لوحة المعلومات"}
-              {activeTab === "responses" && "إدارة الردود الذكية"}
-              {activeTab === "reports" && "التقارير والإحصائيات"}
-              {activeTab === "ratings" && "التقييمات"}
-              {activeTab === "files" && "إدارة الملفات"}
-              {activeTab === "unanswered" && "الأسئلة غير المجابة"}
+              {activeTab === "overview"     && "لوحة المعلومات"}
+              {activeTab === "responses"    && "إدارة الردود الذكية"}
+              {activeTab === "reports"      && "التقارير"}
+              {activeTab === "ratings"      && "تقييمات العملاء"}
+              {activeTab === "files"        && "إدارة الملفات"}
+              {activeTab === "unanswered"   && "الأسئلة غير المجابة"}
             </h1>
             <p className="text-gray-600">
-              {activeTab === "overview" && "نظرة عامة على أداء النظام"}
-              {activeTab === "responses" && "إضافة وتعديل الردود في قاعدة المعرفة"}
-              {activeTab === "reports" && "مراقبة الأداء وتحليل البيانات"}
-              {activeTab === "ratings" && "تحليلات تقييم المحادثات (نجوم فقط)"}
-              {activeTab === "files" && "رفع ملفات لإضافتها لقاعدة المعرفة بعد موافقة الإدارة"}
-              {activeTab === "unanswered" && "الأسئلة التي لم يستطع الذكاء الاصطناعي الإجابة عليها"}
+              {activeTab === "overview"    && "نظرة عامة على أداء النظام"}
+              {activeTab === "responses"   && "إضافة وتعديل الردود في قاعدة المعرفة"}
+              {activeTab === "reports"     && "مراقبة الأداء وتحليل البيانات"}
+              {activeTab === "ratings"     && "تقييمات المواطنين للمحادثات والرسائل"}
+              {activeTab === "files"       && "رفع ملفات لإضافتها لقاعدة المعرفة بعد موافقة الإدارة"}
+              {activeTab === "unanswered"  && "الأسئلة التي لم يستطع الذكاء الاصطناعي الإجابة عليها"}
             </p>
 
             {(loadingStats || statsError) && (
@@ -1029,56 +1030,11 @@ export function EmployeeDashboard({ onLogout }: EmployeeDashboardProps) {
           )}
 
           {/* Ratings */}
+          {/* التقييمات */}
           {activeTab === "ratings" && (
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">تحليلات تقييم المحادثة (نجوم)</h3>
-                <RatingsAnalytics token={token} days={30} showDetails />
-              </div>
-
-              <div className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">مراجعة المحادثات قليلة التقييم (نجمة/نجمتين)</h3>
-                <p className="text-sm text-gray-500 mb-4">بنركز فقط على المحادثات اللي تقييمها منخفض.</p>
-
-                {lowRatedConversations.length === 0 ? (
-                  <p className="text-gray-500">لا توجد محادثات بتقييم منخفض ضمن الفترة 👍</p>
-                ) : (
-                  <div className="space-y-3">
-                    {lowRatedConversations.map((c) => (
-                      <details key={c.conversation_id} className="border rounded-lg p-4">
-                        <summary className="cursor-pointer flex flex-wrap items-center gap-3">
-                          <span className="font-semibold text-gray-800">محادثة #{c.conversation_id}</span>
-                          <span className="text-sm bg-yellow-50 text-yellow-800 border border-yellow-200 px-2 py-1 rounded">
-                            ⭐ {c.avg_stars} / 5
-                          </span>
-                          <span className="text-sm text-gray-500">({c.ratings_count} تقييم)</span>
-                          <span className="text-sm text-gray-500">
-                            آخر تقييم: {new Date(c.last_rated_at).toLocaleDateString("ar-PS")}
-                          </span>
-                        </summary>
-
-                        <div className="mt-3 space-y-2">
-                          {(c.preview || []).map((m, i) => (
-                            <div key={i} className="bg-gray-50 rounded p-3 text-sm">
-                              <div className="text-xs text-gray-500 mb-1">{new Date(m.created_at).toLocaleString("ar-PS")}</div>
-                              {m.message_text && (
-                                <div className="mb-1">
-                                  <span className="font-semibold">سؤال:</span> {m.message_text}
-                                </div>
-                              )}
-                              {m.response_text && (
-                                <div>
-                                  <span className="font-semibold">رد:</span> {m.response_text}
-                                </div>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </details>
-                    ))}
-                  </div>
-                )}
-              </div>
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <h2 className="text-xl font-bold text-gray-800 mb-6">تحليلات التقييمات</h2>
+              <RatingsAnalytics token={token} days={30} showDetails />
             </div>
           )}
 

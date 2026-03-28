@@ -755,6 +755,37 @@ def _date_range_where(from_date: str | None, to_date: str | None) -> tuple[str, 
     return clause, tuple(params)
 
 
+@router.get("/helpful-summary")
+def helpful_summary(days: int = 30, _: dict = Depends(_auth_stats)):
+    """ملخص تقييمات الرسائل (إيجابي/سلبي) من feedback_type = helpful/not_helpful"""
+    days = max(1, min(int(days or 30), 365))
+
+    row = _q_rows(
+        """
+        SELECT
+            SUM(CASE WHEN feedback_type = 'helpful'     THEN 1 ELSE 0 END) AS total_helpful,
+            SUM(CASE WHEN feedback_type = 'not_helpful' THEN 1 ELSE 0 END) AS total_not_helpful,
+            COUNT(*) AS total
+        FROM feedback
+        WHERE feedback_type IN ('helpful', 'not_helpful')
+          AND submitted_at >= NOW() + %s::interval
+        """,
+        (f"-{days} days",),
+    )
+    data = row[0] if row else {}
+    helpful     = int(data.get("total_helpful")     or 0)
+    not_helpful = int(data.get("total_not_helpful") or 0)
+    total       = helpful + not_helpful
+    rate        = round((helpful / total) * 100, 1) if total else 0.0
+
+    return {
+        "days":             days,
+        "total_helpful":    helpful,
+        "total_not_helpful": not_helpful,
+        "positive_rate":    rate,
+    }
+
+
 @router.get("/conversation-ratings-summary-range")
 def conversation_ratings_summary_range(
     from_date: str | None = Query(None, description="YYYY-MM-DD"),
@@ -2136,6 +2167,16 @@ def employee_report(
         (user_id, days),
     )
 
+    # عدد الأسئلة غير المجابة التي أجاب عليها هذا الموظف
+    unanswered_answered = _q_scalar(
+        """
+        SELECT COUNT(*) FROM unanswered_question
+        WHERE answered_by = %s
+          AND answered_at >= NOW() - INTERVAL '%s days'
+        """,
+        (user_id, days),
+    ) or 0
+
     return {
         "days": days,
         "employee": user_row[0],
@@ -2150,6 +2191,7 @@ def employee_report(
             "updated": int(kb_data.get("updated") or 0),
             "deleted": int(kb_data.get("deleted") or 0),
         },
+        "unanswered_answered": int(unanswered_answered),
         "recent_kb_changes": recent_changes,
     }
 

@@ -92,6 +92,7 @@ export type EmployeesActivityResp = {
   employees: {
     user_id: number;
     name: string;
+    role: string;
     logins: number;
     last_activity: string | null;
     active_minutes: number;
@@ -112,6 +113,33 @@ async function apiFetchBlob(path: string, token: string): Promise<Blob> {
   }
   return res.blob();
 }
+
+export type EmployeeReportResp = {
+  days: number;
+  employee: {
+    user_id: number;
+    full_name: string;
+    username: string;
+    role: string;
+    email: string | null;
+    last_login: string | null;
+    created_at: string;
+    status: string;
+  };
+  sessions: {
+    logins: number;
+    last_activity: string | null;
+    total_minutes: number;
+  };
+  kb_contributions: {
+    total: number;
+    added: number;
+    updated: number;
+    deleted: number;
+  };
+  unanswered_answered: number;
+  recent_kb_changes: { action: string; new_question: string | null; changed_at: string }[];
+};
 
 export const StatsAPI = {
   overview: (token: string) =>
@@ -179,6 +207,9 @@ export const StatsAPI = {
 
   exportEmployeesPDF: (days: number, token: string) =>
     apiFetchBlob(`/stats/export/employees.pdf?days=${days}`, token),
+
+  employeeReport: (userId: number, days: number, token: string) =>
+    apiFetch<EmployeeReportResp>(`/stats/employee-report/${userId}?days=${days}`, { token }),
 };
 // ── Types for new features ──────────────────────────────────
 

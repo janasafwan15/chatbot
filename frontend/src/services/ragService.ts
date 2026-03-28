@@ -21,6 +21,7 @@ export type AskResponse = {
   latency_ms?: number;
   message_id?: number;
   user_message_id?: number;
+  sources?: { file?: string; chunk_id?: string; score?: number }[] | null;
 };
 
 export type StreamingCallbacks = {

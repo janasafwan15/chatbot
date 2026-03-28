@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Lock, AlertCircle, CheckCircle } from "lucide-react";
 import { changePassword } from "../api/auth";
@@ -14,10 +14,11 @@ export function ForceChangePassword() {
   const nav = useNavigate();
   const { role, mustChangePassword, clearMustChangePassword, logout } = useAuth();
 
-  if (!mustChangePassword) {
-    nav(role === "admin" ? "/admin" : "/employee", { replace: true });
-    return null;
-  }
+  useEffect(() => {
+    if (!mustChangePassword) {
+      nav(role === "admin" ? "/admin" : "/employee", { replace: true });
+    }
+  }, [mustChangePassword, role, nav]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,6 +72,8 @@ export function ForceChangePassword() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center p-4" dir="rtl">
+      {/* لو mustChangePassword false — ما نعرض شي لأن useEffect رح يعمل redirect */}
+      {!mustChangePassword ? null : (
       <div className="w-full max-w-md">
         <div className="text-center text-white mb-8">
           <div className="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -157,6 +160,7 @@ export function ForceChangePassword() {
           </form>
         </div>
       </div>
+      )}
     </div>
   );
 }

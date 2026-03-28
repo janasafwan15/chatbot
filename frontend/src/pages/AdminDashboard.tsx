@@ -25,6 +25,7 @@ import {
   AlertCircle,
   CheckCircle,
   FileCheck,
+  Star,
 } from "lucide-react";
 
 import {
@@ -54,6 +55,8 @@ import { AnalyticsAPI } from "../api/stats";
 import { downloadBlob } from "../utils/download";
 import { getApiBase } from "../api/http";
 import { FileApproval } from "./FileApproval";
+import { EmployeePerformance } from "./EmployeePerformance";
+import { RatingsAnalytics } from "../app/components/RatingsAnalytics";
 
 interface AdminDashboardProps {
   onLogout: () => void;
@@ -133,7 +136,7 @@ function IconBox({ theme, Icon }: { theme: Theme; Icon: any }) {
 }
 
 export function AdminDashboard({ onLogout }: AdminDashboardProps) {
-  const [activeTab, setActiveTab] = useState<"overview" | "users" | "analytics" | "file-approval">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "users" | "analytics" | "file-approval" | "performance" | "ratings">("overview");
 
   // ===== Users =====
   const [users, setUsers] = useState<User[]>([]);
@@ -619,6 +622,26 @@ export function AdminDashboard({ onLogout }: AdminDashboardProps) {
             <FileCheck className="w-5 h-5" />
             <span>موافقة الملفات</span>
           </button>
+
+          <button
+            onClick={() => setActiveTab("performance")}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+              activeTab === "performance" ? "bg-white/20" : "hover:bg-white/10"
+            }`}
+          >
+            <TrendingUp className="w-5 h-5" />
+            <span>أداء الموظفين</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab("ratings")}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+              activeTab === "ratings" ? "bg-white/20" : "hover:bg-white/10"
+            }`}
+          >
+            <Star className="w-5 h-5" />
+            <span>التقييمات</span>
+          </button>
         </nav>
 
         <button
@@ -636,16 +659,20 @@ export function AdminDashboard({ onLogout }: AdminDashboardProps) {
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-2">
-              {activeTab === "overview" && "لوحة المعلومات الرئيسية"}
-              {activeTab === "users" && "إدارة المستخدمين والصلاحيات"}
-              {activeTab === "analytics" && "التحليلات والتقارير المتقدمة"}
+              {activeTab === "overview"      && "لوحة المعلومات الرئيسية"}
+              {activeTab === "users"         && "إدارة المستخدمين والصلاحيات"}
+              {activeTab === "analytics"     && "التحليلات والتقارير المتقدمة"}
               {activeTab === "file-approval" && "موافقة الملفات"}
+              {activeTab === "performance"   && "أداء الموظفين"}
+              {activeTab === "ratings"       && "التقييمات"}
             </h1>
             <p className="text-gray-600">
-              {activeTab === "overview" && "نظرة شاملة على أداء النظام (نفس تقرير الموظف)"}
-              {activeTab === "users" && "إضافة وتعديل المستخدمين وصلاحياتهم"}
-              {activeTab === "analytics" && "تقرير الأداء + تقرير أداء الموظفين"}
+              {activeTab === "overview"      && "نظرة شاملة على أداء النظام (نفس تقرير الموظف)"}
+              {activeTab === "users"         && "إضافة وتعديل المستخدمين وصلاحياتهم"}
+              {activeTab === "analytics"     && "تقرير الأداء + تقرير أداء الموظفين"}
               {activeTab === "file-approval" && "مراجعة والموافقة على الملفات المرفوعة من الموظفين"}
+              {activeTab === "performance"   && "تقارير نشاط الموظفين ومساهماتهم في قاعدة المعرفة"}
+              {activeTab === "ratings"       && "تحليلات تقييمات المواطنين للمحادثات والرسائل"}
             </p>
 
             {(loadingStats || statsError) && (
@@ -1615,60 +1642,6 @@ export function AdminDashboard({ onLogout }: AdminDashboardProps) {
                     </div>
                   )}
 
-                  {/* تقرير الموظفين */}
-                  <div className="bg-white rounded-xl shadow-sm p-6">
-                    <div className="flex items-center justify-between gap-3 mb-4">
-                      <div>
-                        <h3 className="text-base font-bold text-gray-800">تقرير أداء الموظفين (آخر 30 يوم)</h3>
-                        <p className="text-xs text-gray-400 mt-0.5">مبني على جلسات الدخول والنشاط</p>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold flex items-center gap-1.5">
-                          <UserCheck className="w-3.5 h-3.5" /> {employeesSummary.total} موظف
-                        </span>
-                        <span className="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold">
-                          نشطين: {employeesSummary.active}
-                        </span>
-                      </div>
-                    </div>
-                    {employeesReport?.employees?.length ? (
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                          <thead>
-                            <tr className="text-right text-gray-500 border-b">
-                              <th className="py-2 font-semibold">#</th>
-                              <th className="py-2 font-semibold">الاسم</th>
-                              <th className="py-2 font-semibold">عدد الدخول</th>
-                              <th className="py-2 font-semibold">آخر نشاط</th>
-                              <th className="py-2 font-semibold">دقائق النشاط</th>
-                              <th className="py-2 font-semibold">الحالة</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {employeesReport.employees.map((e, idx) => (
-                              <tr key={e.user_id} className="border-b hover:bg-gray-50">
-                                <td className="py-2 text-gray-400">{idx + 1}</td>
-                                <td className="py-2 font-semibold text-gray-800">{e.name || `User ${e.user_id}`}</td>
-                                <td className="py-2">{(e.logins || 0).toLocaleString("ar-PS")}</td>
-                                <td className="py-2 text-gray-500 text-xs">{e.last_activity ? new Date(e.last_activity).toLocaleString("ar-PS") : "—"}</td>
-                                <td className="py-2">{(e.active_minutes || 0).toLocaleString("ar-PS")}</td>
-                                <td className="py-2">
-                                  <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
-                                    e.status === "نشط" ? "bg-emerald-100 text-emerald-700" :
-                                    e.status === "قليل النشاط" ? "bg-amber-100 text-amber-800" :
-                                    "bg-gray-100 text-gray-600"
-                                  }`}>{e.status}</span>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    ) : (
-                      <p className="text-gray-400 text-sm">لا توجد بيانات نشاط حتى الآن.</p>
-                    )}
-                  </div>
-
                   {/* تصدير التقارير */}
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <h3 className="text-base font-bold text-gray-800 mb-4">تصدير التقارير</h3>
@@ -1707,6 +1680,21 @@ export function AdminDashboard({ onLogout }: AdminDashboardProps) {
 
           {/* موافقة الملفات */}
           {activeTab === "file-approval" && <FileApproval />}
+
+          {/* أداء الموظفين */}
+          {activeTab === "performance" && (
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <EmployeePerformance />
+            </div>
+          )}
+
+          {/* التقييمات */}
+          {activeTab === "ratings" && (
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <h2 className="text-xl font-bold text-gray-800 mb-6">تحليلات التقييمات</h2>
+              <RatingsAnalytics token={token} days={30} showDetails />
+            </div>
+          )}
 
         </div>
       </div>
