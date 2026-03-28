@@ -22,6 +22,10 @@ from .rag_engine import (
     upsert_chunks_into_db,
     build_embeddings,
 )
+from .intent_classifier import (
+    is_personal_query,
+    PERSONAL_AUTH_REQUIRED_REPLY,
+)
 
 def _audit(user_id: int, action: str, details: str = "") -> None:
     try:
@@ -301,6 +305,31 @@ def chat(req: ChatRequest, request: Request):
         cid = create_conversation()
 
     user_mid = save_user_message(conversation_id=cid, text=question_raw)
+
+    # ── كشف الأسئلة الشخصية (تحتاج تحقق هوية) ──────────────
+    if is_personal_query(question_raw):
+        save_assistant_message(
+            conversation_id=cid,
+            question_text=question_raw,
+            answer_text=PERSONAL_AUTH_REQUIRED_REPLY,
+            response_mode="auth_required",
+            best_score=0.0,
+            answer_found=0,
+        )
+        return {
+            "answer":          PERSONAL_AUTH_REQUIRED_REPLY,
+            "sources":         [],
+            "conversation_id": cid,
+            "mode":            "auth_required",
+            "requires_auth":   True,
+            "auth_type":       "citizen_otp",
+            "best_score":      0.0,
+            "confidence":      1.0,
+            "intent":          "personal_data_inquiry",
+            "category":        "personal",
+            "message_id":      None,
+            "user_message_id": user_mid,
+        }
 
     res: RagResult = answer_with_rag(question_raw, conversation_id=cid)
 

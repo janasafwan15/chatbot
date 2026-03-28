@@ -4,18 +4,24 @@ import { Send, Bot, User, Settings, MessageSquare, PlusCircle, Copy, Check } fro
 import { ragService } from "../services/ragService";
 import { OllamaSettings } from "./OllamaSettings";
 import { RatingModal } from "../app/components/RatingModal";
+import { CitizenOtpFlow } from "../app/components/CitizenOtpFlow";
 import { submitConversationRating } from "../api/conversationRating";
 import { getMyAnswers } from "../api/unanswered";
 
 // ─── Types ────────────────────────────────────────────────
+interface CitizenSession {
+  token: string;
+  full_name: string;
+  national_id: string;
+}
+
 interface Message {
   id: number;
   text: string;
   sender: "user" | "bot";
   timestamp: Date;
-  type?: "text" | "link" | "info" | "error" | "pending_answer";
+  type?: "text" | "link" | "info" | "error" | "pending_answer" | "auth_required";
   links?: { text: string; url: string }[];
-  // meta مخفية — مش للمستخدم العادي
   meta?: { intent?: string | null; category?: string | null; mode?: string | null; score?: number | null };
 }
 
@@ -99,6 +105,9 @@ export function CitizenChatbot() {
   const [ratingSent, setRatingSent] = useState(false);
   const [conversationRating, setConversationRating] = useState<{ rating: number; feedback: string } | null>(null);
 
+  // ─ Citizen identity session ─
+  const [citizenSession, setCitizenSession] = useState<CitizenSession | null>(null);
+
   // FIX 4: timeout ref لإلغاء الانتظار
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -166,6 +175,7 @@ export function CitizenChatbot() {
     setRatingSent(false);
     setConversationRating(null);
     setShowRatingModal(false);
+    setCitizenSession(null);
     localStorage.removeItem(SESSION_KEY);
     inputRef.current?.focus();
   }, []);
@@ -229,6 +239,22 @@ export function CitizenChatbot() {
       if (data?.conversation_id) setConversationId(data.conversation_id);
 
       const noAnswer = !data.sources || (Array.isArray(data.sources) && data.sources.length === 0);
+
+      // ── الأسئلة الشخصية — تحتاج تحقق هوية ─────────────────
+      if (data.requires_auth === true || data.mode === "auth_required") {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: Date.now(),
+            text: data.answer,
+            sender: "bot",
+            timestamp: new Date(),
+            type: "auth_required",
+            meta: { intent: "personal_data_inquiry", category: "personal", mode: "auth_required", score: null },
+          },
+        ]);
+        return;
+      }
 
       setMessages((prev) => [
         ...prev,
@@ -402,6 +428,8 @@ export function CitizenChatbot() {
                       ? "bg-red-50 text-red-800 border border-red-200"
                       : m.type === "pending_answer"
                       ? "bg-amber-50 text-amber-900 border border-amber-200"
+                      : m.type === "auth_required"
+                      ? "bg-blue-50 text-blue-900 border border-blue-100"
                       : "bg-white text-gray-800 shadow-md"
                   }`}
                 >
@@ -415,6 +443,26 @@ export function CitizenChatbot() {
                     >
                       🔄 تحقق من الجواب
                     </button>
+                  )}
+
+                  {/* بطاقة التحقق من الهوية — تظهر لرسائل auth_required */}
+                  {m.type === "auth_required" && (
+                    <CitizenOtpFlow
+                      existingSession={citizenSession}
+                      onSessionChange={setCitizenSession}
+                      onDataReady={(text) => {
+                        setMessages((prev) => [
+                          ...prev,
+                          {
+                            id: Date.now(),
+                            text,
+                            sender: "bot",
+                            timestamp: new Date(),
+                            type: "text",
+                          },
+                        ]);
+                      }}
+                    />
                   )}
 
                   {m.links?.length ? (
@@ -431,8 +479,8 @@ export function CitizenChatbot() {
                     </div>
                   ) : null}
 
-                  {/* FIX 7: زر Copy — بس للبوت بدون pending_answer */}
-                  {m.sender === "bot" && m.type !== "error" && m.type !== "pending_answer" && (
+                  {/* FIX 7: زر Copy — بس للبوت بدون pending_answer أو auth_required */}
+                  {m.sender === "bot" && m.type !== "error" && m.type !== "pending_answer" && m.type !== "auth_required" && (
                     <CopyButton text={m.text} />
                   )}
 

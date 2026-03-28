@@ -22,6 +22,9 @@ export type AskResponse = {
   message_id?: number;
   user_message_id?: number;
   sources?: { file?: string; chunk_id?: string; score?: number }[] | null;
+  // ── OTP auth ──
+  requires_auth?: boolean;
+  auth_type?: string;
 };
 
 export type StreamingCallbacks = {

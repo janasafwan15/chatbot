@@ -78,6 +78,7 @@ from .rag_metrics import ensure_eval_table
 from .routers.knowledge_routes import router as knowledge_router
 from .routers.files_routes import router as files_router
 from .routers.unanswered_routes import router as unanswered_router
+from .routers.citizen_auth_routes import router as citizen_auth_router
 
 # =============================
 # App bootstrap
@@ -111,6 +112,7 @@ app.include_router(admin_controls_router)  # ✅ Admin Controls (rebuild embeddi
 app.include_router(knowledge_router)       # ✅ Knowledge Base مع pagination وchangelog
 app.include_router(files_router)           # ✅ رفع الملفات ومراجعتها
 app.include_router(unanswered_router)      # ✅ الأسئلة غير المجابة
+app.include_router(citizen_auth_router)    # ✅ تحقق هوية المواطن (OTP)
 
 # ✅ Access Log Middleware — يسجّل كل طلب في access.log
 app.add_middleware(AccessLogMiddleware)
